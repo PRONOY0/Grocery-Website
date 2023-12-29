@@ -1,0 +1,230 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--Gray-Scale-White, #fff);
+}
+
+.small-one {
+  display: flex;
+  width: 100%;
+  padding: 0.75rem 18.75rem;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 1px 0px 0px #e5e5e5;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Gray-Scale-Gray-600, #666);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.linksAndLogin {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.first-txt {
+  color: var(--Gray-Scale-Gray-600, #666);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 0.975rem */
+}
+
+.down-arrow {
+  width: 0.4375rem;
+  height: 0.21875rem;
+}
+
+.second-txt {
+  color: var(--Gray-Scale-Gray-600, #666);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.sign-in {
+  color: var(--Gray-Scale-Gray-600, #666);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
+}
+
+.sign-up {
+  color: var(--Gray-Scale-Gray-600, #666);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration: none;
+}
+
+.slash {
+  color: var(--Gray-Scale-Gray-600, #666);
+  font-family: Poppins;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.middle {
+  width: 100%;
+  height: 5.8125rem;
+}
+
+.home-page-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.plant {
+  width: 2rem;
+  height: 2rem;
+}
+
+.title {
+  color: var(--Gren-Gray-Scale-900, #002603);
+  font-family: Poppins;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.375rem; /* 118.75% */
+  letter-spacing: -0.06rem;
+}
+
+.searchBtn {
+  display: flex;
+  padding: 0.875rem 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0rem 0.375rem 0.375rem 0rem;
+  background: var(--Branding-Success, #00b207);
+  border: none;
+}
+
+.inputDiv {
+  display: flex;
+  width: 25rem;
+  padding: 0.75rem 1.125rem 0.75rem 1rem;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.magnifying {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.inputField {
+  width: 25rem;
+  flex-shrink: 0;
+  color: var(--Gray-Scale-Gray-500, #808080);
+  font-family: Poppins;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3125rem;
+  outline: none;
+  border: none;
+}
+
+.cartDetails {
+  display: inline-flex;
+  padding-left: 24rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cartItem {
+  display: flex;
+  width: 2.125rem;
+  height: 2.125rem;
+  flex-shrink: 0;
+}
+
+.totalPriceOfItemsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4375rem;
+}
+
+.shoppingcart-txt {
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
+  font-family: Poppins;
+  font-size: 0.6875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 0.825rem */
+}
+
+.price {
+  color: var(--Gray-Scale-Gray-900, #1a1a1a);
+  font-family: Poppins;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 0.875rem */
+}
+
+.heart {
+  font-size: 2rem;
+}
+
+.handbag {
+  font-size: 2rem;
+}
+
+.totalItem {
+  display: flex;
+  width: .5rem;
+  height:.7rem;
+  padding: 0.21875rem 0.375rem 0.28125rem 0.375rem;
+  justify-content: center;
+  align-items: center;
+  color: var(--Gray-Scale-White, #fff);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 0.625rem; /* 100% */
+  border-radius: 1rem;
+  border: 1px solid var(--Gray-Scale-White, #fff);
+  background: var(--Branding-Success-Dark, #2c742f);
+  position: absolute;
+  margin-left:1.1rem;
+}
