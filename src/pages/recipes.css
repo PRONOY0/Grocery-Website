@@ -1,0 +1,220 @@
+.recipe-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-of-path {
+  background-image: url("../resources/Breadcrumbs\ .png");
+  background-size: cover;
+  display: flex;
+  width: 120rem;
+  height: 7.5rem;
+  padding: 0rem 89.36456rem 0rem 18.75rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.filters-and-allFilteredRecipe {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.FILTER {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 1rem;
+}
+
+.recipes-list li ul {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recipes-list li img {
+  width: 26.5rem;
+  height: 20.25rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.filter-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.filter-info div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filter-info {
+  display: flex;
+  padding-left: 5rem;
+  align-items: center;
+}
+
+.recipes-list {
+  display: grid;
+  grid-template-columns: 30rem 30rem;
+  row-gap: 5rem;
+}
+
+.filter-info-perdiv-para {
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
+
+  /* Body Small/Body Small, 400 */
+  font-family: customFont;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.recipe-heading {
+  width: 30.5rem;
+  color: var(--Gray-Scale-Gray-900, #1a1a1a);
+  font-family: customFont;
+  font-size: 1.025rem;
+  font-weight: bolder;
+  line-height: 150%;
+}
+
+.readmorebtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 2.6875rem;
+  color: var(--Branding-Success, #00b207);
+
+  /* Body Medium/Body Medium, 600 */
+  font-family: customFont;
+  border: none;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  line-height: 120%; /* 1.2rem */
+  text-align: start;
+  margin-left: 2rem;
+}
+
+.lower-three-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filter-btn {
+  cursor: pointer;
+  display: inline-flex;
+  width: 8rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 2.6875rem;
+  background: var(--Branding-Success, #00b207);
+
+  color: var(--Gray-Scale-White, #fff);
+
+  /* Body Small/Body Small, 600 */
+  font-family: customFont;
+  font-size: 0.875rem;
+  font-style: normal;
+  letter-spacing: 0.125rem;
+  font-weight: 500;
+  line-height: 120%; /* 1.05rem */
+}
+
+.inputField-and-searchBtn input {
+  display: flex;
+  width: 26.5rem;
+  padding: 0.875rem 1rem;
+  align-items: flex-start;
+  gap: 0.5rem;
+  border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
+  background: var(--Gray-Scale-White, #fff);
+  outline: none;
+  color: var(--Gray-Scale-Gray-400, #999);
+  font-family: customFont;
+  width: 19.75rem;
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.inputField-and-searchBtn {
+  display: flex;
+}
+
+.inputField-and-searchBtn button {
+  width: 7rem;
+  border-radius: 0rem 5rem 5rem 0rem;
+  background: var(--Branding-Success, #00b207);
+  color: #fff;
+  border: none;
+  font-family: customFont;
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.all-filterings div ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cuisine {
+  margin-top: 3rem;
+}
+
+.cuisine-filter {
+  margin-top: 1rem;
+}
+
+.diet-filter {
+  margin-top: 1rem;
+}
+
+.all-filterings div ul li label {
+  color: var(--Gray-Scale-Gray-900, #1a1a1a);
+
+  /* Body Small/Body Small, 400 */
+  font-family: customFont;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.meal{
+  margin-top: 3rem;
+}
+
+.meal-filters{
+  margin-top: 1rem;
+}

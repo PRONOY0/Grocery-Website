@@ -1,7 +1,7 @@
 import React from "react";
-import { CiLocationOn } from "react-icons/ci";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
+import { CiLocationOn } from "react-icons/ci";
 import plant from "../resources/Group.png";
 import Magnifying from "./Magnifying";
 import { IoIosHeartEmpty } from "react-icons/io";
@@ -22,102 +22,12 @@ import DiabeticFood from "../resources/Diabetic Food.png";
 import DishDetergents from "../resources/Dish Detergents.png";
 import Oil from "../resources/Oil.png";
 import { CiStar } from "react-icons/ci";
+import Navbar from "../components/Navbar";
 
 const Home = () => {
+
   return (
     <div className="container">
-      <nav>
-        <div className="small-one">
-          <div className="location">
-            <CiLocationOn className="location-icon" />
-            Store Location: Lincoln- 344, Illinois, Chicago, USA
-          </div>
-
-          <div className="linksAndLogin">
-            <p className="first-txt">ENG</p>
-
-            <GoChevronDown className="down-arrow dwnarrow1" />
-
-            <p className="second-txt">USD</p>
-
-            <GoChevronDown className="down-arrow dwnarrow2" />
-
-            <NavLink className="sign-in">Sign In</NavLink>
-
-            <span className="slash">/</span>
-
-            <NavLink className="sign-up">Sign Up</NavLink>
-          </div>
-        </div>
-
-        <div className="middle">
-          <div className="home-page-icon">
-            <img src={plant} className="plant" />
-            <p className="title">Ecobazar</p>
-
-            <div className="inputDiv">
-              <label htmlFor="searchField">
-                <Magnifying className="magnifying" />
-              </label>
-              <input type="text" className="inputField" id="searchField" />
-              <button className="searchBtn">Search</button>
-            </div>
-
-            <div className="cartDetails">
-              <IoIosHeartEmpty className="heart" />
-
-              <div className="cartItem">
-                <BsHandbag className="handbag" />
-                <span className="totalItem">0</span>
-              </div>
-
-              <div className="totalPriceOfItemsDiv">
-                <p className="shoppingcart-txt">Shopping cart:</p>
-                <span className="price">$0</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="navLinks">
-          <div className="diff-nav-links">
-            <ul>
-              <li>
-                <NavLink>Home</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
-
-              <li>
-                <NavLink>Shop</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
-
-              <li>
-                <NavLink>Pages</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
-
-              <li>
-                <NavLink>Blog</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
-
-              <li>
-                <NavLink>About Us</NavLink>
-              </li>
-
-              <li>
-                <NavLink>Contact Us</NavLink>
-              </li>
-            </ul>
-          </div>
-
-          <div className="contact-number">
-            <MdOutlinePhoneInTalk className="phone" />
-            <p>(219) 555-0114</p>
-          </div>
-        </div>
-      </nav>
 
       <div className="Bannar">
         <div className="Big-Bannar">

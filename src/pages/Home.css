@@ -264,6 +264,11 @@ nav {
   margin-left: 1.1rem;
 }
 
+.homePageNavLink{
+  text-decoration: none;
+  display: flex;
+}
+
 .navLinks {
   display: flex;
   width: 120rem;
@@ -779,7 +784,7 @@ nav {
 .Popular-Categories-first-ul {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 1rem;
   list-style: none;
 }
@@ -942,7 +947,7 @@ nav {
   text-align: center;
 
   /* Body Large/Body Large, 500 */
-  font-family: Poppins;
+  font-family: customFont;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
