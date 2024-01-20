@@ -5,12 +5,7 @@ import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { GoHome } from "react-icons/go";
-import { GoChevronRight } from "react-icons/go";
 import plantlogo from "../resources/Group.png";
-import { IoMdEye } from "react-icons/io";
-import { IoEyeOff } from "react-icons/io5";
-import { useState } from "react";
 
 const Error = () => {
 

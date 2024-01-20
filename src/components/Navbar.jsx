@@ -1,18 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import "../pages/Home.css";
 import { CiLocationOn } from "react-icons/ci";
 import plant from "../resources/Group.png";
-import { IoIosHeartEmpty } from "react-icons/io";
 import { BsHandbag } from "react-icons/bs";
-import { GoArrowRight } from "react-icons/go";
 import { GoChevronDown } from "react-icons/go";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { NavLink, useNavigate } from "react-router-dom";
-import Magnifying from "../pages/Magnifying";
-import { useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { NavLink} from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+
+  const {cart} = useSelector((state)=>state);
+  
+  const [totalAmount, setTotalAmount] = React.useState(0);
+
+  React.useEffect(() => {
+    setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
+  }, [cart]);
+
+
   return (
     <div>
       <nav>
@@ -50,25 +56,16 @@ const Navbar = () => {
               <p className="title">Ecobazar</p>
             </NavLink>
 
-            <div className="inputDiv">
-              <label htmlFor="searchField">
-                <Magnifying className="magnifying" />
-              </label>
-              <input type="text" className="inputField" id="searchField" />
-              <button className="searchBtn">Search</button>
-            </div>
-
             <div className="cartDetails">
-              <IoIosHeartEmpty className="heart" />
 
-              <div className="cartItem">
+              <NavLink to="/cart" className="cartItem">
                 <BsHandbag className="handbag" />
-                <span className="totalItem">0</span>
-              </div>
+                <span className="totalItem">{cart.length}</span>
+              </NavLink>
 
               <div className="totalPriceOfItemsDiv">
                 <p className="shoppingcart-txt">Shopping cart:</p>
-                <span className="price">$0</span>
+                <span className="price">₹{totalAmount}</span>
               </div>
             </div>
           </div>
@@ -84,11 +81,6 @@ const Navbar = () => {
 
               <li>
                 <NavLink to="/shop">Shop</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
-
-              <li>
-                <NavLink>Pages</NavLink>
                 <GoChevronDown className="link-opening-arrow" />
               </li>
 

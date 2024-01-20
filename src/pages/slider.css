@@ -1,0 +1,16 @@
+.priceRangeSliderFilter .thumb{
+    width: 23px;
+    height: 23px;
+    cursor: grab;
+    background: #adff45;
+    border-radius: 100%;
+    border:2px solid green;
+    margin-top: -.5rem;
+}
+
+.priceRangeSliderFilter{
+    width:14rem;
+    height: .4rem;
+    background-color: #ccc;
+    margin-top: .5rem;
+}

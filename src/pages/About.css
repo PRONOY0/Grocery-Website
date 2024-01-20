@@ -576,3 +576,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.testimonial-stars{
+  display: flex;
+}

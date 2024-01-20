@@ -19,7 +19,8 @@
 
 .login {
   color: var(--Branding-Success, #00b207);
-
+  width:8rem;
+  text-align: start;
   /* Body Medium/Body Medium, 400 */
   font-family: customFont;
   font-size: 1rem;

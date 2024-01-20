@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .track-of-path {
@@ -211,10 +212,30 @@
   line-height: 150%; /* 1.3125rem */
 }
 
-.meal{
+.meal {
   margin-top: 3rem;
 }
 
-.meal-filters{
+.meal-filters {
   margin-top: 1rem;
 }
+
+.NOTE {
+  width: 30%;
+  margin-top: 3rem;
+  margin-left: 21rem;
+  display: flex;
+  text-align: start;
+  font-size: 1.1rem;
+  font-family: customFont;
+  color: #d5b60a;
+  font-weight: lighter;
+  background: #fff;
+}
+
+.NOTE span {
+  color: crimson;
+  font-weight: bold;
+}
+
+

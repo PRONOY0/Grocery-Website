@@ -5,18 +5,18 @@ import plantlogo from "../resources/Group.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa6";
-import { GoArrowRight } from "react-icons/go";
 import { useEffect } from "react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
-import RecipePage from "./RecipePage";
 import { FaInstagram } from "react-icons/fa";
 import "./recipes.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [filterClicked, setFilterClicked] = useState(false);
   const [selectedDiet, setSelectedDiet] = useState(null);
   const [selectedCuisine, setSelectedCuisine] = useState(null);
   const [selectedMeal, setSelectedMeal] = useState(null);
@@ -26,16 +26,19 @@ const RecipeSearch = () => {
   const YOUR_API_KEY = "109f55910e05e6994e76c60e0eaa14d2";
   const navigation = useNavigate();
 
-  const encodedDiet = selectedDiet ? selectedDiet.replace(/ /g, '%20') : '';
+  const navigate = useNavigate();
 
-  console.log(encodedDiet);
+  const handleReadMoreClick = (recipe) => {
+    navigate("/recipePage", { state: { recipe } });
+    console.log(recipe);
+  };
 
   const handleSearch = async () => {
     setLoading(true);
     try {
       const encodedQuery = encodeURIComponent(query);
       const response = await fetch(
-        `https://api.edamam.com/api/recipes/v2?type=public&q=${encodedQuery}&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&diet=${selectedDiet}&cuisineType=Indian&mealType=Lunch&imageSize=REGULAR&random=true`
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${encodedQuery}&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&diet=${selectedDiet}&cuisineType=${selectedCuisine}&mealType=${selectedMeal}&imageSize=REGULAR&random=true`
       );
       console.log(response);
 
@@ -51,6 +54,8 @@ const RecipeSearch = () => {
       console.error("Error fetching data:", error);
     }
     setLoading(false);
+
+    toast.error("Please select the filters");
   };
 
   const fetchRandomRecipes = async () => {
@@ -59,7 +64,6 @@ const RecipeSearch = () => {
       const response = await fetch(
         `https://api.edamam.com/api/recipes/v2?type=public&q=&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&imageSize=REGULAR&random=true`
       );
-
 
       if (!response.ok) {
         throw new Error(
@@ -90,6 +94,18 @@ const RecipeSearch = () => {
 
           <p className="login">Recipe</p>
         </div>
+      </div>
+
+      <div>
+        {selectedCuisine === null &&
+        selectedDiet === null &&
+        selectedMeal === null ? (
+          <div>
+            <ToastContainer />
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
 
       <div className="filters-and-allFilteredRecipe">
@@ -126,8 +142,8 @@ const RecipeSearch = () => {
                     type="radio"
                     name="dietType"
                     id="high-fiber"
-                    onChange={() => setSelectedDiet(`high%20fiber`)}
-                    checked={selectedDiet === "high%20fiber"}
+                    onChange={() => setSelectedDiet(`high-fiber`)}
+                    checked={selectedDiet === "high-fiber"}
                   />
                   <label htmlFor="high-fiber">High fiber</label>
                 </li>
@@ -137,8 +153,8 @@ const RecipeSearch = () => {
                     type="radio"
                     name="dietType"
                     id="high-protein"
-                    onChange={() => setSelectedDiet(`high protein`)}
-                    checked={selectedDiet === "high protein"}
+                    onChange={() => setSelectedDiet(`high-protein`)}
+                    checked={selectedDiet === "high-protein"}
                   />
                   <label htmlFor="high-protein">High protein</label>
                 </li>
@@ -148,8 +164,8 @@ const RecipeSearch = () => {
                     type="radio"
                     name="dietType"
                     id="low-carb"
-                    onChange={() => setSelectedDiet(`low carb`)}
-                    checked={selectedDiet === "low carb"}
+                    onChange={() => setSelectedDiet(`low-carb`)}
+                    checked={selectedDiet === "low-carb"}
                   />
                   <label htmlFor="low-carb">Low carb</label>
                 </li>
@@ -159,8 +175,8 @@ const RecipeSearch = () => {
                     type="radio"
                     name="dietType"
                     id="low-fat"
-                    onChange={() => setSelectedDiet(`low fat`)}
-                    checked={selectedDiet === "low fat"}
+                    onChange={() => setSelectedDiet(`low-fat`)}
+                    checked={selectedDiet === "low-fat"}
                   />
                   <label htmlFor="low-fat">Low fat</label>
                 </li>
@@ -170,8 +186,8 @@ const RecipeSearch = () => {
                     type="radio"
                     name="dietType"
                     id="low-sodium"
-                    onChange={() => setSelectedDiet("low sodium")}
-                    checked={selectedDiet === "low sodium"}
+                    onChange={() => setSelectedDiet("low-sodium")}
+                    checked={selectedDiet === "low-sodium"}
                   />
                   <label htmlFor="low-sodium">Low sodium</label>
                 </li>
@@ -180,52 +196,112 @@ const RecipeSearch = () => {
               <h2 className="cuisine">Cuisine Type</h2>
               <ul className="cuisine-filter">
                 <li>
-                  <input type="radio" id="American" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="American"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("American")}
+                    checked={selectedCuisine === "American"}
+                  />
                   <label htmlFor="American">American</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="asian" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="asian"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Asian")}
+                    checked={selectedCuisine === "Asian"}
+                  />
                   <label htmlFor="asian">Asian</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="british" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="british"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("British")}
+                    checked={selectedCuisine === "British"}
+                  />
                   <label htmlFor="british">British</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="caribbean" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="caribbean"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Caribbean")}
+                    checked={selectedCuisine === "Caribbean"}
+                  />
                   <label htmlFor="caribbean">Caribbean</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="chinese" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="chinese"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Chinese")}
+                    checked={selectedCuisine === "Chinese"}
+                  />
                   <label htmlFor="chinese">Chinese</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="french" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="french"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("French")}
+                    checked={selectedCuisine === "French"}
+                  />
                   <label htmlFor="french">French</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="indian" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="Indian"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Indian")}
+                    checked={selectedCuisine === "Indian"}
+                  />
                   <label htmlFor="Indian">Indian</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="italian" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="Italian"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Italian")}
+                    checked={selectedCuisine === "Italian"}
+                  />
                   <label htmlFor="Italian">Italian</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="japanese" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="japanese"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Japanese")}
+                    checked={selectedCuisine === "Japanese"}
+                  />
                   <label htmlFor="japanese">Japanese</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="mexican" name="cuisine-type" />
+                  <input
+                    type="radio"
+                    id="mexican"
+                    name="cuisine-type"
+                    onChange={() => setSelectedCuisine("Mexican")}
+                    checked={selectedCuisine === "Mexican"}
+                  />
                   <label htmlFor="mexican">Mexican</label>
                 </li>
               </ul>
@@ -233,22 +309,46 @@ const RecipeSearch = () => {
               <h2 className="meal">Meal Type</h2>
               <ul className="meal-filters">
                 <li>
-                  <input type="radio" id="BreakFast" />
+                  <input
+                    type="radio"
+                    id="BreakFast"
+                    name="meal type"
+                    onChange={() => setSelectedMeal("Breakfast")}
+                    checked={selectedMeal === "Breakfast"}
+                  />
                   <label htmlFor="BreakFast">BreakFast</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="Lunch" />
+                  <input
+                    type="radio"
+                    id="Lunch"
+                    name="meal type"
+                    onChange={() => setSelectedMeal("Lunch")}
+                    checked={selectedMeal === "Lunch"}
+                  />
                   <label htmlFor="Lunch">Lunch</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="Dinner" />
+                  <input
+                    type="radio"
+                    id="Dinner"
+                    name="meal type"
+                    onChange={() => setSelectedMeal("Dinner")}
+                    checked={selectedMeal === "Dinner"}
+                  />
                   <label htmlFor="Dinner">Dinner</label>
                 </li>
 
                 <li>
-                  <input type="radio" id="Snack" />
+                  <input
+                    type="radio"
+                    id="Snack"
+                    name="meal type"
+                    onChange={() => setSelectedMeal("Snack")}
+                    checked={selectedMeal === "Snack"}
+                  />
                   <label htmlFor="Snack">Snack</label>
                 </li>
               </ul>
@@ -336,7 +436,10 @@ const RecipeSearch = () => {
 
                 <h3 className="recipe-heading">{recipe.recipe.label}</h3>
 
-                <button className="readmorebtn">
+                <button
+                  className="readmorebtn"
+                  onClick={() => handleReadMoreClick(recipe)}
+                >
                   Read More{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -365,6 +468,14 @@ const RecipeSearch = () => {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="NOTE">
+        <span>NOTE:- </span> The images and ingredients used on this platform are obtained from
+        the EDAMAM API. Please be aware that some recipes may not have images,
+        and the quality of available images may vary. It's important to note
+        that this platform is not real-time, and all content is sourced from the
+        EDAMAM API periodically. Thank you for your understanding.
       </div>
 
       <div className="footer">

@@ -208,6 +208,7 @@ nav {
   width: 2.125rem;
   height: 2.125rem;
   flex-shrink: 0;
+  color: #1a1a1a;
 }
 
 .totalPriceOfItemsDiv {
@@ -264,7 +265,7 @@ nav {
   margin-left: 1.1rem;
 }
 
-.homePageNavLink{
+.homePageNavLink {
   text-decoration: none;
   display: flex;
 }
@@ -763,7 +764,7 @@ nav {
 .Popular-Categories {
   width: 100%;
   margin-top: -385rem;
-  height: 60rem;
+  height: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -796,27 +797,22 @@ nav {
   list-style: none;
 }
 
-/* .first-row{
-  width:100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .Fresh-Fruit {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
   align-items: center;
   gap: 1rem;
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
-.Fresh-Fruit-title {
-  width: 12.5rem;
+.fresh-fruit-title {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
   text-align: center;
 
@@ -826,6 +822,9 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  width: 12.5rem;
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Fresh-fruit-img {
@@ -836,6 +835,7 @@ nav {
 .Fresh-Vegetables {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -844,6 +844,8 @@ nav {
   background: var(--Gray-Scale-White, #fff);
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Fresh-Vegetables-img {
@@ -853,7 +855,6 @@ nav {
 
 .fresh-vegetables-title {
   width: 12.5rem;
-  color: var(--Branding-Success-Dark, #2c742f);
   text-align: center;
 
   /* Body Large/Body Large, 500 */
@@ -862,11 +863,14 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Meat-Fish {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -874,6 +878,8 @@ nav {
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Meat-Fish-img {
@@ -892,18 +898,23 @@ nav {
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
   width: 12.5rem;
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Snacks {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
   flex-direction: column;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Snacks-img {
@@ -915,25 +926,28 @@ nav {
   width: 12.5rem;
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
   text-align: center;
-
-  /* Body Large/Body Large, 500 */
   font-family: customFont;
   font-size: 1.125rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 1.6875rem */
+  line-height: 150%;
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Beverages {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
   flex-direction: column;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Beverages-img {
@@ -952,41 +966,14 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
-}
-
-.Beauty-Health {
-  display: inline-flex;
-  padding: 1rem 0rem 1.5rem 0rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 0.3125rem;
-  border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
-  background: var(--Gray-Scale-White, #fff);
-}
-
-.Beauty-Health-img {
-  width: 11.875rem;
-  height: 8.125rem;
-}
-
-.Beauty-Health-title {
-  width: 12.5rem;
-  color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  text-align: center;
-
-  /* Body Large/Body Large, 500 */
-  font-family: customFont;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Bread-Bakery {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -994,6 +981,8 @@ nav {
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Bread-Bakery-img {
@@ -1012,11 +1001,14 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Baking-Needs {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1024,6 +1016,8 @@ nav {
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Baking-Needs-img {
@@ -1042,11 +1036,14 @@ nav {
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
   width: 12.5rem;
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Cooking {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -1054,6 +1051,8 @@ nav {
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Cooking-img {
@@ -1072,18 +1071,23 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Diabetic-Food {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
   flex-direction: column;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Diabetic-Food-img {
@@ -1102,18 +1106,23 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Dish-Detergents {
   display: inline-flex;
   padding: 1rem 0rem 1.5rem 0rem;
   flex-direction: column;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   border-radius: 0.3125rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   background: var(--Gray-Scale-White, #fff);
+  transition: all;
+  transition-duration: .5s;
 }
 
 .Dish-Detergents-img {
@@ -1132,36 +1141,108 @@ nav {
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
+  transition: all;
+  transition-duration: .5s;
 }
 
-.Oil {
-  display: inline-flex;
-  padding: 1rem 0rem 1.5rem 0rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  border-radius: 0.3125rem;
-  border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
+.Fresh-Fruit:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
   background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
 }
 
-.Oil-img {
-  width: 11.875rem;
-  height: 8.125rem;
+.Fresh-Vegetables:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
 }
 
-.Oil-title {
-  width: 12.5rem;
-  color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  text-align: center;
+.Meat-Fish:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
 
-  /* Body Large/Body Large, 500 */
-  font-family: customFont;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 150%; /* 1.6875rem */
+.Snacks:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Beverages:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Bread-Bakery:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Cooking:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Dish-Detergents:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Diabetic-Food:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Baking-Needs:hover {
+  border: 1px solid var(--Branding-Success-Dark, #2c742f);
+  background: var(--Gray-Scale-White, #fff);
+  box-shadow: 0px 0px 52px 0px rgba(32, 181, 38, 0.32);
+}
+
+.Fresh-Fruit:hover .fresh-fruit-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Snacks:hover .Snacks-title{
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Fresh-Vegetables:hover .fresh-vegetables-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Meat-Fish:hover .Meat-Fish-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Beverages:hover .Beverages-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Bread-Bakery:hover .Bread-Bakery-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Baking-Needs:hover .Bread-Needs-title{
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Cooking:hover .Cooking-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Diabetic-Food:hover .Diabetic-Food-title {
+  color: var(--Branding-Success-Dark, #2c742f);
+}
+
+.Dish-Detergents:hover .Dish-Detergents-title {
+  color: var(--Branding-Success-Dark, #2c742f);
 }
 
 .Popular-products {
@@ -1204,9 +1285,9 @@ nav {
   height: 14.375rem;
 }
 
-.green-apple-title{
+.green-apple-title {
   width: 15rem;
-  color: var(--Gray-Scale-Gray-700, #4D4D4D);
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
 
   /* Body Small/Body Small, 400 */
   font-family: Poppins;
@@ -1214,4 +1295,442 @@ nav {
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.3125rem */
+}
+
+.POPUP-CLASS {
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+}
+
+.lightHOME {
+  opacity: 0.5;
+}
+
+.popular-products {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popular-products-heading {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-products-heading h2 {
+  color: var(--Gray-Scale-Gray-900, #1a1a1a);
+
+  /* Heading 05/Heading 05 — 600 */
+  font-family: customFont;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 2.4rem */
+}
+
+.popular-products a {
+  text-decoration: none;
+  color: #00b207;
+}
+
+.items-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.item {
+  display: flex;
+  gap: 0.2rem;
+  flex-direction: column;
+  transition: all;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+}
+
+.popular-products-items {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+}
+
+.rating-star {
+  display: flex;
+}
+
+.not-filled-star {
+  color: #cccccc;
+}
+
+.items-name {
+  display: flex;
+}
+
+.items-price {
+  display: flex;
+}
+
+.items-image {
+  display: flex;
+}
+
+.items-name-eye {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eye {
+  display: none;
+  cursor: pointer;
+}
+
+.item:hover .eye {
+  display: flex;
+  transition: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+.eye:hover {
+  color: #00b207;
+}
+
+.rating-star {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.home-discount-bannar {
+  background-image: url("../resources/Discount\ Bannar\ .png");
+  background-size: cover;
+  display: flex;
+  width: 82.5rem;
+  height: 20.375rem;
+  padding: 3.75rem 3.1875rem 3.75rem 51.75rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.75rem;
+  flex-shrink: 0;
+  border-radius: 0.625rem;
+  margin-top: 9rem;
+  margin-left: 15%;
+}
+
+.home-discount-bannar-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.summersalediscount {
+  display: flex;
+  text-align: start;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.summersalediscount:nth-child(1) {
+  color: var(--Gray-Scale-White, #fff);
+  font-family: customFont;
+  font-size: 3.5rem;
+  font-style: normal;
+  text-align: start;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.summersalediscount:nth-child(2) {
+  color: var(--Gray-Scale-White, #fff);
+  font-family: customFont;
+  font-size: 3.5rem;
+  text-align: start;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.thirtysevernpercentoff {
+  color: var(--Branding-Warning, #ff8a00);
+  font-family: customFont;
+  font-size: 3.5rem;
+  font-style: normal;
+  font-weight: 600;
+  text-align: start;
+  line-height: 120%;
+}
+
+.summersalediscountdesc {
+  color: var(--Gray-Scale-White, #fff);
+
+  /* Body Medium/Body Medium, 400 */
+  font-family: customFont;
+  width: 27.5625rem;
+  text-align: start;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.5rem */
+  opacity: 0.7;
+}
+
+.home-discount-bannar button {
+  display: flex;
+  padding: 1rem 2.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 2.6875rem;
+  background: var(--Branding-Success, #00b207);
+  border: none;
+  color: var(--Gray-Scale-White, #fff);
+
+  /* Body Medium/Body Medium, 600 */
+  font-family: customFont;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 1.2rem */
+}
+
+.home-discount-bannar button:nth-child(1) {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.latest-news {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.latest-news h2 {
+  color: var(--Gray-Scale-Gray-900, #1a1a1a);
+  text-align: center;
+
+  /* Heading 05/Heading 05 — 600 */
+  font-family: customFont;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 2.4rem */
+}
+
+.all-latest-news {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.news1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.news2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.news3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.news1-pic {
+  background-image: url("../resources/news1.jpeg");
+  background-size: cover;
+  width: 26.5rem;
+  height: 20.25rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.news2-pic {
+  background-image: url("../resources/news2.jpeg");
+  background-size: cover;
+  width: 26.5rem;
+  height: 20.25rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.news3-pic {
+  background-image: url("../resources/news3.jpeg");
+  background-size: cover;
+  width: 26.5rem;
+  height: 20.25rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.news1-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news2-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news3-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.news1-desc-section2-heading {
+  width: 23.5rem;
+  color: var(--Branding-Success-Dark, #2c742f);
+
+  /* Body Large/Body Large, 500 */
+  font-family: customFont;
+  text-align: start;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.news2-desc-section2-heading {
+  width: 23.5rem;
+  color: var(--Branding-Success-Dark, #2c742f);
+
+  /* Body Large/Body Large, 500 */
+  font-family: customFont;
+  text-align: start;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.news3-desc-section2-heading {
+  width: 23.5rem;
+  color: var(--Branding-Success-Dark, #2c742f);
+
+  /* Body Large/Body Large, 500 */
+  font-family: customFont;
+  text-align: start;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.6875rem */
+}
+
+.latestnewsbtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 2.6875rem;
+  color: var(--Branding-Success, #00b207);
+
+  /* Body Medium/Body Medium, 600 */
+  font-family: customFont;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 1.2rem */
+  border: none;
+  outline: none;
+}
+
+.food {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.food p {
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
+
+  /* Body Small/Body Small, 400 */
+  font-family: customFont;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.byadmin {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.byadmin p {
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
+
+  /* Body Small/Body Small, 400 */
+  font-family: customFont;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.comments {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.comments p {
+  color: var(--Gray-Scale-Gray-700, #4d4d4d);
+
+  /* Body Small/Body Small, 400 */
+  font-family: customFont;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 1.3125rem */
+}
+
+.news1-desc-section1 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.news2-desc-section1 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.news3-desc-section1 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.companies-name-info {
+  display: flex;
+  width: 82.5rem;
+  padding: 3.75rem 0rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 20rem;
+}
+
+
+@media (max-width:1024px) and (min-width:1440px) {
+  
+}
+
+@media (max-width:1024px) and (min-width:1440px) {
+  
 }
