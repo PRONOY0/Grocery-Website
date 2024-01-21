@@ -5,19 +5,20 @@ import plant from "../resources/Group.png";
 import { BsHandbag } from "react-icons/bs";
 import { GoChevronDown } from "react-icons/go";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { FiMenu } from "react-icons/fi";
+import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
+  const { cart } = useSelector((state) => state);
 
-  const {cart} = useSelector((state)=>state);
-  
   const [totalAmount, setTotalAmount] = React.useState(0);
+  const [mobileNav, setMobileNav] = React.useState(false);
 
   React.useEffect(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
   }, [cart]);
-
 
   return (
     <div>
@@ -50,54 +51,49 @@ const Navbar = () => {
         </div>
 
         <div className="middle">
-          <div className="home-page-icon">
-            <NavLink to="/" className="homePageNavLink">
-              <img src={plant} className="plant" />
-              <p className="title">Ecobazar</p>
+          <NavLink to="/" className="homePageNavLink">
+            <img src={plant} className="plant" />
+            <p className="title">Ecobazar</p>
+          </NavLink>
+
+          <div className="cartDetails">
+            <NavLink to="/cart" className="cartItem">
+              <BsHandbag className="handbag" />
+              <span className="totalItem">{cart.length}</span>
             </NavLink>
 
-            <div className="cartDetails">
-
-              <NavLink to="/cart" className="cartItem">
-                <BsHandbag className="handbag" />
-                <span className="totalItem">{cart.length}</span>
-              </NavLink>
-
-              <div className="totalPriceOfItemsDiv">
-                <p className="shoppingcart-txt">Shopping cart:</p>
-                <span className="price">₹{totalAmount}</span>
-              </div>
+            <div className="totalPriceOfItemsDiv">
+              <p className="shoppingcart-txt">Shopping cart:</p>
+              <span className="price">₹{totalAmount}</span>
             </div>
           </div>
         </div>
 
         <div className="navLinks">
-          <div className="diff-nav-links">
-            <ul>
-              <li>
-                <NavLink to="/">Home</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
+          <ul className="diff-nav-links">
+            <li>
+              <NavLink to="/">Home</NavLink>
+              <GoChevronDown className="link-opening-arrow" />
+            </li>
 
-              <li>
-                <NavLink to="/shop">Shop</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
+            <li>
+              <NavLink to="/shop">Shop</NavLink>
+              <GoChevronDown className="link-opening-arrow" />
+            </li>
 
-              <li>
-                <NavLink to="/recipe">Recipes</NavLink>
-                <GoChevronDown className="link-opening-arrow" />
-              </li>
+            <li>
+              <NavLink to="/recipe">Recipes</NavLink>
+              <GoChevronDown className="link-opening-arrow" />
+            </li>
 
-              <li>
-                <NavLink to='/about'>About Us</NavLink>
-              </li>
+            <li>
+              <NavLink to="/about">About Us</NavLink>
+            </li>
 
-              <li>
-                <NavLink to='/contact'>Contact Us</NavLink>
-              </li>
-            </ul>
-          </div>
+            <li>
+              <NavLink to="/contact">Contact Us</NavLink>
+            </li>
+          </ul>
 
           <div className="contact-number">
             <MdOutlinePhoneInTalk className="phone" />

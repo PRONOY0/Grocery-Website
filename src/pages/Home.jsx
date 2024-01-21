@@ -20,6 +20,12 @@ import { FaEye, FaPinterest } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import plantlogo from "../resources/Group.png";
 import { AppContext } from "../context/AppContext";
+import { TiHome } from "react-icons/ti";
+import { FaShop } from "react-icons/fa6";
+import { GiCook } from "react-icons/gi";
+import { FaInfoCircle } from "react-icons/fa";
+import { RiContactsFill } from "react-icons/ri";
+import { MdAccountCircle } from "react-icons/md";
 
 const Home = ({ products }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -1632,7 +1638,6 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-
       <div className={`${showPopup ? "lightHOME" : "OGHOME"} footer`}>
         <div className="foot-one">
           <div className="newletter-desc">
@@ -1865,6 +1870,14 @@ const Home = ({ products }) => {
           </div>
 
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop"><FaShop/></NavLink>
+        <NavLink to="/recipe"><GiCook/></NavLink>
+        <NavLink to="/"><TiHome/></NavLink>
+        <NavLink to="/contact"><RiContactsFill/></NavLink>
+        <NavLink to="/signin"><MdAccountCircle/></NavLink>
       </div>
     </div>
   );
