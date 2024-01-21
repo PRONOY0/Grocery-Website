@@ -23,6 +23,13 @@ const Navbar = () => {
   return (
     <div>
       <nav>
+        <NavLink className="homepage-iconformobile">
+          <div>
+            <img src={plant} className="plant-mobile" />
+          </div>
+          <p className="plant-text-mobile">Ecobazar</p>
+        </NavLink>
+
         <div className="small-one">
           <div className="location">
             <CiLocationOn className="location-icon" />
