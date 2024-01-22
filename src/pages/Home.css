@@ -1374,19 +1374,17 @@ nav {
 
 .home-discount-bannar {
   background-image: url("../resources/Discount\ Bannar\ .png");
-  /* background-size: cover; */
-  object-fit: cover;
+  background-size: cover;
   display: flex;
-  max-width:100%;
-  height: 20.375rem;
-  padding-left: 55rem;
+  max-width:70vw;
+  min-height: 20.375vh;
+  padding-left: 48vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 1.75rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
-  margin-top: 9rem;
   margin:0 auto;
   margin-top: 5rem;
 }
@@ -1410,7 +1408,7 @@ nav {
 .summersalediscount:nth-child(1) {
   color: var(--Gray-Scale-White, #fff);
   font-family: customFont;
-  font-size: 3.5rem;
+  font-size: 3.5vw;
   font-style: normal;
   text-align: start;
   font-weight: 400;
@@ -1420,7 +1418,7 @@ nav {
 .summersalediscount:nth-child(2) {
   color: var(--Gray-Scale-White, #fff);
   font-family: customFont;
-  font-size: 3.5rem;
+  font-size: 3.5vw;
   text-align: start;
   font-style: normal;
   font-weight: 400;
@@ -1430,7 +1428,7 @@ nav {
 .thirtysevernpercentoff {
   color: var(--Branding-Warning, #ff8a00);
   font-family: customFont;
-  font-size: 3.5rem;
+  font-size: 3.5vw;
   font-style: normal;
   font-weight: 600;
   text-align: start;
@@ -1439,10 +1437,8 @@ nav {
 
 .summersalediscountdesc {
   color: var(--Gray-Scale-White, #fff);
-
-  /* Body Medium/Body Medium, 400 */
   font-family: customFont;
-  width: 27.5625rem;
+  max-width: 27.5625vw;
   text-align: start;
   font-size: 1rem;
   font-style: normal;
@@ -1461,13 +1457,11 @@ nav {
   background: var(--Branding-Success, #00b207);
   border: none;
   color: var(--Gray-Scale-White, #fff);
-
-  /* Body Medium/Body Medium, 600 */
   font-family: customFont;
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 120%; /* 1.2rem */
+  line-height: 120%;
 }
 
 .home-discount-bannar button:nth-child(1) {
@@ -1518,7 +1512,7 @@ nav {
 .news1-pic {
   background-image: url("../resources/news1.jpeg");
   background-size: cover;
-  width: 26.5rem;
+  width: 26.5vw;
   height: 20.25rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -1527,7 +1521,7 @@ nav {
 .news2-pic {
   background-image: url("../resources/news2.jpeg");
   background-size: cover;
-  width: 26.5rem;
+  width: 26.5vw;
   height: 20.25rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -1536,7 +1530,7 @@ nav {
 .news3-pic {
   background-image: url("../resources/news3.jpeg");
   background-size: cover;
-  width: 26.5rem;
+  width: 26.5vw;
   height: 20.25rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -1561,39 +1555,39 @@ nav {
 }
 
 .news1-desc-section2-heading {
-  width: 23.5rem;
+  max-width: 23.5vw;
   color: var(--Branding-Success-Dark, #2c742f);
 
   /* Body Large/Body Large, 500 */
   font-family: customFont;
   text-align: start;
-  font-size: 1.125rem;
+  font-size: 1.125vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
 }
 
 .news2-desc-section2-heading {
-  width: 23.5rem;
+  max-width: 23.5vw;
   color: var(--Branding-Success-Dark, #2c742f);
 
   /* Body Large/Body Large, 500 */
   font-family: customFont;
   text-align: start;
-  font-size: 1.125rem;
+  font-size: 1.125vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
 }
 
 .news3-desc-section2-heading {
-  width: 23.5rem;
+  max-width: 23.5vw;
   color: var(--Branding-Success-Dark, #2c742f);
 
   /* Body Large/Body Large, 500 */
   font-family: customFont;
   text-align: start;
-  font-size: 1.125rem;
+  font-size: 1.125vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 1.6875rem */
@@ -1608,7 +1602,7 @@ nav {
 
   /* Body Medium/Body Medium, 600 */
   font-family: customFont;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 1.2rem */
@@ -1623,13 +1617,11 @@ nav {
 
 .food p {
   color: var(--Gray-Scale-Gray-700, #4d4d4d);
-
-  /* Body Small/Body Small, 400 */
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 1.3125rem */
+  line-height: 150%;
 }
 
 .byadmin {
@@ -1642,7 +1634,7 @@ nav {
 
   /* Body Small/Body Small, 400 */
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.3125rem */
@@ -1658,7 +1650,7 @@ nav {
 
   /* Body Small/Body Small, 400 */
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.3125rem */
@@ -1691,7 +1683,8 @@ nav {
 
 .companies-name-info {
   display: flex;
-  width: 82.5rem;
+  gap: 5rem;
+  max-width: 82.5vw;
   justify-content: space-between;
   align-items: center;
   margin:0 auto;
@@ -1797,8 +1790,10 @@ nav {
   }
 
   .Popular-Categories-first-ul li{
-    width: 20vw;
+    width: 10rem;
   }
+
+  
 
   .popular-products-items{
     display: grid;
@@ -1806,9 +1801,22 @@ nav {
     grid-template-columns: repeat(2,1fr);
     gap: 10rem;
   }
+
+  .list-items-image{
+    width: 10vw;
+    object-fit: contain;
+  }
+
+  .home-discount-bannar{
+    opacity: .9;
+  }
+
+  .companies-name-info{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    row-gap:5rem;
+  }
+
 }
 
-
-.summersalediscount p{
-  
-}

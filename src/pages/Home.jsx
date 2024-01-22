@@ -266,9 +266,7 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div
-        className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}
-      >
+      <div className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}>
         <h1 className="Popular-Categories-heading">Popular Categories</h1>
 
         <ul className="Popular-Categories-first-ul">
@@ -278,7 +276,7 @@ const Home = ({ products }) => {
               freshFruithandler(1);
             }}
           >
-            <img src={FreshFruit} className="Fresh-fruit-img" />
+            <img src={FreshFruit} className="Fresh-fruit-img list-items-image" />
             <h2 className="fresh-fruit-title">Fresh Fruit</h2>
           </li>
 
@@ -288,7 +286,7 @@ const Home = ({ products }) => {
               freshVegetableshandler(2);
             }}
           >
-            <img src={FreshVegetables} className="Fresh-Vegetables-img" />
+            <img src={FreshVegetables} className="Fresh-Vegetables-img list-items-image" />
             <h2 className="fresh-vegetables-title">Fresh Vegetables</h2>
           </li>
 
@@ -298,7 +296,7 @@ const Home = ({ products }) => {
               meathandler(3);
             }}
           >
-            <img src={MeatFish} className="Meat-Fish-img" />
+            <img src={MeatFish} className="Meat-Fish-img list-items-image" />
             <h2 className="Meat-Fish-title">Meat & Fish</h2>
           </li>
 
@@ -308,7 +306,7 @@ const Home = ({ products }) => {
               snacksHandler(4);
             }}
           >
-            <img src={Snacks} className="Snacks-img" />
+            <img src={Snacks} className="Snacks-img list-items-image" />
             <h2 className="Snacks-title">Snacks</h2>
           </li>
 
@@ -318,7 +316,7 @@ const Home = ({ products }) => {
               beveragesHandler(5);
             }}
           >
-            <img src={Beverages} className="Beverages-img" />
+            <img src={Beverages} className="Beverages-img list-items-image" />
             <h2 className="Beverages-title">Beverages</h2>
           </li>
 
@@ -328,7 +326,7 @@ const Home = ({ products }) => {
               BreadBakeryHandler(6);
             }}
           >
-            <img src={BreadBakery} className="Bread-Bakery-img" />
+            <img src={BreadBakery} className="Bread-Bakery-img list-items-image" />
             <h2 className="Bread-Bakery-title">Bread & Bakery</h2>
           </li>
 
@@ -338,7 +336,7 @@ const Home = ({ products }) => {
               BakingNeedsHandler(7);
             }}
           >
-            <img src={BakingNeeds} className="Baking-Needs-img" />
+            <img src={BakingNeeds} className="Baking-Needs-img list-items-image" />
             <h2 className="Bread-Needs-title">Baking Needs</h2>
           </li>
 
@@ -348,7 +346,7 @@ const Home = ({ products }) => {
               CookingHandler(8);
             }}
           >
-            <img src={Cooking} className="Cooking-img" />
+            <img src={Cooking} className="Cooking-img list-items-image" />
             <h2 className="Cooking-title">Cooking</h2>
           </li>
 
@@ -358,7 +356,7 @@ const Home = ({ products }) => {
               DiabeticFoodHandler(9);
             }}
           >
-            <img src={DiabeticFood} className="Diabetic-Food-img" />
+            <img src={DiabeticFood} className="Diabetic-Food-img list-items-image" />
             <h2 className="Diabetic-Food-title">Diabetic Food</h2>
           </li>
 
@@ -368,7 +366,7 @@ const Home = ({ products }) => {
               DishDetergentHandler(10);
             }}
           >
-            <img src={DishDetergents} className="Dish-Detergents-img" />
+            <img src={DishDetergents} className="Dish-Detergents-img list-items-image" />
             <h2 className="Dish-Detergents-title">Dish Detergents</h2>
           </li>
         </ul>
