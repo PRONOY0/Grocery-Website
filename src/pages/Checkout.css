@@ -1,10 +1,12 @@
-form {
+
+.checkout-form{
   width: 100vw;
   min-height: 100vh;
   display: flex;
   justify-content: space-between;
   padding: 5rem;
   gap: 2rem;
+  /* flex-wrap: wrap; */
 }
 
 .billing-left-section {
@@ -20,7 +22,7 @@ form {
 
 .billing-info-text {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -53,7 +55,7 @@ form {
 
 .billing-label-text {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   text-align: start;
   font-weight: 600;
@@ -62,7 +64,7 @@ form {
 
 .billing-inputs {
   display: flex;
-  width: 17.5rem;
+  width: 17.5vw;
   height: 3.0625rem;
   padding: 1rem;
   align-items: center;
@@ -71,7 +73,7 @@ form {
   background: var(--Gray-Scale-White, #fff);
   flex: 1 0 0;
   color: var(--Gray-Scale-Gray-400, #999);
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
@@ -87,7 +89,7 @@ form {
 
 .street-address-text {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -95,7 +97,7 @@ form {
 
 .streetaddressinput input {
   display: flex;
-  width: 50rem;
+  width: 50vw;
   padding: 1rem;
   height: 3.0625rem;
   align-items: center;
@@ -130,7 +132,7 @@ form {
 
 .state-text {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -138,7 +140,7 @@ form {
 
 .zip-code {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -148,9 +150,9 @@ select {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  width: 13.875rem;
+  width: 13.875vw;
   color: var(--Gray-Scale-Gray-400, #999);
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
@@ -170,7 +172,7 @@ select {
   background: var(--Gray-Scale-White, #fff);
   flex: 1 0 0;
   color: var(--Gray-Scale-Gray-400, #999);
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
@@ -199,7 +201,7 @@ select {
 
 .emailandphonetext {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -207,7 +209,7 @@ select {
 
 .email-phone-input {
   display: flex;
-  width: 26.75rem;
+  width: 26.75vw;
   height: 3.0625rem;
   padding: 1rem;
   align-items: center;
@@ -226,7 +228,7 @@ select {
 
 .default-text {
   color: var(--Gray-Scale-Gray-700, #4d4d4d);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; 
@@ -241,7 +243,7 @@ select {
 
 .additional-info-text {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -254,9 +256,9 @@ select {
   gap: 0.5rem;
 }
 
-textarea {
+.textarea-of-checkout{
   display: flex;
-  width: 54.5rem;
+  width: 54.5vw;
   height: 6.25rem;
   padding: 1rem;
   align-items: center;
@@ -280,7 +282,7 @@ textarea {
 
 .ordersummary {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 1.25rem;
+  font-size: 1.25vw;
   font-style: normal;
   text-align: start;
   font-weight: 600;
@@ -300,14 +302,14 @@ textarea {
 
 .checkout-table-row{
   display: flex;
-  width: 23.5rem;
+  width: 23.5vw;
   justify-content: space-between;
   align-items: center;
 }
 
 .frame-145 {
   color: var(--Gray-Scale-Gray-700, #4d4d4d);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
@@ -315,7 +317,7 @@ textarea {
 
 .frame-146 {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
@@ -334,9 +336,9 @@ textarea {
 }
 
 .table-data-images{
-  width: 10.75rem;
-  height: 10.75rem;
-  object-fit: cover;
+  width: 10.75vw;
+  min-height: 10.75rem;
+  object-fit:contain;
 }
 
 .payment-method {
@@ -352,7 +354,7 @@ textarea {
 
 .payment-method h2 {
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
-  font-size: 1.25rem;
+  font-size: 1.25vw;
   font-style: normal;
   font-weight: 700;
   line-height: 150%; 
@@ -366,7 +368,7 @@ textarea {
 
 .paymentDelivery {
   color: var(--Gray-Scale-Gray-700, #4d4d4d);
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%; 
@@ -374,7 +376,7 @@ textarea {
 
 #place-orderBUTTON {
   display: flex;
-  width: 23.5rem;
+  width: 23.5vw;
   padding: 1rem 2.5rem;
   justify-content: center;
   align-items: center;
@@ -383,7 +385,7 @@ textarea {
   background: var(--Branding-Success, #00b207);
   border: none;
   color: var(--Gray-Scale-White, #fff);
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 300;
   line-height: 120%; 
@@ -394,4 +396,10 @@ textarea {
 .image-price-productName-checkout{
   justify-content: space-between;
   display: flex;
+}
+
+@media (max-width:1299px) {
+  .checkout-form{
+    flex-wrap: wrap;
+  }
 }

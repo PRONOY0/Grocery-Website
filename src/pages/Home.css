@@ -1811,12 +1811,12 @@ nav {
     opacity: .9;
   }
 
-  .companies-name-info{
+  /* .companies-name-info{
     display: grid;
     grid-template-rows: repeat(2,1fr);
     grid-template-columns: repeat(3,1fr);
     row-gap:5rem;
-  }
+  } */
 
 }
 

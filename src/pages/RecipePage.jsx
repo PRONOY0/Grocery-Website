@@ -6,8 +6,6 @@ import plantlogo from "../resources/Group.png";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { FaFacebook } from "react-icons/fa6";
-import { GoArrowRight } from "react-icons/go";
-import { useEffect } from "react";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -76,11 +74,7 @@ const RecipePage = () => {
 
                 <h2>Fresh Fruit</h2>
 
-                <button
-                  onClick={() => {
-                    navigation("/shop");
-                  }}
-                >
+                <button onClick={() => {navigation("/shop");}}>
                   Shop Now
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -185,7 +179,7 @@ const RecipePage = () => {
             <div className="comment-and-commentdatename">
               <div className="commenter-date-name">
                 <h3>Devon Lane</h3>
-                <p>.</p>
+                <p className="dot">.</p>
                 <p className="date">24 Apr, 2021</p>
               </div>
 
@@ -205,7 +199,7 @@ const RecipePage = () => {
             <div className="comment-and-commentdatename">
               <div className="commenter-date-name">
                 <h3>Jacob Jones</h3>
-                <p>.</p>
+                <p className="dot">.</p>
                 <p className="date">20 Apr, 2021</p>
               </div>
 
@@ -222,7 +216,7 @@ const RecipePage = () => {
             <div className="comment-and-commentdatename">
               <div className="commenter-date-name">
                 <h3>Jane Cooper</h3>
-                <p>.</p>
+                <p className="dot">.</p>
                 <p className="date">18 Apr, 2021</p>
               </div>
 
@@ -240,7 +234,7 @@ const RecipePage = () => {
             <div className="comment-and-commentdatename">
               <div className="commenter-date-name">
                 <h3>Darrell Steward</h3>
-                <p>.</p>
+                <p className="dot">.</p>
                 <p className="date">7 Apr, 2021</p>
               </div>
 

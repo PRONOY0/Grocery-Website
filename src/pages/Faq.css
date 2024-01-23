@@ -1,22 +1,9 @@
-.track-of-path {
-  background-image: url("../resources/Breadcrumbs\ .png");
-  background-size: cover;
-  display: flex;
-  width: 120rem;
-  height: 7.5rem;
-  padding: 0rem 89.36456rem 0rem 18.75rem;
-  align-items: center;
-  flex-shrink: 0;
-}
+
 
 .faq-container {
   width: 100vw;
 }
 
-.track {
-  display: flex;
-  align-items: center;
-}
 
 .faq {
   width: 100%;

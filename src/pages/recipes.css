@@ -1,6 +1,4 @@
 .recipe-container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,9 +8,10 @@
   background-image: url("../resources/Breadcrumbs\ .png");
   background-size: cover;
   display: flex;
-  width: 120rem;
+  width: 100vw;
   height: 7.5rem;
-  padding: 0rem 89.36456rem 0rem 18.75rem;
+  padding: 0vw 80.36456vw 0vw 4.75vw;
+  /* padding-left: 8rem; */
   align-items: center;
   flex-shrink: 0;
 }
@@ -49,8 +48,9 @@
 }
 
 .recipes-list li img {
-  width: 26.5rem;
-  height: 20.25rem;
+  max-width: 26.5vw;
+  object-fit: cover;
+  min-height: 20.25vh;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
 }
@@ -75,8 +75,8 @@
 
 .recipes-list {
   display: grid;
-  grid-template-columns: 30rem 30rem;
-  row-gap: 5rem;
+  grid-template-columns: 30vw 30vw;
+  row-gap: 5vh;
 }
 
 .filter-info-perdiv-para {
@@ -84,17 +84,17 @@
 
   /* Body Small/Body Small, 400 */
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.3125rem */
 }
 
 .recipe-heading {
-  width: 30.5rem;
+  max-width: 30.5vw;
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
   font-family: customFont;
-  font-size: 1.025rem;
+  font-size: 1.025vw;
   font-weight: bolder;
   line-height: 150%;
 }
@@ -105,15 +105,13 @@
   gap: 0.75rem;
   border-radius: 2.6875rem;
   color: var(--Branding-Success, #00b207);
-
-  /* Body Medium/Body Medium, 600 */
   font-family: customFont;
   border: none;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.2rem;
-  line-height: 120%; /* 1.2rem */
+  letter-spacing: 0.2vw;
+  line-height: 120%;
   text-align: start;
   margin-left: 2rem;
 }
@@ -127,8 +125,8 @@
 .filter-btn {
   cursor: pointer;
   display: inline-flex;
-  width: 8rem;
-  height: 3rem;
+  max-width: 8vw;
+  height: 5vh;
   justify-content: center;
   align-items: center;
   gap: 0.75rem;
@@ -139,17 +137,17 @@
 
   /* Body Small/Body Small, 600 */
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.875vw;
   font-style: normal;
-  letter-spacing: 0.125rem;
+  letter-spacing: 0.125vw;
   font-weight: 500;
   line-height: 120%; /* 1.05rem */
 }
 
 .inputField-and-searchBtn input {
   display: flex;
-  width: 26.5rem;
-  padding: 0.875rem 1rem;
+  max-width: 26.5vw;
+  padding: 0.875vw 1vw;
   align-items: flex-start;
   gap: 0.5rem;
   border: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
@@ -157,7 +155,6 @@
   outline: none;
   color: var(--Gray-Scale-Gray-400, #999);
   font-family: customFont;
-  width: 19.75rem;
   flex-shrink: 0;
   font-size: 1rem;
   font-style: normal;
@@ -170,14 +167,14 @@
 }
 
 .inputField-and-searchBtn button {
-  width: 7rem;
+  width: 7vw;
   border-radius: 0rem 5rem 5rem 0rem;
   background: var(--Branding-Success, #00b207);
   color: #fff;
   border: none;
   font-family: customFont;
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;

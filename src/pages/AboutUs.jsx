@@ -26,8 +26,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className="about-diff-divs">
-        <div className="oc-food">
+      <div className="oc-food">
           <div className="oc-desc">
             <h1>100% Trusted Organic Food Store</h1>
             <p>
@@ -40,9 +39,9 @@ const AboutUs = () => {
           </div>
 
           <div className="farmer-img"></div>
-        </div>
+      </div>
 
-        <div className="trusted-oc-food">
+      <div className="trusted-oc-food">
           <div className="trusted-oc-food-img">
             <div className="trusted-oc-food-img-grass"></div>
             <div className="trusted-oc-food-img-farmer"></div>
@@ -55,7 +54,7 @@ const AboutUs = () => {
                 Pellentesque a ante vulputate leo porttitor luctus sed eget
                 eros. Nulla et rhoncus neque. Duis non diam eget est luctus
                 tincidunt a a mi. Nulla eu eros consequat tortor tincidunt
-                feugiat.{" "}
+                feugiat.
               </p>
             </div>
 
@@ -270,9 +269,9 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
-        <div className="delivery">
+      <div className="delivery">
           <div className="delivery-desc">
             <h2>We Delivered, You Enjoy Your Order.</h2>
 
@@ -302,15 +301,15 @@ const AboutUs = () => {
               </li>
             </ul>
 
-            <NavLink to="/">
+            <NavLink to="/shop">
               <div>Shop Now</div>
               <GoArrowRight />
             </NavLink>
           </div>
           <div className="delivery-guy-img"></div>
-        </div>
+      </div>
 
-        <div className="TEAM">
+      <div className="TEAM">
           <h1>Our Awesome Team</h1>
 
           <p>
@@ -372,11 +371,11 @@ const AboutUs = () => {
               </div>
             </div>
           </div>
-        </div>
+      </div>
 
-        <Testimonials/>
+      <Testimonials/>
 
-        <div className="company-logos">
+      <div className="company-logos">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="82"
@@ -1200,7 +1199,6 @@ const AboutUs = () => {
               fill="#B3B3B3"
             />
           </svg>
-        </div>
       </div>
 
       <div className="footer">

@@ -23,8 +23,8 @@ const CheckoutPage = () => {
   }
 
   return (
-    <div>
-      <form>
+    <div className="checkout-container">
+      <form className="checkout-form">
         <div className="billing-left-section">
           <h2 className="billing-info-text">Billing Information</h2>
 
@@ -145,7 +145,7 @@ const CheckoutPage = () => {
             <h2 className="additional-info-text">Additional Info</h2>
             <label className="order-notes">
               <p className="order-notes-text">Order Notes(Optional)</p>
-              <textarea placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
+              <textarea className="textarea-of-checkout" placeholder="Notes about your order, e.g. special notes for delivery"></textarea>
             </label>
           </div>
         </div>

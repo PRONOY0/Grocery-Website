@@ -421,7 +421,7 @@ const Shop = () => {
                         <h2>{item.productName}</h2>
 
                         <div className="price-eye">
-                          <h4>₹{item.price}</h4>
+                          <h4 className="priceTag">₹{item.price}</h4>
                         </div>
 
                         <div className="btn-and-stars">

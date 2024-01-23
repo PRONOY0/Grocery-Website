@@ -1,46 +1,26 @@
-.track-of-path {
-  background-image: url("../resources/Breadcrumbs\ .png");
-  background-size: cover;
-  display: flex;
-  width: 120rem;
-  height: 7.5rem;
-  padding: 0rem 89.36456rem 0rem 18.75rem;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.track {
-  display: flex;
-  align-items: center;
-}
-
 .about-container {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-.about-diff-divs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  justify-content: space-between;
 }
 
 .oc-food {
-  width: 85.25rem;
+  max-width: 85.25vw;
   height: 30.75rem;
   flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   padding-top: 8rem;
+  padding-left: 1rem;
 }
 
 .farmer-img {
   background-image: url("../resources/farmeroc.png");
-  background-size: cover;
-  width: 44.75rem;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: 44.75vw;
   height: 30.75rem;
   flex-shrink: 0;
   border-radius: 0.5rem;
@@ -58,30 +38,28 @@
 
   /* Heading 01/Heading 01 — 600 */
   font-family: customFont;
-  font-size: 3.5rem;
+  font-size: 3.5vw;
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 4.2rem */
-  width: 35rem;
+  width: 35vw;
   text-align: start;
 }
 
-.oc-desc p {
+.oc-desc p{
   color: var(--Gray-Scale-Gray-600, #666);
-
-  /* Body Large/Body Large, 400 */
   font-family: customFont;
   padding-left: 1rem;
-  font-size: 1.125rem;
+  font-size: 1.125vw;
   font-style: normal;
   font-weight: 400;
-  width: 36.875rem;
+  width: 36.875vw;
   text-align: start;
-  line-height: 150%; /* 1.6875rem */
+  line-height: 150%;
 }
 
 .trusted-oc-food {
-  width: 90%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
   padding-top: 18rem;
@@ -94,18 +72,20 @@
 
 .trusted-oc-food-img-grass {
   background-image: url("../resources/grass.png");
-  background-size: cover;
-  width: 70.5625rem;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  width: 70.5625vw;
   height: 42.8125rem;
   position: absolute;
-  left: -6rem;
+  left: -6vw;
   z-index: -10;
 }
 
 .trusted-oc-food-img-farmer {
   background-image: url("../resources/oldegeezer.png");
-  background-size: cover;
-  width: 40.5625rem;
+  object-fit: contain;
+  background-repeat: no-repeat;
+  width: 40.5625vw;
   height: 42.8125rem;
   position: absolute;
   left: 15rem;
@@ -114,6 +94,8 @@
 .trusted-oc-food-desc {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-left: -4rem;
 }
 
 .trusted-oc-food-desc-headingAndDescription {
@@ -125,11 +107,9 @@
 
 .trusted-oc-food-desc-headingAndDescription h1 {
   color: var(--Gren-Gray-Scale-900, #002603);
-
-  /* Heading 01/Heading 01 — 600 */
   font-family: customFont;
-  font-size: 3.5rem;
-  width: 34rem;
+  font-size: 3.5vw;
+  max-width: 34vw;
   text-align: start;
   font-style: normal;
   font-weight: 600;
@@ -138,45 +118,43 @@
 
 .trusted-oc-food-desc-headingAndDescription p {
   color: var(--Gray-Scale-Gray-500, #808080);
-
-  /* Body Medium/Body Medium, 400 */
   font-family: customFont;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
-  width: 35.625rem;
+  max-width: 30.625vw;
   text-align: start;
   font-weight: 400;
-  line-height: 150%; /* 1.5rem */
+  line-height: 150%;
 }
 
 .gridforfacilities {
   display: grid;
   padding-top: 3rem;
   text-align: start;
-  grid-template-rows: 10.5rem 10.5rem 10.5rem;
+  grid-template-rows: 10.5vw 10.5vw 10.5vw;
   grid-template-columns: auto auto;
 }
 
 .facilities {
   display: flex;
-  gap: 1rem;
+  gap: 1vw;
 }
 
 .facilities div h2 {
-  width: 14rem;
+  max-width: 14vw;
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
   font-family: customFont;
-  font-size: 1.125rem;
+  font-size: 1.125vw;
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
 }
 
 .facilities div p {
-  width: 14rem;
+  width: 14vw;
   color: var(--Gray-Scale-Gray-500, #808080);
   font-family: customFont;
-  font-size: 0.875rem;
+  font-size: 0.805vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -184,7 +162,7 @@
 
 .facilities svg {
   mix-blend-mode: multiply;
-  width: 2.5rem;
+  width: 2.5vw;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -193,21 +171,22 @@
 
 .delivery {
   display: flex;
-  margin-left: 15rem;
-  width: 80%;
+  max-width: 80%;
   justify-content: space-between;
+  padding-left: 10rem;
 }
 
 .delivery-guy-img {
   background-image: url("../resources/red\ delivery\ guy.png");
-  background-size: cover;
-  width: 55.9375rem;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  width: 50.9375vw;
   height: 37.875rem;
   flex-shrink: 0;
 }
 
 .delivery-desc {
-  width: 34.5rem;
+  max-width: 34.5vw;
   height: 26.9375rem;
   display: flex;
   flex-direction: column;
@@ -216,10 +195,10 @@
 }
 
 .delivery-desc h2 {
-  width: 34.5rem;
+  max-width: 34.5vw;
   color: var(--Gray-Scale-Gray-900, #1a1a1a);
   font-family: customFont;
-  font-size: 3rem;
+  font-size: 3vw;
   font-style: normal;
   text-align: start;
   font-weight: 600;
@@ -227,10 +206,10 @@
 }
 
 .delivery-desc p {
-  width: 33.5rem;
+  width: 33.5vw;
   color: var(--Gray-Scale-Gray-600, #666);
   font-family: customFont;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   text-align: start;
@@ -250,11 +229,11 @@
 }
 
 .delivery-desc ul li p {
-  width: 31.75rem;
+  width: 31.75vw;
   text-align: start;
   color: var(--Gray-Scale-Gray-600, #666);
   font-family: customFont;
-  font-size: 0.975rem;
+  font-size: 0.975vw;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -267,14 +246,14 @@
   gap: 0.5rem;
   color: var(--Gray-Scale-White, #fff);
   font-family: customFont;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   border-radius: 2.6875rem;
   text-decoration: none;
-  width: 13rem;
-  height: 3rem;
+  max-width: 13vw;
+  height:3rem;
   background: var(--Branding-Success, #00b207);
 }
 
@@ -284,6 +263,7 @@
   align-items: center;
   flex-direction: column;
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .TEAM h1 {
@@ -292,20 +272,20 @@
 
   /* Heading 02/Heading 02 — 600 */
   font-family: customFont;
-  font-size: 3rem;
+  font-size: 3vw;
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 3.6rem */
 }
 
 .TEAM p {
-  width: 40rem;
+  width: 40vw;
   color: var(--Gray-Scale-Gray-600, #666);
   text-align: center;
 
   /* Body Medium/Body Medium, 400 */
   font-family: customFont;
-  font-size: 1rem;
+  font-size: 1vw;
   font-style: normal;
   font-weight: 400;
   line-height: 150%; /* 1.5rem */
@@ -319,7 +299,7 @@
 .pic1 {
   background-image: url("../resources/another\ Old\ geezer.jpeg");
   background-size: cover;
-  width: 19.5rem;
+  width: 19.5vw;
   height: 17.5rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -328,7 +308,7 @@
 .pic2 {
   background-image: url("../resources/farmerBoy.jpeg");
   background-size: cover;
-  width: 19.5rem;
+  width: 19.5vw;
   height: 17.5rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -337,7 +317,7 @@
 .pic3 {
   background-image: url("../resources/farm\ inspection.jpeg");
   background-size: cover;
-  width: 19.5rem;
+  width: 19.5vw;
   height: 17.5rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -346,7 +326,7 @@
 .pic4 {
   background-image: url("../resources/nigga\ holdin\ tomatoes.jpeg");
   background-size: cover;
-  width: 19.5rem;
+  width: 19.5vw;
   height: 17.5rem;
   flex-shrink: 0;
   border-radius: 0.5rem 0.5rem 0rem 0rem;
@@ -366,42 +346,42 @@
 }
 
 .social-media-follow-icons :nth-child(1):hover {
-  font-size: 2rem;
+  font-size: 2vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
 }
 
 .social-media-follow-icons :nth-child(2):hover {
-  font-size: 2rem;
+  font-size: 2vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
 }
 
 .social-media-follow-icons :nth-child(3):hover {
-  font-size: 2rem;
+  font-size: 2vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
 }
 
 .social-media-follow-icons :nth-child(1) {
-  font-size: 1.6rem;
+  font-size: 1.6vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
 }
 
 .social-media-follow-icons :nth-child(2) {
-  font-size: 1.6rem;
+  font-size: 1.6vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
 }
 
 .social-media-follow-icons :nth-child(3) {
-  font-size: 1.6rem;
+  font-size: 1.6vw;
   color: #1f1f1f;
   transition: all;
   transition-duration: 0.5s;
@@ -574,12 +554,21 @@
 
 .company-logos {
   display: flex;
-  width: 82.5rem;
-  padding: 5rem 0rem;
+  gap: 5rem;
+  max-width: 82.5vw;
   justify-content: space-between;
   align-items: center;
+  margin:0 auto;
 }
 
 .testimonial-stars{
   display: flex;
+}
+
+
+
+@media (max-width:1340px) {
+  .delivery{
+    padding-top: 12rem;
+  }
 }

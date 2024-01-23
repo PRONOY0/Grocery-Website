@@ -87,7 +87,7 @@ const RecipeSearch = () => {
   return (
     <div className="recipe-container">
       <div className="track-of-path">
-        <div className="track">
+        <div className="track-of-path">
           <GoHome className="home" />
 
           <GoChevronRight className="rightIcon" />

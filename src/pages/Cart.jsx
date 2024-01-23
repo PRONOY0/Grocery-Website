@@ -58,22 +58,22 @@ const Cart = () => {
 
         <div className="main-cart-section">
           <div className="main-cart-section-left">
-            <table>
+            <table className="cart-table">
               <tr>
-                <th>Product</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Subtotal</th>
+                <th className="th-of-cart-table">Product</th>
+                <th className="th-of-cart-table">Name</th>
+                <th className="th-of-cart-table">Price</th>
+                <th className="th-of-cart-table">Subtotal</th>
               </tr>
               {cart.map((item, id) => {
                 return (
                   <tr className="table-row-of-products" key={id}>
-                    <td>
+                    <td className="table-td-of-cart-table">
                       <img src={item.images} className="td-images"/>
                     </td>
-                    <td>{item.productName}</td>
-                    <td>₹{item.price}</td>
-                    <td>₹{item.price}</td>
+                    <td className="td-product-of-cart-table">{item.productName}</td>
+                    <td className="td-product-of-cart-table">₹{item.price}</td>
+                    <td className="td-product-of-cart-table">₹{item.price}</td>
                     <td
                       onClick={() => {
                         dispatch(removeFromCart(item.id));
