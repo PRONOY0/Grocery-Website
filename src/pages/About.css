@@ -572,3 +572,10 @@
     padding-top: 12rem;
   }
 }
+
+
+@media (max-width:768px) {
+  .testimonials{
+    display: none;
+  }
+}

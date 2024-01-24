@@ -25,12 +25,15 @@ import { FaShop } from "react-icons/fa6";
 import { GiCook } from "react-icons/gi";
 import { RiContactsFill } from "react-icons/ri";
 import { MdAccountCircle } from "react-icons/md";
-import { useMediaQuery } from "react-responsive";
+import latestnewsimage1 from "../resources/news1.jpeg";
+import latestnewsimage2 from "../resources/news2.jpeg";
+import latestnewsimage3 from "../resources/news3.jpeg";
+import pfp1 from "../resources/P1.jpeg";
+import pfp2 from "../resources/P2.jpeg";
+import pfp3 from "../resources/P3.jpeg";
 
 const Home = ({ products }) => {
   const [showPopup, setShowPopup] = useState(false);
-
-  const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const navigation = useNavigate();
 
@@ -94,6 +97,58 @@ const Home = ({ products }) => {
     navigation("/Products", { state: { value } });
   }
 
+  const latestNewsImages = [
+    latestnewsimage1,
+    latestnewsimage2,
+    latestnewsimage3,
+  ];
+
+  const [defaultNews, setDefaultNews] = useState(0);
+
+  const [defaultTestimonial, setDefaultTestimonial] = useState(0);
+
+  const profilePhotosOfTestimonials = [pfp1, pfp2, pfp3];
+
+  const prevNews = () => {
+    if (defaultNews > 0) {
+      setDefaultNews((prev) => prev - 1);
+    } else {
+      return 0;
+    }
+  };
+
+  const nextNews = () => {
+    if (defaultNews < 2) {
+      setDefaultNews((prev) => prev + 1);
+    } else {
+      return 2;
+    }
+  };
+
+  const accountOfTheCustomers = ["Robert Fox","Dianne Russell","Eleanor Pena"];
+
+  const [namesOfCustomer,setNamesOfCustomer] = useState(0);
+
+  const nextTestimonial = () =>{
+    if(defaultTestimonial<2){
+      setDefaultTestimonial((prev)=>prev+1);
+      setNamesOfCustomer((prev)=>prev+1);
+    }
+    else{
+      return 2;
+    }
+  }
+
+  const previousTestimonial = () =>{
+    if(defaultTestimonial>0){
+      setDefaultTestimonial((prev)=>prev-1);
+      setNamesOfCustomer((prev)=>prev-1);
+    }
+    else{
+      return 0;
+    }
+  }
+
   return (
     <div className="container">
       <div className="POPUP-CLASS">{showPopup && <PopUp />}</div>
@@ -153,6 +208,7 @@ const Home = ({ products }) => {
             height="40"
             viewBox="0 0 40 40"
             fill="none"
+            className="shippingSvg"
           >
             <path
               d="M32.7021 26.3042C31.7247 26.3042 30.7962 26.687 30.0957 27.3793C29.3952 28.0798 29.0043 28.992 29.0043 29.9694C29.0043 30.9468 29.3871 31.8591 30.0957 32.5595C30.8043 33.2519 31.7247 33.6347 32.7021 33.6347C34.7058 33.6347 36.3348 31.9894 36.3348 29.9694C36.3348 27.9495 34.7058 26.3042 32.7021 26.3042ZM32.7021 32.0057C31.5781 32.0057 30.6333 31.0772 30.6333 29.9694C30.6333 28.8617 31.5781 27.9332 32.7021 27.9332C33.8098 27.9332 34.7058 28.8454 34.7058 29.9694C34.7058 31.0935 33.8098 32.0057 32.7021 32.0057ZM33.6469 14.0949C33.5003 13.9564 33.3048 13.8831 33.1012 13.8831H28.9228C28.4749 13.8831 28.1083 14.2496 28.1083 14.6976V21.3765C28.1083 21.8245 28.4749 22.191 28.9228 22.191H35.5528C36.0008 22.191 36.3673 21.8245 36.3673 21.3765V16.9049C36.3673 16.6768 36.2696 16.4569 36.0986 16.3022L33.6469 14.0949ZM34.7383 20.562H29.7373V15.504H32.7835L34.7383 17.2633V20.562ZM12.8121 26.3042C11.8347 26.3042 10.9061 26.687 10.2057 27.3793C9.50519 28.0798 9.11423 28.992 9.11423 29.9694C9.11423 30.9468 9.49705 31.8591 10.2057 32.5595C10.9143 33.2519 11.8347 33.6347 12.8121 33.6347C14.8157 33.6347 16.4447 31.9894 16.4447 29.9694C16.4447 27.9495 14.8157 26.3042 12.8121 26.3042ZM12.8121 32.0057C11.688 32.0057 10.7432 31.0772 10.7432 29.9694C10.7432 28.8617 11.688 27.9332 12.8121 27.9332C13.9198 27.9332 14.8157 28.8454 14.8157 29.9694C14.8157 31.0935 13.9198 32.0057 12.8121 32.0057ZM7.37935 27.306H5.74221V25.1395C5.74221 24.6915 5.37569 24.325 4.92771 24.325C4.47974 24.325 4.11322 24.6915 4.11322 25.1395V28.1205C4.11322 28.5685 4.47974 28.935 4.92771 28.935H7.37935C7.82733 28.935 8.19385 28.5685 8.19385 28.1205C8.19385 27.6726 7.82733 27.306 7.37935 27.306ZM11.5089 22.867C11.5089 22.419 11.1423 22.0525 10.6944 22.0525H0.814498C0.366524 22.0525 0 22.419 0 22.867C0 23.315 0.366524 23.6815 0.814498 23.6815H10.6944C11.1423 23.6815 11.5089 23.3231 11.5089 22.867ZM2.46793 19.9267L12.3478 19.9837C12.7958 19.9837 13.1623 19.6253 13.1704 19.1773C13.1786 18.7212 12.8121 18.3547 12.3641 18.3547L2.48422 18.2977C2.47607 18.2977 2.47607 18.2977 2.47607 18.2977C2.0281 18.2977 1.66158 18.6561 1.66158 19.104C1.65343 19.5602 2.01996 19.9267 2.46793 19.9267ZM4.12951 16.2289H14.0094C14.4573 16.2289 14.8239 15.8623 14.8239 15.4144C14.8239 14.9664 14.4573 14.5999 14.0094 14.5999H4.12951C3.68153 14.5999 3.31501 14.9664 3.31501 15.4144C3.31501 15.8623 3.68153 16.2289 4.12951 16.2289ZM39.6986 15.1293L33.8668 10.2993C33.7202 10.1771 33.541 10.112 33.3456 10.112H26.4875V7.17979C26.4875 6.73182 26.121 6.3653 25.673 6.3653H4.92771C4.47974 6.3653 4.11322 6.73182 4.11322 7.17979V13.1419C4.11322 13.5899 4.47974 13.9564 4.92771 13.9564C5.37569 13.9564 5.74221 13.5899 5.74221 13.1419V7.99429H24.8666V27.306H18.1877C17.7398 27.306 17.3732 27.6726 17.3732 28.1205C17.3732 28.5685 17.7398 28.935 18.1877 28.935H28.1328C28.5807 28.935 28.9473 28.5685 28.9473 28.1205C28.9473 27.6726 28.5807 27.306 28.1328 27.306H26.4956V11.741H33.0605L38.371 16.1393L38.314 27.2897H37.4669C37.0189 27.2897 36.6524 27.6563 36.6524 28.1042C36.6524 28.5522 37.0189 28.9187 37.4669 28.9187H39.1203C39.5683 28.9187 39.9348 28.5604 39.9348 28.1124L40 15.7646C39.9919 15.5203 39.886 15.284 39.6986 15.1293Z"
@@ -174,6 +230,7 @@ const Home = ({ products }) => {
             height="40"
             viewBox="0 0 41 40"
             fill="none"
+            className="CustomerSupportSvg"
           >
             <g clip-path="url(#clip0_629_3527)">
               <path
@@ -206,6 +263,7 @@ const Home = ({ products }) => {
             height="40"
             viewBox="0 0 41 40"
             fill="none"
+            className="SecurePaymentSvg"
           >
             <g clip-path="url(#clip0_629_3558)">
               <path
@@ -244,6 +302,7 @@ const Home = ({ products }) => {
             height="40"
             viewBox="0 0 40 40"
             fill="none"
+            className="MoneyBackSvg"
           >
             <g clip-path="url(#clip0_629_3586)">
               <path
@@ -266,32 +325,40 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}>
+      <div
+        className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}
+      >
         <h1 className="Popular-Categories-heading">Popular Categories</h1>
 
         <ul className="Popular-Categories-first-ul">
           <li
-            className="Fresh-Fruit"
+            className="Fresh-Fruit categories-formobile"
             onClick={() => {
               freshFruithandler(1);
             }}
           >
-            <img src={FreshFruit} className="Fresh-fruit-img list-items-image" />
+            <img
+              src={FreshFruit}
+              className="Fresh-fruit-img list-items-image"
+            />
             <h2 className="fresh-fruit-title">Fresh Fruit</h2>
           </li>
 
           <li
-            className="Fresh-Vegetables"
+            className="Fresh-Vegetables categories-formobile"
             onClick={() => {
               freshVegetableshandler(2);
             }}
           >
-            <img src={FreshVegetables} className="Fresh-Vegetables-img list-items-image" />
+            <img
+              src={FreshVegetables}
+              className="Fresh-Vegetables-img list-items-image"
+            />
             <h2 className="fresh-vegetables-title">Fresh Vegetables</h2>
           </li>
 
           <li
-            className="Meat-Fish"
+            className="Meat-Fish categories-formobile"
             onClick={() => {
               meathandler(3);
             }}
@@ -301,7 +368,7 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Snacks"
+            className="Snacks categories-formobile"
             onClick={() => {
               snacksHandler(4);
             }}
@@ -311,7 +378,7 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Beverages"
+            className="Beverages categories-formobile"
             onClick={() => {
               beveragesHandler(5);
             }}
@@ -321,27 +388,33 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Bread-Bakery"
+            className="Bread-Bakery categories-formobile"
             onClick={() => {
               BreadBakeryHandler(6);
             }}
           >
-            <img src={BreadBakery} className="Bread-Bakery-img list-items-image" />
+            <img
+              src={BreadBakery}
+              className="Bread-Bakery-img list-items-image"
+            />
             <h2 className="Bread-Bakery-title">Bread & Bakery</h2>
           </li>
 
           <li
-            className="Baking-Needs"
+            className="Baking-Needs categories-formobile"
             onClick={() => {
               BakingNeedsHandler(7);
             }}
           >
-            <img src={BakingNeeds} className="Baking-Needs-img list-items-image" />
+            <img
+              src={BakingNeeds}
+              className="Baking-Needs-img list-items-image"
+            />
             <h2 className="Bread-Needs-title">Baking Needs</h2>
           </li>
 
           <li
-            className="Cooking"
+            className="Cooking categories-formobile"
             onClick={() => {
               CookingHandler(8);
             }}
@@ -351,22 +424,28 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Diabetic-Food"
+            className="Diabetic-Food categories-formobile"
             onClick={() => {
               DiabeticFoodHandler(9);
             }}
           >
-            <img src={DiabeticFood} className="Diabetic-Food-img list-items-image" />
+            <img
+              src={DiabeticFood}
+              className="Diabetic-Food-img list-items-image"
+            />
             <h2 className="Diabetic-Food-title">Diabetic Food</h2>
           </li>
 
           <li
-            className="Dish-Detergents"
+            className="Dish-Detergents categories-formobile"
             onClick={() => {
               DishDetergentHandler(10);
             }}
           >
-            <img src={DishDetergents} className="Dish-Detergents-img list-items-image" />
+            <img
+              src={DishDetergents}
+              className="Dish-Detergents-img list-items-image"
+            />
             <h2 className="Dish-Detergents-title">Dish Detergents</h2>
           </li>
         </ul>
@@ -411,7 +490,9 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div className={`${showPopup ? "lightHOME" : "OGHOME"} home-discount-bannar`}>
+      <div
+        className={`${showPopup ? "lightHOME" : "OGHOME"} home-discount-bannar`}
+      >
         <div className="home-discount-bannar-description">
           <div className="summersalediscount">
             <p>Summer Sale</p>
@@ -702,6 +783,107 @@ const Home = ({ products }) => {
         </div>
       </div>
 
+      <div className="latest-news-for-mobile">
+        <button onClick={prevNews} className="button-news-for-mobile">
+          <GoArrowRight className="prev-news-btn" />
+        </button>
+
+        <div className="news-section-for-mobile">
+          <img
+            src={latestNewsImages[defaultNews]}
+            className="latest-news-image-formobile"
+          />
+
+          <div className="news-middle-section-formobile">
+            <div className="food-formobile">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                className="formobile-icons"
+              >
+                <path
+                  d="M17.1583 11.6748L11.1833 17.6498C11.0285 17.8048 10.8447 17.9277 10.6424 18.0116C10.4401 18.0955 10.2232 18.1386 10.0042 18.1386C9.78513 18.1386 9.56825 18.0955 9.36592 18.0116C9.16359 17.9277 8.97978 17.8048 8.82499 17.6498L1.66666 10.4998V2.1665H9.99999L17.1583 9.32484C17.4687 9.63711 17.643 10.0595 17.643 10.4998C17.643 10.9401 17.4687 11.3626 17.1583 11.6748V11.6748Z"
+                  stroke="#B3B3B3"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M5.83331 6.33301H5.84165"
+                  stroke="#B3B3B3"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p>Food</p>
+            </div>
+
+            <div className="byadmin-formobile">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="21"
+                viewBox="0 0 20 21"
+                fill="none"
+                className="formobile-icons"
+              >
+                <path
+                  d="M9.99993 9.66667C11.8409 9.66667 13.3333 8.17428 13.3333 6.33333C13.3333 4.49238 11.8409 3 9.99993 3C8.15898 3 6.6666 4.49238 6.6666 6.33333C6.6666 8.17428 8.15898 9.66667 9.99993 9.66667Z"
+                  stroke="#B3B3B3"
+                  stroke-width="1.2"
+                />
+                <path
+                  d="M12.4999 12.1665H7.49995C5.19828 12.1665 3.13745 14.2915 4.65161 16.024C5.68161 17.2023 7.38495 17.9998 9.99995 17.9998C12.6149 17.9998 14.3174 17.2023 15.3474 16.024C16.8624 14.2907 14.8008 12.1665 12.4999 12.1665Z"
+                  stroke="#B3B3B3"
+                  stroke-width="1.2"
+                />
+              </svg>
+
+              <p>By Admin</p>
+            </div>
+
+            <div className="comments-formobile">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="19"
+                viewBox="0 0 18 19"
+                fill="none"
+                className="formobile-icons"
+              >
+                <path
+                  d="M10.5238 14.2728L9.48206 16.0087C9.43209 16.092 9.36139 16.1609 9.27687 16.2088C9.19234 16.2566 9.09686 16.2818 8.99972 16.2818C8.90258 16.2818 8.8071 16.2566 8.72257 16.2088C8.63804 16.1609 8.56735 16.092 8.51738 16.0087L7.47675 14.2728C7.42671 14.1895 7.35596 14.1206 7.27138 14.0728C7.1868 14.025 7.09128 13.9999 6.99413 14H2.8125C2.66332 14 2.52024 13.9407 2.41475 13.8352C2.30926 13.7298 2.25 13.5867 2.25 13.4375V4.4375C2.25 4.28832 2.30926 4.14524 2.41475 4.03975C2.52024 3.93426 2.66332 3.875 2.8125 3.875H15.1875C15.3367 3.875 15.4798 3.93426 15.5852 4.03975C15.6907 4.14524 15.75 4.28832 15.75 4.4375V13.4375C15.75 13.5867 15.6907 13.7298 15.5852 13.8352C15.4798 13.9407 15.3367 14 15.1875 14H11.0059C10.9088 14 10.8134 14.0252 10.7289 14.073C10.6445 14.1208 10.5738 14.1896 10.5238 14.2728V14.2728Z"
+                  stroke="#B3B3B3"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <p>65 Comments</p>
+            </div>
+          </div>
+
+          <h3 className="news-description">
+            Curabitur porttitor orci eget neque accumsan venenatis. Nunc
+            fermentum.
+          </h3>
+
+          <button className="read-more-formobile">
+            Read more <GoArrowRight />{" "}
+          </button>
+        </div>
+
+        <button onClick={nextNews} className="button-news-for-mobile">
+          <GoArrowRight className="fwd-news-btn" />
+        </button>
+      </div>
+
       <div className={`${showPopup ? "lightHOME" : "OGHOME"} testimonials`}>
         <h2 className="testimonials-heading">Client Testimonials</h2>
 
@@ -849,8 +1031,68 @@ const Home = ({ products }) => {
         </div>
       </div>
 
+      <div className="testimonials-for-mobile">
+        <button onClick={previousTestimonial} className="button-testimonial-for-mobile">
+          <GoArrowRight className="prev-news-btn" />
+        </button>
+
+        <div className="testimonial-section-for-mobile">
+          <h2 className="testimonials-heading">Client Testimonials</h2>
+
+          <img src={profilePhotosOfTestimonials[defaultTestimonial]} className="testimonial-image-formobile"/>
+
+
+          <p className="testimonial-description">
+            Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
+            Phasellus imperdiet elit eu magna dictum, bibendum cursus velit
+            sodales. Donec sed neque eget
+          </p>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="26"
+            viewBox="0 0 32 26"
+            fill="none"
+            className="testimonial-icon"
+          >
+            <path
+              opacity="0.3"
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M23.8222 0C20.4357 0 17.6851 2.65696 17.6851 5.9336C17.6851 9.20821 20.4357 11.8672 23.8222 11.8672C29.6404 11.8672 26.2689 22.171 18.931 23.2443C18.5848 23.2936 18.2688 23.4578 18.0403 23.7071C17.8117 23.9563 17.6857 24.2742 17.6851 24.6032C17.6851 25.4456 18.487 26.1119 19.3751 25.9843C32.7122 24.0847 37.4546 0.00202497 23.8222 0.00202497V0ZM6.13933 0C2.74847 0 0 2.65493 0 5.9336C0 9.20619 2.74847 11.8631 6.13933 11.8631C11.9553 11.8631 8.58385 22.171 1.24597 23.2443C0.900119 23.2936 0.58443 23.4575 0.355931 23.7063C0.127431 23.9551 0.00118682 24.2725 0 24.6011C0 25.4436 0.801907 26.1098 1.68788 25.9823C15.0293 24.0827 19.7717 0 6.13933 0Z"
+              fill="#00B307"
+            />
+          </svg>
+
+          <h3 className="name-of-the-customer">{accountOfTheCustomers[namesOfCustomer]}</h3>
+          
+          <p className="customer-text-formobile">Customer</p>
+
+          <div className="stars-for-rating-formobile">
+              <RiStarSFill className="stars-filled-formobile"/>
+              <RiStarSFill className="stars-filled-formobile"/>
+              <RiStarSFill className="stars-filled-formobile"/>
+              <RiStarSFill className="stars-notfilled-formobile"/>
+              <RiStarSFill className="stars-notfilled-formobile"/>
+          </div>
+
+          <div className="current-testimonial">
+            <div className={`${defaultTestimonial===0 ? "activated-testimonial" : "noActivatedTestimonial"} activatedCircles`}></div>
+            <div className={`${defaultTestimonial===1 ? "activated-testimonial" : "noActivatedTestimonial"} activatedCircles`}></div>
+            <div className={`${defaultTestimonial===2 ? "activated-testimonial" : "noActivatedTestimonial"} activatedCircles`}></div>
+          </div>
+
+        </div>
+
+        <button onClick={nextTestimonial} className="button-testimonial-for-mobile">
+          <GoArrowRight className="fwd-news-btn" />
+        </button>
+      </div>
+
       <div className={`${showPopup ? "lightHOME" : "OGHOME"} companies-name-info`}>
-        <svg
+        <div className="gridlaganevalabox">
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="82"
           height="32"
@@ -863,9 +1105,9 @@ const Home = ({ products }) => {
             d="M8.00036 8.70355C8.61529 8.1764 9.40674 7.91258 10.1099 7.91258C11.429 7.91258 12.7476 8.52799 14.0662 9.58278L14.6816 10.1104L16.4396 7.64877L15.9998 7.20891C14.3296 5.80253 12.5716 5.09886 10.5493 5.09886C9.05467 5.09886 7.64828 5.62649 6.2419 6.50572C4.83552 7.47273 3.95629 8.70307 3.69247 10.1977C3.34088 11.7801 3.69247 13.1865 4.83552 14.2413C5.53871 14.945 6.68176 15.5604 8.35196 16.2631C9.58278 16.7907 10.3738 17.2301 10.7253 17.5822C11.1652 18.1098 11.3408 18.812 11.1652 19.6918C10.9892 20.5705 10.5498 21.2742 9.75834 21.7136C9.05515 22.2412 8.2637 22.4172 7.47273 22.4172C5.62649 22.4172 4.04455 21.6258 2.63721 19.8673L2.19783 19.2529L0 21.6258L0.439854 22.0651C1.14305 22.9449 2.10957 23.6485 3.3404 24.263C4.65948 24.8784 5.88983 25.2309 7.12065 25.2309C8.70307 25.2309 10.1095 24.7906 11.4281 23.8236C12.9222 22.8566 13.8897 21.5375 14.1535 19.8673C14.5929 18.1098 14.1535 16.7025 13.0105 15.5604C12.3951 14.945 11.1642 14.2413 9.40578 13.5381H9.318C7.29621 12.6589 6.41698 11.6919 6.59254 10.6371C6.76954 9.84612 7.20939 9.14293 8.00036 8.70355ZM26.198 0H23.2092L21.9783 5.53823H17.9347L17.3193 8.2637H21.3634L19.1656 18.7252C18.6379 21.0981 18.814 22.8566 19.781 23.9114C20.3964 24.7901 21.5394 25.2305 23.0341 25.2305C25.7591 25.2305 28.1329 23.7353 30.2425 20.7465L30.8579 19.8668L27.8691 19.1641L27.6053 19.6035C26.2862 21.4493 24.8803 22.4167 23.3857 22.4167C22.7703 22.4167 22.3304 22.3285 22.0666 21.9774C21.8028 21.6253 21.715 20.9216 21.9783 19.9546L24.44 8.26274H30.9457L31.5611 5.53727H24.9671L26.198 0ZM46.5934 7.03335C45.5386 5.71427 44.1313 5.09886 42.286 5.09886C39.6483 5.09886 37.3627 6.24142 35.5164 8.35196C33.934 10.1982 32.8792 12.4838 32.3516 15.121C31.4724 18.6374 31.9117 21.2747 33.4064 23.2082C34.549 24.5273 36.1319 25.2309 38.2414 25.2309C40.0877 25.2309 42.4606 24.7024 45.186 23.5607L45.8015 23.2964L45.0978 20.3081L44.3073 20.7475C42.1977 21.8905 40.2632 22.4177 38.593 22.4177C37.3622 22.4177 36.4834 22.0656 35.9558 21.4497C35.0766 20.4827 34.8128 18.7252 35.1644 16.1753H47.3839L47.5599 15.5604C48.3509 11.6924 47.9993 8.79133 46.5934 7.03335ZM41.8452 7.9121C42.8131 7.9121 43.6036 8.2637 44.219 9.05515C45.0105 10.1104 45.2738 11.5168 44.9227 13.3626H35.7798C36.2196 11.8679 37.0106 10.6371 38.0659 9.5823C39.2967 8.52751 40.527 7.9121 41.8452 7.9121ZM59.2518 5.09886C57.4943 5.09886 55.9109 5.71427 54.5928 6.94509V5.01156L51.6035 5.45093V6.1546C51.7795 7.91258 51.6035 10.0226 51.0759 12.3082L46.8562 32H49.9338L51.603 24.2635C52.6974 24.9006 53.9418 25.2347 55.2082 25.2314C57.054 25.2314 58.9002 24.44 60.5709 23.0336C62.7687 21.1869 64.1751 18.7262 64.8783 15.4731C65.6688 11.8689 65.3177 9.14389 63.7352 7.20939C62.5927 5.80253 61.0985 5.09886 59.2518 5.09886ZM54.329 11.0769C55.8241 8.96737 57.3182 7.9121 58.9007 7.9121C59.8677 7.9121 60.6591 8.35196 61.2736 9.05515C62.3284 10.286 62.4166 12.3078 61.889 15.0328C61.2736 18.1098 60.0432 20.2194 58.1087 21.4497C57.1417 22.0651 56.0869 22.4177 55.0322 22.4177C54.0652 22.4177 53.0986 21.9783 52.2189 21.0986L54.329 11.0769ZM74.5488 13.5386C72.4393 12.6594 71.4713 11.6924 71.7356 10.6376C71.9116 9.8466 72.351 9.14341 73.0537 8.70355C73.7574 8.1764 74.4611 7.91258 75.2515 7.91258C76.5706 7.91258 77.8888 8.52799 79.2078 9.58278L79.8232 10.1104L81.5817 7.64877L81.1423 7.20891C79.4721 5.80253 77.6254 5.09886 75.6919 5.09886C74.1968 5.09886 72.7904 5.62649 71.3835 6.50572C69.9771 7.47273 69.0984 8.70307 68.8346 10.1977C68.4835 11.7801 68.8346 13.1865 70.0654 14.2413C70.6808 14.8567 71.8239 15.5604 73.4941 16.2631L75.867 17.5822C76.3063 18.1098 76.4824 18.812 76.3063 19.6918C76.1313 20.5705 75.6036 21.2742 74.9 21.7136C74.1963 22.2412 73.4058 22.4172 72.6139 22.4172C70.7681 22.4172 69.1862 21.6258 67.8671 19.8673L67.3394 19.2529L65.2299 21.6258L65.581 22.0651C66.2847 22.9449 67.2512 23.6485 68.4825 24.263C69.7133 24.8784 71.0314 25.2309 72.2627 25.2309C73.8452 25.2309 75.2511 24.7906 76.5702 23.8236C78.0643 22.8566 79.0313 21.5375 79.2956 19.8673C79.735 18.1098 79.2956 16.7025 78.2408 15.5604C77.5372 14.9455 76.3063 14.2418 74.5488 13.5386Z"
             fill="#00B307"
           />
-        </svg>
+          </svg>
 
-        <svg
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="67"
           height="32"
@@ -1556,9 +1798,9 @@ const Home = ({ products }) => {
             d="M18.0811 25.7764H20.4017V25.1929H18.0811V25.7764ZM23.1825 25.7764H25.483V25.1929H23.1825V25.7764Z"
             fill="#CCCCCC"
           />
-        </svg>
+          </svg>
 
-        <svg
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="61"
           height="32"
@@ -1589,9 +1831,9 @@ const Home = ({ products }) => {
             d="M21.0257 22.2178H22.0408L23.3327 24.1558V22.2178H24.1635V25.909H23.425L21.8561 23.7871V25.909H21.0257V22.2178ZM26.5625 22.2178H29.4236V22.9563H27.67V23.6017H28.7778V24.4325H27.67V25.0782H29.4236V25.909H26.5625V22.2178ZM32.4694 22.9563H31.4542V22.2178H34.5917V22.9563H33.5765V25.909H32.4694V22.9563ZM36.4376 22.2178H37.5444L38.0065 24.1558H38.0982L38.5596 22.2178H39.4831L39.9441 24.1558H40.0368L40.4982 22.2178H41.3283L40.4055 25.909H39.4831L38.929 23.8787L38.3752 25.909H37.4528L36.4376 22.2178ZM45.0892 26.0017C44.0051 26.0017 43.2666 25.2636 43.2666 24.0634C43.2666 22.8639 44.0047 22.1255 45.0892 22.1255C46.1971 22.1255 46.8425 22.8636 46.8425 24.0634C46.8425 25.2633 46.1967 26.0017 45.0892 26.0017ZM44.4435 24.0631C44.4435 25.0782 44.7205 25.2633 45.0892 25.2633C45.4586 25.2633 45.735 25.0782 45.735 24.0631C45.735 23.0486 45.4586 22.8636 45.0892 22.8636C44.6278 22.8636 44.4435 23.1406 44.4435 24.0631ZM49.0571 22.2178H50.9031C52.1026 22.2178 52.3796 22.7709 52.3796 23.233C52.3796 23.6944 52.1026 24.0631 51.6415 24.1558L52.3796 25.909H51.1801L50.6264 24.3401H50.165V25.909H49.0571V22.2178ZM50.165 23.6944H50.7187C50.9951 23.6944 51.2724 23.5093 51.2724 23.325C51.2724 23.0486 51.0874 22.8636 50.7187 22.8636H50.165V23.6944ZM54.6869 22.2178H55.7944V23.6944L56.9016 22.2178H57.9167L56.9939 23.4173L58.1011 25.909H56.9939L56.2558 24.3401L55.7944 24.9866V25.909H54.6869V22.2178Z"
             fill="white"
           />
-        </svg>
+          </svg>
 
-        <svg
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="84"
           height="32"
@@ -1626,9 +1868,9 @@ const Home = ({ products }) => {
               />
             </clipPath>
           </defs>
-        </svg>
+          </svg>
 
-        <svg
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="132"
           height="32"
@@ -1651,9 +1893,9 @@ const Home = ({ products }) => {
               />
             </clipPath>
           </defs>
-        </svg>
+          </svg>
 
-        <svg
+          <svg
           xmlns="http://www.w3.org/2000/svg"
           width="96"
           height="32"
@@ -1672,14 +1914,14 @@ const Home = ({ products }) => {
             d="M95.2566 18.5424C94.5409 18.1943 93.4143 17.8512 92.4561 17.8625C91.3335 17.8752 89.8588 18.1933 89.8746 19.5904C89.9027 21.9713 94.6675 22.0259 94.7124 25.9138C94.7512 29.2819 91.6694 30.4121 89.48 30.4371C87.2624 30.4632 86.437 30.1712 85.3931 29.8271L85.8596 27.6045C86.8775 28.0032 87.9506 28.3743 89.0721 28.361C90.4688 28.3452 91.9956 27.752 91.9762 26.1644C91.9492 23.7825 87.1813 23.4813 87.1404 19.9498C87.1067 16.9926 90.0497 15.8088 92.3499 15.7822C93.5812 15.768 94.8446 16.0543 95.9998 16.5066L95.2566 18.5424Z"
             fill="#CCCCCC"
           />
-        </svg>
-
+          </svg>
+        </div>
       </div>
 
       <div className={`${showPopup ? "lightHOME" : "OGHOME"} footer`}>
         <div className="foot-one">
           <div className="newletter-desc">
-            <h1>Subcribe our Newsletter</h1>
+            <h1 className="newletter-desc-h1">Subcribe our Newsletter</h1>
             <p>
               Pellentesque eu nibh eget mauris congue mattis mattis nec tellus.
               Phasellus imperdiet elit eu magna.
@@ -1728,25 +1970,25 @@ const Home = ({ products }) => {
               </div>
 
               <div className="homepageicon-phonenumber">
-                <p>(219)555-0114</p> <p>or</p> <p>Proxy@gmail.com</p>
+                <p className="para-for-phoennumber">(219)555-0114</p> <p className="para-for-phoennumber">or</p> <p className="para-for-phoennumber">Proxy@gmail.com</p>
               </div>
             </div>
 
             <div className="foot-two-phase1-part2">
               <h3>My Account</h3>
               <div className="links">
-                <NavLink className="footer-all-links">My Account</NavLink>
-                <NavLink className="footer-all-links">Order History</NavLink>
-                <NavLink className="footer-all-links">Shoppin Cart</NavLink>
-                <NavLink className="footer-all-links">Wishlist</NavLink>
+                <NavLink to="/signin" className="footer-all-links">My Account</NavLink>
+                <NavLink to="/paymentGateway" className="footer-all-links">Order History</NavLink>
+                <NavLink to="/Cart" className="footer-all-links">Shoppin Cart</NavLink>
+                <NavLink to="/Cart" className="footer-all-links">Wishlist</NavLink>
               </div>
             </div>
 
             <div className="foot-two-phase1-part3">
               <h3>Helps</h3>
               <div className="help-links">
-                <NavLink className="footer-all-links">Contact</NavLink>
-                <NavLink className="footer-all-links">Faqs</NavLink>
+                <NavLink to="/contact" className="footer-all-links">Contact</NavLink>
+                <NavLink to="/FAQs" className="footer-all-links">Faqs</NavLink>
                 <NavLink className="footer-all-links">
                   Terms & Condition
                 </NavLink>
@@ -1757,22 +1999,22 @@ const Home = ({ products }) => {
             <div className="foot-two-phase1-part4">
               <h3>Proxy</h3>
               <div className="proxy-links">
-                <NavLink className="footer-all-links">About</NavLink>
-                <NavLink className="footer-all-links">Shop</NavLink>
-                <NavLink className="footer-all-links">Product</NavLink>
-                <NavLink className="footer-all-links">Track Order</NavLink>
+                <NavLink to="/about" className="footer-all-links">About</NavLink>
+                <NavLink to="/shop" className="footer-all-links">Shop</NavLink>
+                <NavLink to="/Products" className="footer-all-links">Product</NavLink>
+                <NavLink to="/Cart" className="footer-all-links">Track Order</NavLink>
               </div>
             </div>
 
             <div className="foot-two-phase1-part5">
               <h3>Categories</h3>
               <div className="categories-links">
-                <NavLink className="footer-all-links">
+                <NavLink to="/" className="footer-all-links">
                   Fruits & Vegetables
                 </NavLink>
-                <NavLink className="footer-all-links">Meat & Fish</NavLink>
-                <NavLink className="footer-all-links">Bread & Bakery</NavLink>
-                <NavLink className="footer-all-links">Beauty & Health</NavLink>
+                <NavLink to="/" className="footer-all-links">Meat & Fish</NavLink>
+                <NavLink to="/" className="footer-all-links">Bread & Bakery</NavLink>
+                <NavLink to="/" className="footer-all-links">Beauty & Health</NavLink>
               </div>
             </div>
           </div>
@@ -1790,6 +2032,7 @@ const Home = ({ products }) => {
                   height="15"
                   viewBox="0 0 33 15"
                   fill="none"
+                  className="svgsForFooter"
                 >
                   <path
                     fill-rule="evenodd"
@@ -1807,6 +2050,7 @@ const Home = ({ products }) => {
                   height="12"
                   viewBox="0 0 32 12"
                   fill="none"
+                  className="svgsForFooter"
                 >
                   <path
                     fill-rule="evenodd"
@@ -1824,6 +2068,7 @@ const Home = ({ products }) => {
                   height="20"
                   viewBox="0 0 41 20"
                   fill="none"
+                  className="svgsForFooter"
                 >
                   <path
                     d="M15.5293 19.6767L40.6764 12.0664V15.7061C40.6764 17.899 38.8987 19.6767 36.7058 19.6767H15.5293Z"
@@ -1851,6 +2096,7 @@ const Home = ({ products }) => {
                   height="19"
                   viewBox="0 0 31 19"
                   fill="none"
+                  className="svgsForFooter"
                 >
                   <path
                     fill-rule="evenodd"
@@ -1880,6 +2126,7 @@ const Home = ({ products }) => {
                   height="11"
                   viewBox="0 0 11 11"
                   fill="none"
+                  className="svgsForFooter"
                 >
                   <g clip-path="url(#clip0_2030_5996)">
                     <rect width="11" height="11" fill="#1A1A1A" />

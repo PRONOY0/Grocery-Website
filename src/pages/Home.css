@@ -25,11 +25,13 @@ html {
   font-family: customFont;
 }
 
-.container {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+.latest-news-for-mobile {
+  display: none;
+  padding-top: 5rem;
+}
+
+.testimonials-heading {
+  text-align: start;
 }
 
 .location-icon {
@@ -109,6 +111,12 @@ nav {
   font-weight: 400;
   line-height: 130%;
   text-decoration: none;
+}
+
+.gridlaganevalabox{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .sign-up {
@@ -733,7 +741,7 @@ nav {
 .Popular-Categories {
   width: 100%;
   margin-top: -385rem;
-  height: 40rem;
+  min-height: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -753,8 +761,8 @@ nav {
 
 .Popular-Categories-first-ul {
   display: grid;
-  grid-template-rows: repeat(2,1fr);
-  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   row-gap: 1rem;
   column-gap: 1rem;
 }
@@ -1233,8 +1241,6 @@ nav {
   align-items: center;
 }
 
-
-
 .second-row-of-popular-products {
   display: flex;
   gap: 1rem;
@@ -1376,7 +1382,7 @@ nav {
   background-image: url("../resources/Discount\ Bannar\ .png");
   background-size: cover;
   display: flex;
-  max-width:70vw;
+  max-width: 70vw;
   min-height: 20.375vh;
   padding-left: 48vw;
   flex-direction: column;
@@ -1385,7 +1391,7 @@ nav {
   gap: 1.75rem;
   flex-shrink: 0;
   border-radius: 0.625rem;
-  margin:0 auto;
+  margin: 0 auto;
   margin-top: 5rem;
 }
 
@@ -1687,7 +1693,7 @@ nav {
   max-width: 82.5vw;
   justify-content: space-between;
   align-items: center;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .bottom-navbar-mobile {
@@ -1698,25 +1704,63 @@ nav {
   display: none;
 }
 
-@media (max-width: 600px) {
+.testimonials-for-mobile {
+  display: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1460px) {
+  .small-bannar {
+    display: none;
+  }
+
+  .features {
+    display: flex;
+  }
+
+  .Bannar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -5rem;
+  }
+
+  .features {
+    display: grid;
+    grid-template-rows: 5rem 5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Popular-Categories-first-ul li {
+    width: 10rem;
+  }
+
+  .popular-products-items {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10rem;
+  }
+
+  .list-items-image {
+    width: 10vw;
+    object-fit: contain;
+  }
+
+  .home-discount-bannar {
+    opacity: 0.9;
+  }
+
+  /* .companies-name-info{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    row-gap:5rem;
+  } */
+}
+
+@media (max-width: 1024px) {
   .container {
     overflow-x: hidden;
-  }
-
-  .small-one {
-    display: none;
-  }
-
-  .navLinks {
-    display: none;
-  }
-
-  .cartDetails {
-    display: none;
-  }
-
-  .middle {
-    display: none;
   }
 
   .bottom-navbar-mobile {
@@ -1741,82 +1785,461 @@ nav {
     color: #00b207;
   }
 
-  .homepage-iconformobile {
-    display: flex;
-    position: fixed;
-    background: #1f1f1f;
-    justify-content: center;
-    top: 0;
-    gap: 0.35rem;
-    text-decoration: none;
-    color: #fff;
-    width: 100%;
-  }
-
-  .plant-mobile {
-    background-size: contain;
-    width: 10vw;
-  }
-
-  .plant-text-mobile {
-    font-size: 7vw;
-  }
-
   .small-bannar {
     display: none;
   }
-}
 
-@media (min-width: 1025px) and (max-width: 1460px) {
-  .small-bannar{
-    display: none;
+  .Big-Bannar {
+    width: 90vw;
+    object-fit: contain;
+    height: 10vh;
   }
 
-  .features{
-    display: flex;
+  .ad-title {
+    font-size: 4vw;
+    width: 35.25vw;
   }
 
-  .Bannar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -5rem;
+  .sales-first-part {
+    font-size: 4vw;
   }
 
-  .features{
+  .sales-second-part {
+    font-size: 3.15vw;
+  }
+
+  .shipping-text {
+    font-size: 2.5vw;
+  }
+
+  .shopNow-btn {
+    font-size: 3vw;
+  }
+
+  .features {
     display: grid;
-    grid-template-rows: 5rem 5rem;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3vh;
+    margin-left: 0.5rem;
   }
 
-  .Popular-Categories-first-ul li{
-    width: 10rem;
+  .MoneyBackSvg {
+    width: 7.5vw;
+    height: 5.70431vh;
   }
 
-  
+  .SecurePaymentSvg {
+    width: 7.5vw;
+    height: 5.70431vh;
+  }
 
-  .popular-products-items{
+  .CustomerSupportSvg {
+    width: 7.5vw;
+    height: 5.70431vh;
+  }
+
+  .shippingSvg {
+    width: 7.5vw;
+    height: 5.70431vh;
+  }
+
+  .free-shipping-text {
+    font-size: 3vw;
+    width: 25.625vw;
+  }
+
+  .free-shipping-order-text {
+    font-size: 2.5vw;
+    width: 25.625vw;
+  }
+
+  .customer-support-text {
+    font-size: 3vw;
+    width: 25.625vw;
+  }
+
+  .instant-access-text {
+    font-size: 2.5vw;
+    width: 25.625vw;
+  }
+
+  .secure-payment-security-text {
+    font-size: 3vw;
+    width: 25.625vw;
+  }
+
+  .secure-payment-descrp {
+    font-size: 2.5vw;
+    width: 25.625vw;
+  }
+
+  .money-back-guarantee-text {
+    font-size: 3vw;
+    width: 25.625vw;
+  }
+
+  .money-back-guarantee-desc {
+    font-size: 2.5vw;
+    width: 25.625vw;
+  }
+
+  .Popular-Categories-heading {
+    font-size: 4vw;
+  }
+
+  .Popular-Categories-first-ul {
     display: grid;
-    grid-template-rows: repeat(4,1fr);
-    grid-template-columns: repeat(2,1fr);
-    gap: 10rem;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5rem;
   }
 
-  .list-items-image{
-    width: 10vw;
+  .list-items-image {
+    width: 25vw;
     object-fit: contain;
   }
 
-  .home-discount-bannar{
-    opacity: .9;
+  .fresh-fruit-title {
+    font-size: 4vw;
   }
 
-  /* .companies-name-info{
+  .fresh-vegetables-title {
+    font-size: 4vw;
+  }
+
+  .Meat-Fish-title {
+    font-size: 4vw;
+  }
+
+  .Snacks-title {
+    font-size: 4vw;
+  }
+
+  .categories-formobile {
+    width: 40vw;
+    min-height: 15vh;
+  }
+
+  .Beverages-title {
+    font-size: 4vw;
+  }
+
+  .Bread-Bakery-title {
+    font-size: 4vw;
+  }
+
+  .Bread-Needs-title {
+    font-size: 4vw;
+  }
+
+  .Cooking-title {
+    font-size: 4vw;
+  }
+
+  .Dish-Detergents-title {
+    font-size: 4vw;
+  }
+
+  .Diabetic-Food-title {
+    font-size: 4vw;
+  }
+
+  .popular-products-heading h2 {
+    font-size: 3.1vw;
+    text-align: start;
+  }
+
+  .popular-products a {
+    text-decoration: none;
+    color: #00b207;
+    font-size: 3.2vw;
+  }
+
+  .goarrowright {
+    font-size: 3.2vw;
+  }
+
+  .popular-products-heading {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .popular-products-items {
     display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns: repeat(3,1fr);
-    row-gap:5rem;
-  } */
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
 
+  .items-image {
+    width: 35vw;
+    height: 15vh;
+    object-fit: contain;
+  }
+
+  .filled-star {
+    font-size: 3vw;
+  }
+
+  .not-filled-star {
+    font-size: 3vw;
+  }
+
+  .popular-products {
+    margin-top: 5rem;
+  }
+
+  .home-discount-bannar {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .latest-news {
+    display: none;
+  }
+
+  .latest-news-for-mobile {
+    display: flex;
+    width: 100vw;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .prev-news-btn {
+    transform: rotate(180deg);
+  }
+
+  .latest-news-for-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-news-for-mobile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .button-news-for-mobile :nth-child(1) {
+    color: #00b207;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  .latest-news-image-formobile {
+    width: 100%;
+    border-radius: 1rem;
+    object-fit: contain;
+  }
+
+  .news-section-for-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .news-description {
+    font-size: 3vw;
+    text-align: start;
+    font-family: customFont;
+    color: #4d4d4d;
+    font-weight: 400;
+  }
+
+  .news-middle-section-formobile {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .food-formobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .byadmin-formobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .comments-formobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .food-formobile p {
+    font-size: 3vw;
+    color: #666;
+  }
+
+  .byadmin-formobile p {
+    font-size: 3vw;
+    color: #666;
+  }
+
+  .comments-formobile p {
+    font-size: 3vw;
+    color: #666;
+  }
+
+  .formobile-icons {
+    width: 5vw;
+    height: 3vh;
+  }
+
+  .read-more-formobile {
+    border: none;
+    text-align: start;
+    font-weight: 500;
+    font-family: customFont;
+    color: #00b207;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .testimonials {
+    display: none;
+  }
+
+  .name-and-customer-formobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .stars-for-rating-formobile {
+    display: flex;
+    align-items: center;
+    margin-top: -0.5rem;
+  }
+
+  .stars-filled-formobile {
+    color: #ff8a00;
+    font-size: 3vw;
+  }
+
+  .stars-notfilled-formobile {
+    color: #808080;
+    font-size: 3vw;
+  }
+
+  .testimonials-for-mobile {
+    display: flex;
+    width: 100vw;
+    margin-top: 5rem;
+    align-items: center;
+  }
+
+  .testimonial-section-for-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.85rem;
+  }
+
+  .testimonial-description {
+    color: var(--Gray-Scale-Gray-700, #4d4d4d);
+    font-family: customFont;
+    font-size: 2.5vw;
+    width: 80%;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 0.825rem */
+  }
+
+  .testimonial-image-formobile {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    opacity: 0.8;
+    border-radius: 100%;
+  }
+
+  .testimonial-icon {
+    width: 5vw;
+    height: 5vh;
+    transform: rotate(180deg);
+  }
+
+  .last-section-of-testimonial-forMobile {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .name-of-the-customer {
+    font-size: 3.6vw;
+  }
+
+  .customer-text-formobile {
+    color: var(--Gray-Scale-Gray-700, #4d4d4d);
+    font-family: customFont;
+    font-size: 2.2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 0.825rem */
+    margin-top: -0.5rem;
+  }
+
+  .activatedCircles {
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    background-color: #666;
+    border: none;
+  }
+
+  .current-testimonial {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .activated-testimonial {
+    background-color: #00b207;
+  }
+
+  .button-testimonial-for-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .button-testimonial-for-mobile :nth-child(1) {
+    color: #00b207;
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  .companies-name-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+  }
+
+  .gridlaganevalabox{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+  }
+
+  .companies-name-info svg {
+    width: 18.09888vw;
+    height: 2rem;
+    flex-shrink: 0;
+  }
 }
-
