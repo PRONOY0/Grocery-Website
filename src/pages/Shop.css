@@ -8,12 +8,20 @@
   font-size: 1.5vw;
 }
 
+.FilterMobile{
+  display: none;
+}
+
 .item-card-for-item-showing-div-grid {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 5vw;
   margin-top: 5vh;
+}
+
+.filters-for-mobile{
+  display: none;
 }
 
 .item-images {
@@ -70,6 +78,10 @@
   border: none;
 }
 
+.full-filters-list-for-mobile{
+  display: none;
+}
+
 .shoppingBag {
   font-size: 1.5vw;
 }
@@ -78,7 +90,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1); /* Initial or no shadow */
   transition: box-shadow .3s ease;
 }
 
@@ -229,4 +240,111 @@
   line-height: 120%;
 }
 
+@media (max-width:1024px){
+  .product-card img{
+    max-width: 60vw;
+    height: 10vh;
+    object-fit: contain;
+  }
 
+  .item-card-for-item-showing-div-grid {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 2rem;
+    row-gap: 2rem;
+  }
+
+  .Filter{
+    display: none;
+  }
+
+  .product-card h2{
+    font-size: 4vw;
+    min-width: 40vw;
+  }
+
+  .product-card h4{
+    font-size: 4vw;
+  }
+
+  .filled-stars{
+    font-size: 4vw;
+  }
+
+  .not-filled-stars{
+    font-size: 4vw;
+  }
+
+  .handbagIcon{
+    display: none;
+  }
+
+  .btn-and-stars{
+    display: flex;
+    flex-direction: column;
+    gap: .55rem;
+    align-items: flex-start;
+  }
+
+  .add-and-remove-item-button1{
+    font-size: 2.8891vw;
+    width: 40vw;
+  }
+
+  .filters-for-mobile{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  
+  .filters-for-mobile-btn{
+    font-size: 4vw;
+    width: max-content;
+    border: none;
+  }
+  
+  .filters-for-mobile-btn svg{
+    font-size: 4vw;
+    margin-top: .2rem;
+  }
+
+  .full-filters-list-for-mobile{
+    width: 100vw;
+    min-height: 60vh;
+    background-color: #808080;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .FilterMobile{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .filter-btn{
+    font-size: 4vw;
+    max-width:40vw;
+    height: 4vh;
+  }
+
+  .all-categories h2{
+    font-size: 4vw;
+  }
+
+  .all-categories ul li label span{
+    font-size: 3vw;
+  }
+
+  .all-categories ul li label input{
+    font-size: 2vw;
+  }
+
+  .all-categories ul li label{
+    width: max-content;
+  }
+
+}

@@ -16,9 +16,12 @@ import Slider from "react-slider";
 import { FaEye } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../Slices/Slice/cartSlice";
+import { GoChevronDown } from "react-icons/go";
+import { GoChevronUp } from "react-icons/go";
 
 const Shop = () => {
   const [allSelected, setAllSelected] = useState(true);
+  const [allmobileSelected, setAllmobileSelected] = useState(true);
 
   const { cart } = useSelector((state) => state);
 
@@ -29,8 +32,10 @@ const Shop = () => {
   const Max = 1000;
 
   const [userFilteredCategory, setUserFilteredCategory] = useState(null);
+  const [mobileuserFilteredCategory, setmobileUserFilteredCategory] = useState(null);
 
   const [values, setValues] = useState([Min, Max]);
+  const [mobilevalues, setmobileValues] = useState([Min, Max]);
 
   console.log("The all selected value now is ", allSelected);
 
@@ -83,13 +88,19 @@ const Shop = () => {
       "FreshFruit"
   );
 
+  const [filtersClicked, setFiltersClicked] = useState(false);
+
   const totalallProducts = allProudcts.length;
-  
+
   const navigate = useNavigate();
 
   const productViewHandler = (itemId) => {
     navigate(`/singleProduct/${itemId}`);
   };
+
+  function filtersHandler() {
+    setFiltersClicked((prev) => !prev);
+  }
 
   console.log(values);
   return (
@@ -102,6 +113,16 @@ const Shop = () => {
 
           <p className="signup">Shop</p>
         </div>
+      </div>
+
+      <div className="filters-for-mobile">
+        <button className="filters-for-mobile-btn" onClick={filtersHandler}>
+          Filters
+          <span>{filtersClicked ? <GoChevronUp /> : <GoChevronDown />}</span>
+        </button>
+      </div>
+
+      <div className={`full-filters-list-for-mobile ${filtersClicked ? "AppearFilter" : "DontAppearFilter"}`}>
       </div>
 
       <div className="filter-product-section">
@@ -372,7 +393,8 @@ const Shop = () => {
 
                         <div className="fashoppinBagBtn">
                           {cart.some((p) => p.id === item.id) ? (
-                            <button className="add-and-remove-item-button1"
+                            <button
+                              className="add-and-remove-item-button1"
                               onClick={() => {
                                 dispath(removeFromCart(item.id));
                               }}
@@ -380,7 +402,8 @@ const Shop = () => {
                               Remove from Cart <BsHandbag />
                             </button>
                           ) : (
-                            <button className="add-and-remove-item-button1"
+                            <button
+                              className="add-and-remove-item-button1"
                               onClick={() => {
                                 dispath(addToCart(item));
                               }}
@@ -435,20 +458,24 @@ const Shop = () => {
 
                           <div className="fashoppinBagBtn">
                             {cart.some((p) => p.id === item.id) ? (
-                              <button className="add-and-remove-item-button1"
+                              <button
+                                className="add-and-remove-item-button1"
                                 onClick={() => {
                                   dispath(removeFromCart(item.id));
                                 }}
                               >
-                                Remove from Cart <BsHandbag />
+                                Remove from Cart{" "}
+                                <BsHandbag className="handbagIcon" />
                               </button>
                             ) : (
-                              <button className="add-and-remove-item-button1"
+                              <button
+                                className="add-and-remove-item-button1"
                                 onClick={() => {
                                   dispath(addToCart(item));
                                 }}
                               >
-                                Add to Cart <BsHandbag />
+                                Add to Cart{" "}
+                                <BsHandbag className="handbagIcon" />
                               </button>
                             )}
                           </div>

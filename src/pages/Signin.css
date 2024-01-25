@@ -229,7 +229,7 @@
   font-family: customFont;
   font-size: 1vw;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.25rem;
   border: none;
 }
@@ -806,5 +806,16 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 2rem;
+  }
+
+  .signUpLink{
+    display: flex;
+    width: 70vw;
+    gap: .5rem;
+    font-size: 3.5vw;
+  }
+
+  .signUpLink a{
+    font-size: 3.5vw;
   }
 }

@@ -57,3 +57,40 @@
   display: flex;
   flex-direction: column;
 }
+
+
+@media (max-width:1024px){
+  .SignInHeading{
+    font-size:5vw;
+  }
+
+  .email-input{
+    width: 80vw;
+    font-size: 4vw;
+    outline: none;
+  }
+  
+  .password-inputFieldForSigninpage{
+    width: 80vw;
+    font-size: 4vw;
+    outline: none;
+  }
+
+  .showPassword-paragraph{
+    font-size: 4vw;
+  }
+
+  .forgotPassword{
+    font-size: 4vw;
+  }
+
+  .rememberMe-ForgotPassword{
+    width: 100vw;
+  }
+
+  .SignInPage-loginBtn{
+    font-size: 4vw;
+    font-weight: 400;
+    width: 80vw;
+  }
+}
