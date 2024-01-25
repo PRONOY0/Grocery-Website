@@ -255,7 +255,6 @@
 .foot-two {
   display: flex;
   width: 100%;
-  min-height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -576,10 +575,6 @@
   top: 58.5%;
 }
 
-.container{
-  max-height: 100vh;
-}
-
 .errorContainer {
   width: 100vw;
   display: flex;
@@ -649,6 +644,10 @@
   font-size: 0.875rem;
   font-style: normal;
   line-height: 120%; /* 1.05rem */
+}
+
+.cotnainer{
+  max-height: 100vh;
 }
 
 @media (max-width: 1024px) {

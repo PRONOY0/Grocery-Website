@@ -9,8 +9,6 @@ import Timer from "../components/Timer";
 import "./ProductPage.css";
 import { FaEye } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "../Slices/Slice/cartSlice";
-import { BsHandbag } from "react-icons/bs";
 
 const ProductsPage = () => {
   const navigation = useNavigate();
