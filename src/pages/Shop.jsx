@@ -26,18 +26,16 @@ const Shop = () => {
   const { cart } = useSelector((state) => state);
 
   const Min = 0;
+  const Max = 1000;
 
   const dispath = useDispatch();
 
-  const Max = 1000;
 
   const [userFilteredCategory, setUserFilteredCategory] = useState(null);
   const [mobileuserFilteredCategory, setmobileUserFilteredCategory] = useState(null);
 
   const [values, setValues] = useState([Min, Max]);
   const [mobilevalues, setmobileValues] = useState([Min, Max]);
-
-  console.log("The all selected value now is ", allSelected);
 
   const freshFruit = data.filter((item) => item.category === "FreshFruit");
 
@@ -120,9 +118,6 @@ const Shop = () => {
           Filters
           <span>{filtersClicked ? <GoChevronUp /> : <GoChevronDown />}</span>
         </button>
-      </div>
-
-      <div className={`full-filters-list-for-mobile ${filtersClicked ? "AppearFilter" : "DontAppearFilter"}`}>
       </div>
 
       <div className="filter-product-section">

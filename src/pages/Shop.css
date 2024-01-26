@@ -240,6 +240,10 @@
   line-height: 120%;
 }
 
+.Mobile-Filter{
+  display: none;
+}
+
 @media (max-width:1024px){
   .product-card img{
     max-width: 60vw;
@@ -253,10 +257,6 @@
     grid-template-columns: repeat(2, 1fr);
     margin-left: 2rem;
     row-gap: 2rem;
-  }
-
-  .Filter{
-    display: none;
   }
 
   .product-card h2{
@@ -347,4 +347,22 @@
     width: max-content;
   }
 
+  .Mobile-Filter{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-product-section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Two-rows-item-card{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    margin-top: 5vh;
+    margin-left: 2rem;
+  }
 }
