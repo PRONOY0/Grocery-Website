@@ -27,13 +27,13 @@ const Contact = () => {
         <div className="map-container-one">
           <div className="contact-info">
             <div className="address">
-              <div>
-                <svg
+              <svg
                   width="52"
                   height="51"
                   viewBox="0 0 52 51"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="about-us-icons"
                 >
                   <path
                     d="M11.6562 46.2188H40.3438"
@@ -56,20 +56,19 @@ const Contact = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
-                </svg>
-              </div>
+              </svg>
 
               <span>2715 Ash Dr. San Jose, South Dakota 83475</span>
             </div>
 
             <div className="gmail">
-              <div>
-                <svg
+              <svg
                   width="52"
                   height="51"
                   viewBox="0 0 52 51"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="about-us-icons"
                 >
                   <g clip-path="url(#clip0_460_40738)">
                     <path
@@ -99,20 +98,19 @@ const Contact = () => {
                       />
                     </clipPath>
                   </defs>
-                </svg>
-              </div>
+              </svg>
 
               <span>Proxy@gmail.com Help.proxy@gmail.com</span>
             </div>
 
             <div className="phonenumber">
-              <div>
-                <svg
+              <svg
                   width="52"
                   height="51"
                   viewBox="0 0 52 51"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
+                  className="about-us-icons"
                 >
                   <path
                     d="M31.9829 7.24219C34.9249 8.03345 37.6074 9.58385 39.7616 11.7381C41.9159 13.8923 43.4663 16.5748 44.2575 19.5168"
@@ -135,8 +133,7 @@ const Contact = () => {
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
-                </svg>
-              </div>
+              </svg>
 
               <span>(219) 555-0114 (164) 333-0487</span>
             </div>
@@ -146,7 +143,7 @@ const Contact = () => {
             <h1>Just Say Hello!</h1>
             <p>Do you fancy saying hi to me or you want to get started with your project and you need my help? Feel free to contact me.</p>
             <input type="email" readOnly placeholder="zakirsoft@gmail.com"/>
-            <input type="text" required placeholder="Say Hello!"/>
+            <input type="text" required placeholder="Say Hello!" className="messageInput"/>
             <button>Send Message</button>
           </div>
         </div>

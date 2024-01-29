@@ -27,7 +27,6 @@
   align-items: flex-start;
   border-radius: 0.5rem;
   background: var(--Gray-Scale-White, #fff);
-  box-shadow: 0px 0px 56px 0px rgba(0, 38, 3, 0.08);
 }
 
 .address {
@@ -96,7 +95,6 @@
   gap: 1.5rem;
   border-radius: 0.5rem;
   background: var(--Gray-Scale-White, #fff);
-  box-shadow: 0px 0px 56px 0px rgba(0, 38, 3, 0.08);
 }
 
 .hello-message h1 {
@@ -137,7 +135,7 @@
 
 .hello-message :nth-child(4) {
   display: flex;
-  width: 55.25vw;
+  width: 45.25vw;
   height: 3.0625vh;
   padding-left: 1vw;
   padding-top: 1rem;
@@ -180,4 +178,66 @@
   background-size: cover;
   height: 25vh;
   flex-shrink: 0;
+}
+
+@media (max-width:1024px) {
+  .map{
+    max-width: 100vw;
+    background-size: cover;
+  }
+
+  .hello-message{
+    width: 100vw;
+    padding: 1rem;
+  }
+
+  .hello-message h1{
+    font-size: 6vw;
+  }
+
+  .hello-message p{
+    font-size: 4vw;
+    max-width: 90vw;
+  }
+  
+  .hello-message :nth-child(4) {
+    width: 80vw;
+    font-size: 4vw;
+    padding: 1rem;
+  }
+
+  .hello-message button {
+    max-width: 30vw;
+    font-size: 3vw;
+  }
+
+  .contact-info{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-container-one{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-us-icons{
+    width: 11.5vw;
+    height: 2.5rem;
+  }
+
+  .phonenumber span {
+    font-size: 3.5vw;
+    min-width: 100vw;
+  }
+
+  .address span{
+    font-size: 3.5vw;
+    min-width: 100vw;
+  }
+
+  .gmail span{
+    font-size: 3.5vw;
+    min-width: 100vw;
+  }
 }

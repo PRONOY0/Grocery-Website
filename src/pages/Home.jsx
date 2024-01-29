@@ -13,10 +13,12 @@ import DiabeticFood from "../resources/Diabetic Food.png";
 import DishDetergents from "../resources/Dish Detergents.png";
 import { useState, useEffect, useContext } from "react";
 import PopUp from "../components/PopUp";
+import { IoMdCall } from "react-icons/io";
 import { RiStarSFill } from "react-icons/ri";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaEye, FaPinterest } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import plantlogo from "../resources/Group.png";
 import { AppContext } from "../context/AppContext";
@@ -162,7 +164,7 @@ const Home = ({ products }) => {
 
       <div className="bottom-navbar-mobile">
         <NavLink to="/shop">
-          <FaShop />
+          <FaSearch />
         </NavLink>
         <NavLink to="/recipe">
           <GiCook />
@@ -171,7 +173,7 @@ const Home = ({ products }) => {
           <TiHome />
         </NavLink>
         <NavLink to="/contact">
-          <RiContactsFill />
+          <IoMdCall />
         </NavLink>
         <NavLink to="/signin">
           <MdAccountCircle />

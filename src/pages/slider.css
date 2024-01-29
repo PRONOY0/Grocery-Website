@@ -14,3 +14,16 @@
     background-color: #ccc;
     margin-top: .5vh;
 }
+
+
+@media (max-width:1024px) {
+    .priceRangeSliderFilter .thumb{
+        width: 12px;
+        height: 12px;
+        cursor: grab;
+        background: #adff45;
+        border-radius: 100%;
+        border:2px solid green;
+        margin-top: -.25rem;
+    }
+}

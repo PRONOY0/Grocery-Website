@@ -12,6 +12,18 @@
   display: none;
 }
 
+.mobile-show-items{
+  display: none;
+}
+
+.Two-rows-item-card-for-mobile{
+  display: none;
+}
+
+.item-card-for-item-showing-div-grid-for-mobile{
+  display: none;
+}
+
 .item-card-for-item-showing-div-grid {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
@@ -244,6 +256,10 @@
   display: none;
 }
 
+.filters-and-products-show{
+  display: none;
+}
+
 @media (max-width:1024px){
   .product-card img{
     max-width: 60vw;
@@ -364,5 +380,94 @@
     gap: 5vw;
     margin-top: 5vh;
     margin-left: 2rem;
+  }
+
+  .filters-and-products-show{
+    display: flex;
+    width: 100vw;
+    height: 60vh;
+    background-color: #808080;
+  }
+
+  .Filter{
+    display: none;
+  }
+
+  .dikhaneKa{
+    display: block;
+  }
+  
+  .neiDikhaneKa{
+    display: none;
+  }
+
+  .filters-and-products-show{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  .filters-and-products-show{
+    transition: bottom;
+    transition-duration: 2s;
+    transition:all;
+    transition-timing-function: ease-in-out;
+  }
+
+  .filters-and-products-show.dikhaneKa {
+    bottom: 0;
+  }
+
+  .filter-btn{
+    font-size: 3vw;
+    width: 20vw;
+  }
+
+  .all-categories ul li label span{
+    font-size: 4vw;
+  }
+
+  .all-categories ul li label span p{
+    font-size: 4vw;
+  }
+
+  .Price-filter{
+    padding-top: 1.3rem;
+  }
+
+  .Price-filter h2{
+    font-size: 6vw;
+  }
+
+  .Two-rows-item-card-for-mobile{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    margin-top: 5vh;
+    margin-left: 2rem;
+  }
+
+  .item-card-for-item-showing-div-grid-for-mobile{
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 2rem;
+    row-gap: 2rem;
+    column-gap: 1rem;
+  }
+
+  .item-card-for-item-showing-div-grid{
+    display: none;
+  }
+
+  .Two-rows-item-card{
+    display: none;
+  }
+
+  .footer{
+    padding-top: 4rem;
   }
 }

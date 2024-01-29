@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import "./PopUp.css";
 import { LuUtensilsCrossed } from "react-icons/lu";
 import { AppContext } from "../context/AppContext";
@@ -17,6 +17,7 @@ const PopUp = () => {
         <div className="popup-image"></div>
         <div className="popup-desc">
           <LuUtensilsCrossed onClick={()=>{setClose((prev)=>!prev)}} className="crossIcon"/>
+          
           <h1>Subcribe to Our Newsletter</h1>
           
           <p>
@@ -24,7 +25,7 @@ const PopUp = () => {
             <span>money</span> with discount code today.
           </p>
           
-          <div>
+          <div className="input-email-newsletter">
             <input type="email" placeholder="Email" required />
             <button onClick={subscribeHandler}>Subscribe</button>
           </div>

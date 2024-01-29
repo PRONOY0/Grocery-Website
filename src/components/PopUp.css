@@ -106,7 +106,8 @@
 .nomessageagain {
   display: flex;
   gap: 1vw;
-  margin-top: 5rem;
+  margin-top: auto;
+  margin-left: 1rem;
 }
 
 .nomessageagain {
@@ -128,8 +129,7 @@
 }
 
 .crossIcon {
-  margin-left: 35vw;
-  margin-top: 1rem;
+  margin-left: auto;
   font-size: x-large;
   cursor: pointer;
 }
@@ -140,4 +140,53 @@
 
 .no-hide-popup{
   display: flex;
+}
+
+@media (max-width:1024px) {
+  .popup{
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .crossIcon{
+    margin-left: auto;
+  }
+  
+  .popup-image{
+    display: none;
+  }
+
+  .popup h1{
+    font-size: 4vw;
+  }
+
+  .popup p{
+    font-size: 3vw;
+    width: 70vw;
+  }
+
+  .popup p span{
+    font-size: 3vw;
+  }
+
+  .popup-desc :nth-child(4) input {
+    width: 50vw;
+    height: 4vh;
+    font-size: 3vw;
+    padding-left: 1rem;
+  }
+
+  .popup-desc :nth-child(4) button {
+    width: 20vw;
+    font-size: 3vw;
+  }
+
+  .nomessageagain input {
+    width: max-content;
+    margin-left: 8vw;
+  }
+
+  .nomessageagain{
+    font-size: 4vw;
+  }
 }

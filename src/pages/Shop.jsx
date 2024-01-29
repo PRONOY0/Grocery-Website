@@ -96,8 +96,13 @@ const Shop = () => {
     navigate(`/singleProduct/${itemId}`);
   };
 
+  const mobileProductHandler = (itemIDs) => {
+    navigate(`/singleProduct/${itemIDs}`);
+  }
+
   function filtersHandler() {
     setFiltersClicked((prev) => !prev);
+    console.log("THe value of setFiltersClicked is ",filtersClicked);
   }
 
   console.log(values);
@@ -118,6 +123,377 @@ const Shop = () => {
           Filters
           <span>{filtersClicked ? <GoChevronUp /> : <GoChevronDown />}</span>
         </button>
+      </div>
+
+      <div className={`${filtersClicked ? "dikhaneKa" : "neiDikhaneKa"} filters-and-products-show`}>
+        <div className="Filters-for-mobile">
+          <div className="filter-btn">Filter</div>
+
+          <div className="all-categories">
+            <h2>All Categories</h2>
+
+            <ul>
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("FreshFruit");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "FreshFruit"}
+                  />
+                  <span>
+                    Fresh Fruit<p>{`(${totalFreshfruit})`}</p>{" "}
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Freshvegetables");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Freshvegetables"}
+                  />
+                  <span>
+                    Vegetables<p>{`(${totalFreshVegetables})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Cooking");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Cooking"}
+                  />
+                  <span>
+                    Cooking<p>{`(${totalCooking})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Snacks");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Snacks"}
+                  />
+                  <span>
+                    Snacks<p>{`(${totalSnacks})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Beverages");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Beverages"}
+                  />
+                  <span>
+                    Beverages<p>{`(${totalBeverages})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Meat");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Meat"}
+                  />
+                  <span>
+                    Meat<p>{`(${totalMeat})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("Dishdetergent");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "Dishdetergent"}
+                  />
+                  <span>
+                    Dish Detergents<p>{`(${totalDishDetergent})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("BreadBakery");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "BreadBakery"}
+                  />
+                  <span>
+                    Bread & Bakery<p>{`(${totalBreadBakery})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("BakingNeeds");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "BakingNeeds"}
+                  />
+                  <span>
+                    Baking Needs<p>{`(${totalBakingNeeds})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("DiabeticFood");
+                      setAllmobileSelected(false);
+                    }}
+                    checked={mobileuserFilteredCategory === "DiabeticFood"}
+                  />
+                  <span>
+                    Diabetic Food<p>{`(${totalDiabeticFood})`}</p>
+                  </span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input
+                    type="radio"
+                    name="productTypeFilterMobile"
+                    onChange={() => {
+                      setmobileUserFilteredCategory("");
+                      setAllmobileSelected(true);
+                    }}
+                    checked={allmobileSelected === true}
+                  />
+                  <span>
+                    All<p>{`(${totalallProducts})`}</p>
+                  </span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div className="Price-filter">
+            <h2>Price</h2>
+            <div className="range-price-show">
+              ₹{mobilevalues[0]} - ₹{mobilevalues[1]}
+            </div>
+            <small className="current-range">
+              Current Range: ₹{mobilevalues[1] - mobilevalues[0]}
+            </small>
+            <Slider
+              className="priceRangeSliderFilter"
+              value={mobilevalues}
+              step={50}
+              max={Max}
+              min={Min}
+              onChange={setmobileValues}
+            />
+          </div>
+        </div>        
+      </div>
+
+      <div className={`${ allmobileSelected ? "item-card-for-item-showing-div-grid-for-mobile" : "Two-rows-item-card-for-mobile"}`}>
+          {(() => {
+            let FORMOBILEmatchingItemsExist = false;
+
+            const itemsforMobile = data.map((productsForMobile, id) => {
+              if (
+                allmobileSelected === true &&
+                productsForMobile.price <= mobilevalues[1] &&
+                productsForMobile.price >= mobilevalues[0]
+              ) {
+                FORMOBILEmatchingItemsExist = true;
+                return (
+                  <div className="item-card-forMobile" key={id}>
+                    <div className="product-card">
+                      <div className="image-and-eye">
+                        <img
+                          src={productsForMobile.images}
+                          alt={`${productsForMobile.name}`}
+                          className="item-images"
+                        />
+                        <button
+                          className="eyeforshoppingBtn"
+                          onClick={() => {
+                            mobileProductHandler(productsForMobile.id);
+                          }}
+                        >
+                          <FaEye className="eyeforshopping" />
+                        </button>
+                      </div>
+
+                      <h2>{productsForMobile.productName}</h2>
+                      <div className="price-eye">
+                        <h4>₹{productsForMobile.price}</h4>
+                      </div>
+
+                      <div className="btn-and-stars">
+                        <div className="stars">
+                          <RiStarSFill className="filled-stars" />
+                          <RiStarSFill className="filled-stars" />
+                          <RiStarSFill className="filled-stars" />
+                          <RiStarSFill className="not-filled-stars" />
+                          <RiStarSFill className="not-filled-stars" />
+                        </div>
+
+                        <div className="fashoppinBagBtn">
+                          {cart.some((p) => p.id === productsForMobile.id) ? (
+                            <button
+                              className="add-and-remove-item-button1"
+                              onClick={() => {
+                                dispath(removeFromCart(productsForMobile.id));
+                              }}
+                            >
+                              Remove from Cart <BsHandbag />
+                            </button>
+                          ) : (
+                            <button
+                              className="add-and-remove-item-button1"
+                              onClick={() => {
+                                dispath(addToCart(productsForMobile));
+                              }}
+                            >
+                              Add to Cart <BsHandbag />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                if (
+                  productsForMobile.category === mobileuserFilteredCategory &&
+                  productsForMobile.price <= mobilevalues[1] &&
+                  productsForMobile.price >= mobilevalues[0]
+                ) {
+                  FORMOBILEmatchingItemsExist = true;
+                  return (
+                    <div className="item-card" key={id}>
+                      <div className="product-card">
+                        <div className="image-and-eye">
+                          <img
+                            src={productsForMobile.images}
+                            alt={`${productsForMobile.name}`}
+                            className="item-images"
+                          />
+                          <button
+                            className="eyeforshoppingBtn"
+                            onClick={() => {
+                              mobileProductHandler(productsForMobile.id);
+                            }}
+                          >
+                            <FaEye className="eyeforshopping" />
+                          </button>
+                        </div>
+                        <h2>{productsForMobile.productName}</h2>
+
+                        <div className="price-eye">
+                          <h4 className="priceTag">₹{productsForMobile.price}</h4>
+                        </div>
+
+                        <div className="btn-and-stars">
+                          <div className="stars">
+                            <RiStarSFill className="filled-stars" />
+                            <RiStarSFill className="filled-stars" />
+                            <RiStarSFill className="filled-stars" />
+                            <RiStarSFill className="not-filled-stars" />
+                            <RiStarSFill className="not-filled-stars" />
+                          </div>
+
+                          <div className="fashoppinBagBtn">
+                            {cart.some((p) => p.id === productsForMobile.id) ? (
+                              <button
+                                className="add-and-remove-item-button1"
+                                onClick={() => {
+                                  dispath(removeFromCart(productsForMobile.id));
+                                }}
+                              >
+                                Remove from Cart{" "}
+                                <BsHandbag className="handbagIcon" />
+                              </button>
+                            ) : (
+                              <button
+                                className="add-and-remove-item-button1"
+                                onClick={() => {
+                                  dispath(addToCart(productsForMobile));
+                                }}
+                              >
+                                Add to Cart{" "}
+                                <BsHandbag className="handbagIcon" />
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                }
+              }
+            });
+
+            if (FORMOBILEmatchingItemsExist) {
+              return itemsforMobile;
+            } else {
+              return (
+                <div className="NO-ITEM">
+                  <p className="NO-item-found-text">
+                    Sorry! Try something else
+                  </p>
+                </div>
+              );
+            }
+          })()}
       </div>
 
       <div className="filter-product-section">
