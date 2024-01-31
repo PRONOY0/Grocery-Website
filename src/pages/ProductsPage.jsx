@@ -72,16 +72,13 @@ const ProductsPage = () => {
             if (item.category === "FreshFruit") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
-                    <div
-                      className="eye-btn-checkout"
-                      onClick={() => {
-                        eyeHandler(item.id);
-                      }}
-                    >
-                      <FaEye />
+                  <div className="fruit-section-next-div">
+                    <div className="eye-btn-checkout" onClick={() => {eyeHandler(item.id);}}>
+                      <FaEye/>
                     </div>
-                    <img src={item.images} className="fruit-images" />
+
+                    <img src={item.images} className="fruit-images"/>
+
                     <div className="bag-others">
                       <div className="product-name-and-price">
                         <h2 className="productname">{item.productName}</h2>
@@ -95,9 +92,8 @@ const ProductsPage = () => {
                           <RiStarSFill className="star-not-filled" />
                         </div>
                       </div>
-
-                      
                     </div>
+
                   </div>
                 </div>
               );
@@ -106,7 +102,7 @@ const ProductsPage = () => {
             if (item.category === "Freshvegetables") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -141,7 +137,7 @@ const ProductsPage = () => {
             if (item.category === "Meat") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -176,7 +172,7 @@ const ProductsPage = () => {
             if (item.category === "Snacks") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -211,7 +207,7 @@ const ProductsPage = () => {
             if (item.category === "Beverages") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -246,7 +242,7 @@ const ProductsPage = () => {
             if (item.category === "BreadBakery") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -281,7 +277,7 @@ const ProductsPage = () => {
             if (item.category === "BakingNeeds") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -316,7 +312,7 @@ const ProductsPage = () => {
             if (item.category === "Cooking") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {
@@ -351,7 +347,7 @@ const ProductsPage = () => {
             if (item.category === "DiabeticFood") {
               return (
                 <div className="fruit-section" key={id}>
-                  <div>
+                  <div className="fruit-section-next-div">
                     <div
                       className="eye-btn-checkout"
                       onClick={() => {

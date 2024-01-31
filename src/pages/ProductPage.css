@@ -189,3 +189,50 @@
   font-weight: 500;
   line-height: 120%;
 }
+
+
+@media (max-width:1024px) {
+  .all-product-showing-div-grid {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    margin-top: 6rem;
+  }
+
+  .fruit-images{
+    width: 30vw;
+    height: 10vh;
+    object-fit: contain;
+  }
+
+  .productname{
+    font-size: 4vw;
+  }
+  
+  .productPrice{
+    font-size: 4vw;
+  }
+
+  .star-filled{
+    font-size: 4vw;
+  }
+
+  .star-not-filled{
+    font-size: 4vw;
+  }
+
+  .eye-btn-checkout{
+    font-size: 4vw;
+  }
+
+  .fruit-images {
+    width: 30vw;
+    height: 10vh;
+  }
+
+  .fruit-section-next-div{
+    width: max-content;
+    height: max-content;
+  }
+}

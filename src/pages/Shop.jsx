@@ -127,7 +127,9 @@ const Shop = () => {
 
       <div className={`${filtersClicked ? "dikhaneKa" : "neiDikhaneKa"} filters-and-products-show`}>
         <div className="Filters-for-mobile">
-          <div className="filter-btn">Filter</div>
+          <div className="filter-btn">
+          Filter
+          </div>
 
           <div className="all-categories">
             <h2>All Categories</h2>
@@ -354,7 +356,7 @@ const Shop = () => {
               ) {
                 FORMOBILEmatchingItemsExist = true;
                 return (
-                  <div className="item-card-forMobile" key={id}>
+                  <div className="item-card" key={id}>
                     <div className="product-card">
                       <div className="image-and-eye">
                         <img
