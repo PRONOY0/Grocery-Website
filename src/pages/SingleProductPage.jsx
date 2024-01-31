@@ -219,40 +219,31 @@ const SingleProductPage = () => {
 
           <div className="CTA">
             <div className="coutner">
-              <button
-                className="minus"
-                onClick={() => {
-                  setResult((prev) => prev - 1);
-                }}
-                disabled={result === 1}
-              >
+                <button className="minus" onClick={() => {setResult((prev) => prev - 1);}} disabled={result === 1}>
                 -
-              </button>
-              <div className="counter-result">{result}</div>
-              <button
-                className="add"
-                onClick={() => {
-                  setResult((prev) => prev + 1);
-                }}
-                disabled={result === 6}
-              >
-                +
-              </button>
+                </button>
+
+                <div className="counter-result">{result}
+                </div>
+
+                <button className="add" onClick={() => {setResult((prev) => prev + 1);}} disabled={result === 6}>
+                  +
+                </button>
             </div>
 
             <div>
-              {
-                cart.some((p)=>p.id=== selectedProduct.id) ? 
-                (
-                  <button className="add-and-remove-item-button" onClick={()=>{dispath(removeFromCart(selectedProduct.id))}}>Remove from Cart <BsHandbag/></button>
-                )
+                {
+                  cart.some((p)=>p.id=== selectedProduct.id) ? 
+                  (
+                    <button className="add-and-remove-item-button" onClick={()=>{dispath(removeFromCart(selectedProduct.id))}}>Remove from Cart <BsHandbag/></button>
+                  )
 
-                :
+                  :
 
-                (
-                  <button className="add-and-remove-item-button" onClick={()=>{dispath(addToCart(selectedProduct))}}>Add to Cart <BsHandbag/></button>
-                )
-              }
+                  (
+                    <button className="add-and-remove-item-button" onClick={()=>{dispath(addToCart(selectedProduct))}}>Add to Cart <BsHandbag/></button>
+                  )
+                }
             </div>
           </div>
 
