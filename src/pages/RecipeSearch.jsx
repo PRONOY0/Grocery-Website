@@ -13,6 +13,8 @@ import "./recipes.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import { GoChevronDown } from "react-icons/go";
+import { GoChevronUp } from "react-icons/go";
 
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,7 +23,9 @@ const RecipeSearch = () => {
   const [selectedCuisine, setSelectedCuisine] = useState(null);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [count, setCount] = useState();
+
   const [query, setQuery] = useState("");
+
   const YOUR_APP_ID = "89b916ed";
   const YOUR_API_KEY = "109f55910e05e6994e76c60e0eaa14d2";
   const navigation = useNavigate();
@@ -32,6 +36,13 @@ const RecipeSearch = () => {
     navigate("/recipePage", { state: { recipe } });
     console.log(recipe);
   };
+
+  const [filtersClicked, setFiltersClicked] = useState(false);
+
+  function filtersHandler() {
+    setFiltersClicked((prev) => !prev);
+    console.log("THe value of setFiltersClicked is ",filtersClicked);
+  }
 
   const handleSearch = async () => {
     setLoading(true);
@@ -84,6 +95,66 @@ const RecipeSearch = () => {
     fetchRandomRecipes();
   }, []);
 
+
+
+
+
+
+
+  const [recipesForMobile, setRecipesForMobile] = useState([]);
+  const [countForMobile, setCountForMobile] = useState();
+  const [queryForMobile, setQueryForMobile] = useState("");
+  const [selectedDietForMobileScreens, setSelectedDietForMobileScreens] = useState(null);
+  const [selectedCuisineforMobile, setSelectedCuisineforMobile] = useState(null);
+  const [selectedMealForMobile, setSelectedMealForMobile] = useState(null);
+
+  const handleSearchForMobile = async () => {
+    try {
+      const encodedQuery = encodeURIComponent(queryForMobile);
+      const response = await fetch(
+        `https://api.edamam.com/api/recipes/v2?type=public&q=${encodedQuery}&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&diet=${selectedDietForMobileScreens}&cuisineType=${selectedCuisineforMobile}&mealType=${selectedMealForMobile}&imageSize=REGULAR&random=true`
+      );
+      console.log(response);
+
+      if (!response.ok) {
+        console.log(response);
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      setCountForMobile(data.count);
+      setRecipesForMobile(data.hits); // Assuming the API response has a 'hits' property containing the recipes
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+
+    toast.error("Please select the filters");
+  };
+
+  const fetchRandomRecipesForMobile = async () => {
+    try {
+      const response = await fetch(
+        `https://api.edamam.com/api/recipes/v2?type=public&q=&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&imageSize=REGULAR&random=true`
+      );
+
+      if (!response.ok) {
+        throw new Error(
+          `Network response was not ok. Status: ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+      setRecipesForMobile(data.hits || []); // Assuming the API response has a 'hits' property containing the recipes
+    } catch (error) {
+      console.error("Error fetching data:", error.message);
+      navigation("/404");
+    }
+  };
+
+  useEffect(() => {
+    fetchRandomRecipesForMobile();
+  }, []);
+
   return (
     <div className="recipe-container">
       <div className="track-of-path">
@@ -96,7 +167,7 @@ const RecipeSearch = () => {
         </div>
       </div>
 
-      <div>
+      <div className="Warning-display">
         {selectedCuisine === null &&
         selectedDiet === null &&
         selectedMeal === null ? (
@@ -108,17 +179,388 @@ const RecipeSearch = () => {
         )}
       </div>
 
+      <div className="Warning-display-forMobile">
+        {selectedCuisineforMobile === null &&
+        selectedDietForMobileScreens === null &&
+        selectedMealForMobile === null ? (
+          <div>
+            <ToastContainer />
+          </div>
+        ) : (
+          <div></div>
+        )}
+      </div>
+
+      <div className="filters-for-mobile">
+        <button className="filters-for-mobile-btn" onClick={filtersHandler}>
+          Filters
+          <span>{filtersClicked ? <GoChevronUp /> : <GoChevronDown />}</span>
+        </button>
+      </div>
+
+      <div className={`${filtersClicked ? "dikhaneKa" : "neiDikhaneKa"} filtersList-for-mobile`}>
+        <div className="FILTER">
+          <div className="filter-btn">Filter</div>
+
+          <div className="inputField-and-searchBtn">
+            <input type="text" placeholder="Search for recipes..." value={queryForMobile} onChange={(e) => setQueryForMobile(e.target.value)}/>
+            <button onClick={handleSearchForMobile}>Search</button>
+          </div>
+
+          <div className="all-filterings">
+            <div>
+              <h2>Diet</h2>
+              <ul className="diet-filter">
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="balanced"
+                    onChange={() => setSelectedDietForMobileScreens("balanced")}
+                    checked={selectedDietForMobileScreens === "balanced"}
+                  />
+                  <label htmlFor="balanced">Balanced</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="high-fiber"
+                    onChange={() => setSelectedDietForMobileScreens(`high-fiber`)}
+                    checked={selectedDietForMobileScreens === "high-fiber"}
+                  />
+                  <label htmlFor="high-fiber">High fiber</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="high-protein"
+                    onChange={() => setSelectedDietForMobileScreens(`high-protein`)}
+                    checked={selectedDietForMobileScreens === "high-protein"}
+                  />
+                  <label htmlFor="high-protein">High protein</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="low-carb"
+                    onChange={() => setSelectedDietForMobileScreens(`low-carb`)}
+                    checked={selectedDietForMobileScreens === "low-carb"}
+                  />
+                  <label htmlFor="low-carb">Low carb</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="low-fat"
+                    onChange={() => setSelectedDietForMobileScreens(`low-fat`)}
+                    checked={selectedDietForMobileScreens === "low-fat"}
+                  />
+                  <label htmlFor="low-fat">Low fat</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    name="dietTypeForMobile"
+                    id="low-sodium"
+                    onChange={() => setSelectedDietForMobileScreens("low-sodium")}
+                    checked={selectedDietForMobileScreens === "low-sodium"}
+                  />
+                  <label htmlFor="low-sodium">Low sodium</label>
+                </li>
+              </ul>
+
+              <h2 className="cuisine">Cuisine Type</h2>
+              <ul className="cuisine-filter">
+                <li>
+                  <input
+                    type="radio"
+                    id="American"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("American")}
+                    checked={ selectedCuisineforMobile === "American"}
+                  />
+                  <label htmlFor="American">American</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="asian"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Asian")}
+                    checked={ selectedCuisineforMobile === "Asian"}
+                  />
+                  <label htmlFor="asian">Asian</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="british"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("British")}
+                    checked={ selectedCuisineforMobile === "British"}
+                  />
+                  <label htmlFor="british">British</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="caribbean"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Caribbean")}
+                    checked={ selectedCuisineforMobile === "Caribbean"}
+                  />
+                  <label htmlFor="caribbean">Caribbean</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="chinese"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Chinese")}
+                    checked={ selectedCuisineforMobile === "Chinese"}
+                  />
+                  <label htmlFor="chinese">Chinese</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="french"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("French")}
+                    checked={ selectedCuisineforMobile === "French"}
+                  />
+                  <label htmlFor="french">French</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="Indian"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Indian")}
+                    checked={ selectedCuisineforMobile === "Indian"}
+                  />
+                  <label htmlFor="Indian">Indian</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="Italian"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Italian")}
+                    checked={ selectedCuisineforMobile === "Italian"}
+                  />
+                  <label htmlFor="Italian">Italian</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="japanese"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Japanese")}
+                    checked={ selectedCuisineforMobile === "Japanese"}
+                  />
+                  <label htmlFor="japanese">Japanese</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="mexican"
+                    name="cuisine-typeForMobile"
+                    onChange={() => setSelectedCuisineforMobile("Mexican")}
+                    checked={ selectedCuisineforMobile === "Mexican"}
+                  />
+                  <label htmlFor="mexican">Mexican</label>
+                </li>
+              </ul>
+
+              <h2 className="meal">Meal Type</h2>
+              <ul className="meal-filters">
+                <li>
+                  <input
+                    type="radio"
+                    id="BreakFast"
+                    name="meal typeForMobile"
+                    onChange={() => setSelectedMealForMobile("Breakfast")}
+                    checked={selectedMealForMobile === "Breakfast"}
+                  />
+                  <label htmlFor="BreakFast">BreakFast</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="Lunch"
+                    name="meal typeForMobile"
+                    onChange={() => setSelectedMealForMobile("Lunch")}
+                    checked={selectedMealForMobile === "Lunch"}
+                  />
+                  <label htmlFor="Lunch">Lunch</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="Dinner"
+                    name="meal typeForMobile"
+                    onChange={() => setSelectedMealForMobile("Dinner")}
+                    checked={selectedMealForMobile === "Dinner"}
+                  />
+                  <label htmlFor="Dinner">Dinner</label>
+                </li>
+
+                <li>
+                  <input
+                    type="radio"
+                    id="Snack"
+                    name="meal typeForMobile"
+                    onChange={() => setSelectedMealForMobile("Snack")}
+                    checked={selectedMealForMobile === "Snack"}
+                  />
+                  <label htmlFor="Snack">Snack</label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ul className="recipes-list Display-hidden">
+        {recipesForMobile.map((recipe) => (
+            <li key={recipe.recipe.uri}>
+              <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+
+              <div className="lower-three-section">
+                <div className="filter-info">
+                  <div>
+                    <svg
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.1584 11.6753L11.1834 17.6503C11.0286 17.8053 10.8448 17.9282 10.6424 18.0121C10.4401 18.096 10.2232 18.1391 10.0042 18.1391C9.78516 18.1391 9.56828 18.096 9.36595 18.0121C9.16362 17.9282 8.97981 17.8053 8.82502 17.6503L1.66669 10.5003V2.16699H10L17.1584 9.32533C17.4688 9.6376 17.643 10.06 17.643 10.5003C17.643 10.9406 17.4688 11.3631 17.1584 11.6753V11.6753Z"
+                        stroke="#B3B3B3"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M5.83337 6.33398H5.84171"
+                        stroke="#B3B3B3"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <p className="filter-info-perdiv-para">Food</p>
+                  </div>
+
+                  <div>
+                    <svg
+                      width="20"
+                      height="21"
+                      viewBox="0 0 20 21"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M9.9999 9.66667C11.8408 9.66667 13.3332 8.17428 13.3332 6.33333C13.3332 4.49238 11.8408 3 9.9999 3C8.15895 3 6.66656 4.49238 6.66656 6.33333C6.66656 8.17428 8.15895 9.66667 9.9999 9.66667Z"
+                        stroke="#B3B3B3"
+                        stroke-width="1.2"
+                      />
+                      <path
+                        d="M12.4999 12.167H7.49995C5.19828 12.167 3.13745 14.292 4.65161 16.0245C5.68161 17.2028 7.38495 18.0003 9.99995 18.0003C12.6149 18.0003 14.3174 17.2028 15.3474 16.0245C16.8624 14.2912 14.8008 12.167 12.4999 12.167Z"
+                        stroke="#B3B3B3"
+                        stroke-width="1.2"
+                      />
+                    </svg>
+
+                    <p className="filter-info-perdiv-para">By Admin</p>
+                  </div>
+
+                  <div>
+                    <svg
+                      width="18"
+                      height="19"
+                      viewBox="0 0 18 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.5238 14.2728L9.48206 16.0087C9.43209 16.092 9.36139 16.1609 9.27687 16.2088C9.19234 16.2566 9.09686 16.2818 8.99972 16.2818C8.90258 16.2818 8.8071 16.2566 8.72257 16.2088C8.63804 16.1609 8.56735 16.092 8.51738 16.0087L7.47675 14.2728C7.42671 14.1895 7.35596 14.1206 7.27138 14.0728C7.1868 14.025 7.09128 13.9999 6.99413 14H2.8125C2.66332 14 2.52024 13.9407 2.41475 13.8352C2.30926 13.7298 2.25 13.5867 2.25 13.4375V4.4375C2.25 4.28832 2.30926 4.14524 2.41475 4.03975C2.52024 3.93426 2.66332 3.875 2.8125 3.875H15.1875C15.3367 3.875 15.4798 3.93426 15.5852 4.03975C15.6907 4.14524 15.75 4.28832 15.75 4.4375V13.4375C15.75 13.5867 15.6907 13.7298 15.5852 13.8352C15.4798 13.9407 15.3367 14 15.1875 14H11.0059C10.9088 14 10.8134 14.0252 10.7289 14.073C10.6445 14.1208 10.5738 14.1896 10.5238 14.2728V14.2728Z"
+                        stroke="#B3B3B3"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+
+                    <p className="filter-info-perdiv-para">Comments</p>
+                  </div>
+                </div>
+
+                <h3 className="recipe-heading">{recipe.recipe.label}</h3>
+
+                <button
+                  className="readmorebtn"
+                  onClick={() => handleReadMoreClick(recipe)}
+                >
+                  Read More{" "}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="15"
+                    viewBox="0 0 17 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M16 7.50098H1"
+                      stroke="#00B307"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M9.95001 1.47559L16 7.49959L9.95001 13.5246"
+                      stroke="#00B307"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>{" "}
+                </button>
+              </div>
+            </li>
+        ))}
+      </ul>
+
       <div className="filters-and-allFilteredRecipe">
         <div className="FILTER">
           <div className="filter-btn">Filter</div>
 
           <div className="inputField-and-searchBtn">
-            <input
-              type="text"
-              placeholder="Search for recipes..."
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
+            <input type="text" placeholder="Search for recipes..." value={query} onChange={(e) => setQuery(e.target.value)}/>
             <button onClick={handleSearch}>Search</button>
           </div>
 

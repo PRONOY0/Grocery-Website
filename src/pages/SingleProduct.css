@@ -292,6 +292,18 @@
   background: var(--Gray-Scale-White, #fff);
 }
 
+.add{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.minus{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .coutner button {
   width: 1.3vw;
   height: 1.5rem;
@@ -1026,15 +1038,41 @@
     font-size: 4vw;
   }
 
-  .products-info{
-    width: 100%;
-  }
-
   .product-details-info{
-    width: 100%;
+    width: 100vw;
   }
 
   .information-about-product{
-    font-size: 4vw;
+    font-size: 3.5vw;
+    max-width: 90vw;
+    margin-left: -4rem;
+  }
+
+  .last-info{
+    font-size: 3.5vw;
+    width: 100%;
+    margin-left: -4rem;
+  }
+
+  .minus{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .all-checked-infos-text{
+    font-size: 3vw;
+  }
+
+  .all-checked-infos{
+    margin-left: -4rem;
+  }
+
+  .add{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
