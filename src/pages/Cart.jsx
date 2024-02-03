@@ -26,7 +26,7 @@ const Cart = () => {
 
   const proceedToCheckOutHandler = () => {
     navigate("/paymentGateway");
-  }
+  };
 
   return (
     <div>
@@ -40,85 +40,98 @@ const Cart = () => {
         </div>
       </div>
 
-      {cart.length<1 ? 
-        (
-          <div className="cartEmpty">
-            <h2 className="empty-cart">Your cart is empty</h2>
-            <div className="empty-cartName"></div>
-            <p className="empty-message">Looks like you have not added anything to your cart.Go ahead & explore top categories</p>
-            <button onClick={()=>{navigate("/shop")}} className="explore-btn">Explore Now</button>
-          </div>
-        ) 
-        
-        : 
-        
-        (
-          <div className="cart-top-div">
-        <h1 className="my-shopping-cart">My Shopping Cart</h1>
+      {cart.length < 1 ? (
+        <div className="cartEmpty">
+          <h2 className="empty-cart">Your cart is empty</h2>
+          <div className="empty-cartName"></div>
+          <p className="empty-message">
+            Looks like you have not added anything to your cart.Go ahead &
+            explore top categories
+          </p>
+          <button
+            onClick={() => {
+              navigate("/shop");
+            }}
+            className="explore-btn"
+          >
+            Explore Now
+          </button>
+        </div>
+      ) : (
+        <div className="cart-top-div">
+          <h1 className="my-shopping-cart">My Shopping Cart</h1>
 
-        <div className="main-cart-section">
-          <div className="main-cart-section-left">
-            <table className="cart-table">
-              <tr>
-                <th className="th-of-cart-table">Product</th>
-                <th className="th-of-cart-table">Name</th>
-                <th className="th-of-cart-table">Price</th>
-                <th className="th-of-cart-table">Subtotal</th>
-              </tr>
-              {cart.map((item, id) => {
-                return (
-                  <tr className="table-row-of-products" key={id}>
-                    <td className="table-td-of-cart-table">
-                      <img src={item.images} className="td-images"/>
-                    </td>
-                    <td className="td-product-of-cart-table">{item.productName}</td>
-                    <td className="td-product-of-cart-table">₹{item.price}</td>
-                    <td className="td-product-of-cart-table">₹{item.price}</td>
-                    <td
-                      onClick={() => {
-                        dispatch(removeFromCart(item.id));
-                      }}
-                    >
-                      <TiDelete className="DeleteIcon"/>
-                    </td>
-                  </tr>
-                );
-              })}
-            </table>
-          </div>
-
-          <div className="main-cart-section-right">
-            <h2 className="cart-total">Cart Total</h2>
-
-            <div className="subtotal">
-              <p className="subtotal-text">Subtotal:</p>
-              <p className="subtotal-totalAmount">₹{totalAmount.toFixed(2)}</p>
+          <div className="main-cart-section">
+            <div className="main-cart-section-left">
+              <table className="cart-table">
+                <tr>
+                  <th className="th-of-cart-table">Product</th>
+                  <th className="th-of-cart-table">Name</th>
+                  <th className="th-of-cart-table">Price</th>
+                  <th className="th-of-cart-table">Subtotal</th>
+                </tr>
+                {cart.map((item, id) => {
+                  return (
+                    <tr className="table-row-of-products" key={id}>
+                      <td className="table-td-of-cart-table">
+                        <img src={item.images} className="td-images" />
+                      </td>
+                      <td className="td-product-of-cart-table">
+                        {item.productName}
+                      </td>
+                      <td className="td-product-of-cart-table">
+                        ₹{item.price}
+                      </td>
+                      <td className="td-product-of-cart-table">
+                        ₹{item.price}
+                      </td>
+                      <td
+                        onClick={() => {
+                          dispatch(removeFromCart(item.id));
+                        }}
+                      >
+                        <TiDelete className="DeleteIcon" />
+                      </td>
+                    </tr>
+                  );
+                })}
+              </table>
             </div>
 
-            <div className="shipping">
-              <p className="shipping-full-message">Shipping:</p>
+            <div className="main-cart-section-right">
+              <h2 className="cart-total">Cart Total</h2>
 
-              <p className="shipping-cost">Free</p>
-            </div>
+              <div className="subtotal">
+                <p className="subtotal-text">Subtotal:</p>
+                <p className="subtotal-totalAmount">
+                  ₹{totalAmount.toFixed(2)}
+                </p>
+              </div>
 
-            <div className="Total-price">
-              <p className="total-txt">Total:</p>
-              <p className="total-amount">₹{totalAmount.toFixed(2)}</p>
-            </div>
+              <div className="shipping">
+                <p className="shipping-full-message">Shipping:</p>
 
-            <button onClick={proceedToCheckOutHandler}>
+                <p className="shipping-cost">Free</p>
+              </div>
+
+              <div className="Total-price">
+                <p className="total-txt">Total:</p>
+                <p className="total-amount">₹{totalAmount.toFixed(2)}</p>
+              </div>
+
+              <button onClick={proceedToCheckOutHandler}>
                 Proceed to Checkout
               </button>
+            </div>
           </div>
-        </div>
 
-        <div className="coupon-section">
-          <p>Coupon Code</p>
-          <input type="text" placeholder="Enter code" maxLength={15} />
-          <button>Apply Coupon</button>
-        </div>
+          <div className="coupon-section">
+            <p>Coupon Code</p>
+            <input type="text" placeholder="Enter code" maxLength={15} />
+            <button>Apply Coupon</button>
           </div>
-        )}
+        </div>
+      )}
 
       <div className="footer">
         <div className="foot-one">

@@ -290,3 +290,44 @@
   font-weight: 500;
   line-height: 120%; /* 1.2rem */
 }
+
+
+@media (max-width:1024px){
+  .main-cart-section{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .my-shopping-cart{
+    font-size: 5vw;
+  }
+
+  .th-of-cart-table{
+    font-size: 3vw;
+  }
+
+
+  .td-images{
+    width: 20vw;
+    height: 10vh;
+  }
+
+  .empty-cart{
+    font-size: 5vw;
+  }
+
+  .empty-cartName{
+    width: 50vw;
+  }
+
+  .empty-message{
+    font-size: 4vw;
+    width: 90%;
+  }
+
+  .explore-btn{
+    width: 50vw;
+    font-size: 4vw;
+    height: 5vh;
+  }
+}

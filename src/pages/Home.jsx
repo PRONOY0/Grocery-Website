@@ -15,6 +15,7 @@ import { useState, useEffect, useContext } from "react";
 import PopUp from "../components/PopUp";
 import { IoMdCall } from "react-icons/io";
 import { RiStarSFill } from "react-icons/ri";
+import { MdFastfood } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaEye, FaPinterest } from "react-icons/fa";
@@ -167,7 +168,7 @@ const Home = ({ products }) => {
           <FaSearch />
         </NavLink>
         <NavLink to="/recipe">
-          <GiCook />
+          <MdFastfood />
         </NavLink>
         <NavLink to="/">
           <TiHome />

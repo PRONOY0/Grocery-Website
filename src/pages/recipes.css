@@ -273,27 +273,101 @@
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    padding: 1rem;
   }
 
-  .filtersList-for-mobile{
+  .filtersList-for-mobile {
     position: fixed;
-    bottom: -100%;
+    bottom: 0;
+    max-height: 80vh;
     left: 0;
     width: 100%;
-    background-color: #ffffff;
-    transition: bottom 1s;
-    min-height: 40vh;
+    height: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+    z-index: 999; /* Ensure the filters appear above other content */
+  }
+  
+  .visible {
+    height: 100%;
+    overflow-y: scroll;
   }
 
-  .filtersList-for-mobile.neiDikhaneKa{
-    display: none;
-    transform: translateY(100%);
-    transition: bottom 1s;
+
+  .recipes-list{
+    width: 100%;
+    padding-top: 2rem;
   }
 
-  .filtersList-for-mobile.dikhaneKa {
-    display: block;
-    transform: translateY(0);
-    bottom: 0;
+  .recipes-list li img{
+    max-width: 40vw;
+    min-height: auto;
+    object-fit: contain;
+  }
+
+  .filter-info-perdiv-para{
+    font-size: 2vw;
+  }
+
+  .iconsForRecipesCard{
+    width: 1rem;
+    height: max-content;
+  }
+
+  .filter-info{
+    padding-left: 0rem;
+    gap: 0rem;
+  }
+  
+  .filter-info div{
+    gap: 0rem;
+  }
+
+  .recipe-heading{
+    font-size: 3vw;
+    width: 100%;
+  }
+
+  .readmorebtn{
+    font-size: 3vw;
+    margin-left: 0rem;
+  }
+
+  .NOTE{
+    margin-left: 0rem;
+  }
+  
+  .NOTE span{
+    font-size: 4vw;
+  }
+
+  .FILTERformobilescreens{
+    padding-left: 1rem;
+  }
+
+  .inputField-and-searchBtn input {
+    max-width: 70vw;
+    height: 5vh;
+    padding: 1rem;
+  }
+
+  .inputField-and-searchBtn button {
+    width: 18vw;
+    font-size: 3vw;
+  }
+
+  .inputField-and-searchBtn{
+    padding-top: 1rem;
+  }
+
+  .all-filterings{
+    height: 100vh;
+  }
+
+  .filters-for-mobile-btn{
+    display: flex;
+    align-items: center;
   }
 }

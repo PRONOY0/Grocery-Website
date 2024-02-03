@@ -15,6 +15,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
+import Loader from "./Loader";
+
 
 const RecipeSearch = () => {
   const [recipes, setRecipes] = useState([]);
@@ -107,8 +109,10 @@ const RecipeSearch = () => {
   const [selectedDietForMobileScreens, setSelectedDietForMobileScreens] = useState(null);
   const [selectedCuisineforMobile, setSelectedCuisineforMobile] = useState(null);
   const [selectedMealForMobile, setSelectedMealForMobile] = useState(null);
+  const [loader,setLoader] = useState(false);
 
   const handleSearchForMobile = async () => {
+    setLoader(true);
     try {
       const encodedQuery = encodeURIComponent(queryForMobile);
       const response = await fetch(
@@ -127,11 +131,12 @@ const RecipeSearch = () => {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-
+    setLoader(false);
     toast.error("Please select the filters");
   };
 
   const fetchRandomRecipesForMobile = async () => {
+    setLoader(true);
     try {
       const response = await fetch(
         `https://api.edamam.com/api/recipes/v2?type=public&q=&app_id=${YOUR_APP_ID}&app_key=${YOUR_API_KEY}&imageSize=REGULAR&random=true`
@@ -149,6 +154,7 @@ const RecipeSearch = () => {
       console.error("Error fetching data:", error.message);
       navigation("/404");
     }
+    setLoader(false);
   };
 
   useEffect(() => {
@@ -167,6 +173,16 @@ const RecipeSearch = () => {
         </div>
       </div>
 
+      { loader ?  
+      
+      (        
+      <Loader/>
+      )
+
+      :
+
+      (
+      <div> 
       <div className="Warning-display">
         {selectedCuisine === null &&
         selectedDiet === null &&
@@ -198,8 +214,8 @@ const RecipeSearch = () => {
         </button>
       </div>
 
-      <div className={`${filtersClicked ? "dikhaneKa" : "neiDikhaneKa"} filtersList-for-mobile`}>
-        <div className="FILTER">
+      <div className={`${filtersClicked ? "visible" : "notVisible"} filtersList-for-mobile`}>
+        <div className="FILTERformobilescreens">
           <div className="filter-btn">Filter</div>
 
           <div className="inputField-and-searchBtn">
@@ -456,6 +472,7 @@ const RecipeSearch = () => {
                       viewBox="0 0 20 21"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="iconsForRecipesCard"
                     >
                       <path
                         d="M17.1584 11.6753L11.1834 17.6503C11.0286 17.8053 10.8448 17.9282 10.6424 18.0121C10.4401 18.096 10.2232 18.1391 10.0042 18.1391C9.78516 18.1391 9.56828 18.096 9.36595 18.0121C9.16362 17.9282 8.97981 17.8053 8.82502 17.6503L1.66669 10.5003V2.16699H10L17.1584 9.32533C17.4688 9.6376 17.643 10.06 17.643 10.5003C17.643 10.9406 17.4688 11.3631 17.1584 11.6753V11.6753Z"
@@ -483,6 +500,7 @@ const RecipeSearch = () => {
                       viewBox="0 0 20 21"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="iconsForRecipesCard"
                     >
                       <path
                         d="M9.9999 9.66667C11.8408 9.66667 13.3332 8.17428 13.3332 6.33333C13.3332 4.49238 11.8408 3 9.9999 3C8.15895 3 6.66656 4.49238 6.66656 6.33333C6.66656 8.17428 8.15895 9.66667 9.9999 9.66667Z"
@@ -506,6 +524,7 @@ const RecipeSearch = () => {
                       viewBox="0 0 18 19"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
+                      className="iconsForRecipesCard"
                     >
                       <path
                         d="M10.5238 14.2728L9.48206 16.0087C9.43209 16.092 9.36139 16.1609 9.27687 16.2088C9.19234 16.2566 9.09686 16.2818 8.99972 16.2818C8.90258 16.2818 8.8071 16.2566 8.72257 16.2088C8.63804 16.1609 8.56735 16.092 8.51738 16.0087L7.47675 14.2728C7.42671 14.1895 7.35596 14.1206 7.27138 14.0728C7.1868 14.025 7.09128 13.9999 6.99413 14H2.8125C2.66332 14 2.52024 13.9407 2.41475 13.8352C2.30926 13.7298 2.25 13.5867 2.25 13.4375V4.4375C2.25 4.28832 2.30926 4.14524 2.41475 4.03975C2.52024 3.93426 2.66332 3.875 2.8125 3.875H15.1875C15.3367 3.875 15.4798 3.93426 15.5852 4.03975C15.6907 4.14524 15.75 4.28832 15.75 4.4375V13.4375C15.75 13.5867 15.6907 13.7298 15.5852 13.8352C15.4798 13.9407 15.3367 14 15.1875 14H11.0059C10.9088 14 10.8134 14.0252 10.7289 14.073C10.6445 14.1208 10.5738 14.1896 10.5238 14.2728V14.2728Z"
@@ -526,7 +545,7 @@ const RecipeSearch = () => {
                   className="readmorebtn"
                   onClick={() => handleReadMoreClick(recipe)}
                 >
-                  Read More{" "}
+                  Read More
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="17"
@@ -919,7 +938,10 @@ const RecipeSearch = () => {
         that this platform is not real-time, and all content is sourced from the
         EDAMAM API periodically. Thank you for your understanding.
       </div>
+      </div>
+      )
 
+      }
       <div className="footer">
         <div className="foot-one">
           <div className="newletter-desc">

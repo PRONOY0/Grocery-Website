@@ -122,9 +122,9 @@
 
 .hello-message :nth-child(3) {
   display: flex;
-  width: 27.125rem;
+  width:fit-content;
   height: 3.0625rem;
-  padding: 0.875rem 15.625rem 0.875rem 1rem;
+  padding: 0.875rem 10rem 0.875rem 1rem;
   align-items: center;
   flex-shrink: 0;
   border-radius: 0.375rem;

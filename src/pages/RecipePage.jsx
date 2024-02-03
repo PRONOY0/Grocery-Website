@@ -51,7 +51,7 @@ const RecipePage = () => {
             </ul>
           </div>
 
-          <img src={recipe.recipe.image} alt={recipe.recipe.label} width="700px" height="700px"/>
+          <img src={recipe.recipe.image} alt={recipe.recipe.label}/>
 
           <div className="healthLabels">
             <p>
@@ -123,22 +123,13 @@ const RecipePage = () => {
 
             <div className="emailsection">
               <label htmlFor="emailsection-commentsection">Email</label>
-              <input
-                type="email"
-                id="emailsection-commentsection"
-                required
-                placeholder="example@gmail.com"
-              />
+              <input type="email" id="emailsection-commentsection" required placeholder="example@gmail.com"/>
             </div>
           </div>
 
           <div className="commentingArea">
             <label htmlFor="commentSectionOfCommentsection">Comment</label>
-            <textarea
-              rows="10"
-              cols="140"
-              placeholder="Write your comment here…"
-            />
+            <textarea rows="10" cols="140" placeholder="Write your comment here…"/>
           </div>
 
           <div className="savemyname">
@@ -249,11 +240,11 @@ const RecipePage = () => {
       </div>
 
       <div className="NOTE">
-        <span>NOTE:- </span> The images and ingredients used on this platform are obtained from
+        <p><span>NOTE:- </span> The images and ingredients used on this platform are obtained from
         the EDAMAM API. Please be aware that some recipes may not have images,
         and the quality of available images may vary. It's important to note
         that this platform is not real-time, and all content is sourced from the
-        EDAMAM API periodically. Thank you for your understanding.
+        EDAMAM API periodically. Thank you for your understanding.</p>
       </div>
 
       <div className="footer">

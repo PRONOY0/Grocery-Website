@@ -142,7 +142,7 @@ const Contact = () => {
           <div className="hello-message">
             <h1>Just Say Hello!</h1>
             <p>Do you fancy saying hi to me or you want to get started with your project and you need my help? Feel free to contact me.</p>
-            <input type="email" readOnly placeholder="zakirsoft@gmail.com"/>
+            <input type="email" placeholder="zakirsoft@gmail.com"/>
             <input type="text" required placeholder="Say Hello!" className="messageInput"/>
             <button>Send Message</button>
           </div>
