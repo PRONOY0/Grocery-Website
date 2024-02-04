@@ -15,6 +15,8 @@ import { useState, useEffect, useContext } from "react";
 import PopUp from "../components/PopUp";
 import { IoMdCall } from "react-icons/io";
 import { RiStarSFill } from "react-icons/ri";
+import { BsCart } from "react-icons/bs";
+import { BsHandbag } from "react-icons/bs";
 import { MdFastfood } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -23,10 +25,6 @@ import { FaSearch } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import plantlogo from "../resources/Group.png";
 import { AppContext } from "../context/AppContext";
-import { TiHome } from "react-icons/ti";
-import { FaShop } from "react-icons/fa6";
-import { GiCook } from "react-icons/gi";
-import { RiContactsFill } from "react-icons/ri";
 import { MdAccountCircle } from "react-icons/md";
 import latestnewsimage1 from "../resources/news1.jpeg";
 import latestnewsimage2 from "../resources/news2.jpeg";
@@ -35,6 +33,8 @@ import pfp1 from "../resources/P1.jpeg";
 import pfp2 from "../resources/P2.jpeg";
 import pfp3 from "../resources/P3.jpeg";
 import Timer from "../components/Timer";
+import {TiHome} from "react-icons/ti"
+import { useSelector } from "react-redux";
 
 const Home = ({ products }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -56,6 +56,7 @@ const Home = ({ products }) => {
   });
 
   const navigate = useNavigate();
+  const { cart } = useSelector((state) => state);
 
   const handleClick = (itemId) => {
     navigate(`/singleProduct/${itemId}`);
@@ -160,7 +161,16 @@ const Home = ({ products }) => {
       <div className="POPUP-CLASS">{showPopup && <PopUp />}</div>
 
       <div className="logoandNameForMobile">
-        Ecobazar <img src={plantlogo} className="plant-logo"/>
+        <div className="Ecobazar-logo-and-text"> 
+          <p>Ecobazar</p> 
+          <img src={plantlogo} className="plant-logo"/>
+        </div>
+
+
+        <NavLink to="/cart" className="cart-items">
+          <p>{cart.length}</p>
+          <BsHandbag/>
+        </NavLink>
       </div>
 
       <div className="bottom-navbar-mobile">

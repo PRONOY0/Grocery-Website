@@ -7,14 +7,11 @@ import { GoChevronDown } from "react-icons/go";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { FiMenu } from "react-icons/fi";
-import { RxCross2 } from "react-icons/rx";
 
 const Navbar = () => {
   const { cart } = useSelector((state) => state);
 
   const [totalAmount, setTotalAmount] = React.useState(0);
-  const [mobileNav, setMobileNav] = React.useState(false);
 
   React.useEffect(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));

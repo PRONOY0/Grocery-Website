@@ -261,6 +261,11 @@
 }
 
 @media (max-width:1024px){
+
+  .filters-for-mobile-btn{
+    background:none;
+  }
+
   .product-card img{
     max-width: 60vw;
     height: 10vh;

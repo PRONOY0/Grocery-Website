@@ -876,6 +876,14 @@
     font-size: 3.5vw;
   }
 
+  .arrowBtn{
+    background: none;
+  }
+
+  .arrowBtn:active{
+    background: none;
+  }
+
   .discount-price{
     font-size: 3.5vw;
     font-size: 3.5vw;
