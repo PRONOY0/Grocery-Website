@@ -127,9 +127,7 @@ const Shop = () => {
 
       <div className={`${filtersClicked ? "dikhaneKa" : "neiDikhaneKa"} filters-and-products-show`}>
         <div className="Filters-for-mobile">
-          <div className="filter-btn">
-          Filter
-          </div>
+          <div className="filter-btn">Filter</div>
 
           <div className="all-categories">
             <h2>All Categories</h2>

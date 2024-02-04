@@ -66,7 +66,7 @@
   font-size: 1vw;
   font-style: normal;
   font-weight: 500;
-  line-height: 150%; /* 1.5rem */
+  line-height: 150%;
 }
 
 .DeleteIcon {
@@ -303,7 +303,16 @@
   }
 
   .th-of-cart-table{
-    font-size: 3vw;
+    font-size: 3.5vw;
+  }
+
+  .td-product-of-cart-table{
+    font-size: 3.4vw;
+    height: unset;
+  }
+
+  .DeleteIcon{
+    font-size: 4vw;
   }
 
 
@@ -325,9 +334,17 @@
     width: 90%;
   }
 
+  .DeleteIcon{
+    font-size: 7vw;
+  }
+
   .explore-btn{
     width: 50vw;
     font-size: 4vw;
     height: 5vh;
+  }
+
+  .cart-table{
+    width: 100%;
   }
 }

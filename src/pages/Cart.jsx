@@ -48,12 +48,7 @@ const Cart = () => {
             Looks like you have not added anything to your cart.Go ahead &
             explore top categories
           </p>
-          <button
-            onClick={() => {
-              navigate("/shop");
-            }}
-            className="explore-btn"
-          >
+          <button onClick={() => {navigate("/shop");}} className="explore-btn">
             Explore Now
           </button>
         </div>
@@ -76,15 +71,23 @@ const Cart = () => {
                       <td className="table-td-of-cart-table">
                         <img src={item.images} className="td-images" />
                       </td>
+
+
                       <td className="td-product-of-cart-table">
                         {item.productName}
                       </td>
+
+
                       <td className="td-product-of-cart-table">
                         ₹{item.price}
                       </td>
+
+
                       <td className="td-product-of-cart-table">
                         ₹{item.price}
                       </td>
+
+                      
                       <td
                         onClick={() => {
                           dispatch(removeFromCart(item.id));

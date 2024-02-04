@@ -277,6 +277,10 @@
     padding: 1rem;
   }
 
+  .readmorebtn{
+    background: none;
+  }
+
   .filtersList-for-mobile {
     position: fixed;
     bottom: 0;
@@ -284,7 +288,7 @@
     left: 0;
     width: 100%;
     height: 0;
-    background-color: #fff;
+    background-color: #bfbfbf;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     z-index: 999; /* Ensure the filters appear above other content */
@@ -295,6 +299,9 @@
     overflow-y: scroll;
   }
 
+  .FILTERformobilescreens{
+    margin-top: 1rem;
+  }
 
   .recipes-list{
     width: 100%;
