@@ -6,7 +6,6 @@
   justify-content: space-between;
   padding: 5rem;
   gap: 2rem;
-  /* flex-wrap: wrap; */
 }
 
 .billing-left-section {
@@ -401,5 +400,145 @@ select {
 @media (max-width:1299px) {
   .checkout-form{
     flex-wrap: wrap;
+  }
+}
+
+
+@media (max-width:1024px) {
+  .billing-left-section{
+    width: 120%;
+  }
+
+  .firstname-lastname-companyName{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .billing-info-text{
+    font-size: 4vw;
+  }
+
+  .billing-label-text{
+    font-size: 3vw;
+  }
+
+  .billing-inputs{
+    width: 100%;
+    height: 2vh;
+  }
+
+  .street-address-text{
+    font-size: 4vw;
+  }
+
+  .billing-label-firstname input{
+    font-size: 3vw;
+  }
+
+  .billing-label-lastname input{
+    font-size: 3vw;
+  }
+
+  .billing-label-companyname input{
+    font-size: 3vw;
+  }
+  
+  .streetaddressinput input{
+    font-size: 3vw;
+  }
+
+  .state-zipCodes{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .state-text{
+    font-size: 4vw;
+  }
+
+  #stateName{
+    width: 100%;
+    font-size: 4vw;
+  }
+
+  .zip-code{
+    font-size: 4vw;
+  }
+
+  .zipcode{
+    width: 100%;
+    font-size: 3vw;
+  }
+
+  .email-and-phoneNumber{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .emailandphonetext{
+    font-size: 4vw;
+  }
+
+  .email-phone-input{
+    width: 100%;
+    height: 2rem;
+  }
+
+  .default-text{
+    font-size: 3.5vw;
+  }
+
+  .additional-info-text{
+    font-size: 3.5vw;
+  }
+
+  .textarea-of-checkout{
+    font-size: 3vw;
+  }
+
+  .billing-right-section{
+    width: 120%;
+  }
+
+  .ordersummary{
+    font-size: 4vw;
+  }
+
+  .table-data-images{
+    width: 20vw;
+    min-height: 10vh;
+  }
+
+  .checkout-table-row{
+    width: 100%;
+  }
+
+  .checkout-table-row td{
+    width: 7rem;
+  }
+
+  .frame-145{
+    font-size: 4vw;
+  }
+  
+  .frame-146{
+    font-size: 4vw;
+  }
+
+  .payment-method{
+    width: 80%;
+  }
+
+  .payment-method h2{
+    font-size: 3vw;
+  }
+
+  .paymentDelivery{
+    font-size: 3vw;
+  }
+
+  #place-orderBUTTON{
+    width: 90%;
+    font-size: 3vw;
   }
 }

@@ -61,7 +61,7 @@ const CheckoutPage = () => {
 
           <label className="streetaddressinput">
             <p className="street-address-text">Street Address</p>
-            <input type="text" placeholder="House name/street name..." />
+            <input type="text" placeholder="House name/street name..."/>
           </label>
 
           <div className="state-zipCodes">
@@ -107,8 +107,7 @@ const CheckoutPage = () => {
                 placeholder="zip code"
                 className="zipcode"
                 required
-                maxLength={6}
-              />
+                maxLength={6}/>
             </label>
           </div>
 
@@ -155,38 +154,48 @@ const CheckoutPage = () => {
             <h2 className="ordersummary">Order Summary</h2>
             {cart.map((item, id) => {
               return (
-                <table className="checkout-tables">
-                  <tr className=" checkout-table-row image-price-productName-checkout">
+                <table className="checkout-tables" key={id}>
+                  <tr className="checkout-table-row image-price-productName-checkout">
                     <td>
                       <img src={item.images} className="table-data-images"/>
                     </td>
-                    <td>{item.productName}</td>
-                    <td className="itemPriceFromTableData">₹{item.price}</td>
+
+                    <td>
+                      {item.productName}
+                    </td>
+
+                    <td className="itemPriceFromTableData">
+                      ₹{item.price}
+                    </td>
                   </tr>
                 </table>
               );
             })}
 
             <tr className="frame-69 checkout-table-row ">
-                    <td colSpan={2} className="frame-145">
-                      Subtotal:
-                    </td>
-                    <td className="frame-146">₹{totalAmount}</td>
-                  </tr>
+              <td colSpan={2} className="frame-145">
+                Subtotal:
+              </td>
+              
+              <td className="frame-146">
+                ₹{totalAmount}
+              </td>
 
-                  <tr className="frame-69 checkout-table-row ">
-                    <td colSpan={2} className="frame-145">
-                      Shipping:
-                    </td>
-                    <td className="frame-146">Free</td>
-                  </tr>
+            </tr>
 
-                  <tr className="frame-69 checkout-table-row ">
-                    <td colSpan={2} className="frame-145">
-                      Total:
-                    </td>
-                    <td className="frame-146">₹{totalAmount}</td>
-                  </tr>
+            <tr className="frame-69 checkout-table-row ">
+              <td colSpan={2} className="frame-145">
+                Shipping:
+              </td>
+              <td className="frame-146">Free</td>
+            </tr>
+
+            <tr className="frame-69 checkout-table-row ">
+              <td colSpan={2} className="frame-145">
+                Total:
+              </td>
+              <td className="frame-146">₹{totalAmount}</td>
+            </tr>
 
 
             <div className="payment-method">
@@ -451,7 +460,7 @@ const CheckoutPage = () => {
               </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
   );
 };

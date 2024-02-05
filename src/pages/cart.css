@@ -303,11 +303,13 @@
   }
 
   .my-shopping-cart{
-    font-size: 5vw;
+    font-size: 7vw;
   }
 
   .th-of-cart-table{
     font-size: 3.5vw;
+    min-width: 18vw;
+    text-align: start;
   }
 
   .td-product-of-cart-table{
@@ -320,11 +322,12 @@
 
   .table-td-of-cart-table img{
     width: 20vw;
-    height: 7vh;
+    height: 8vh;
   }
 
   .table-row-of-products{
     border-bottom: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
+
   }
 
   .empty-cart{
@@ -354,6 +357,7 @@
     width: 100%;
     border-collapse: collapse;
   }
+
 
   .main-cart-section-right{
     width: 100%;
