@@ -48,7 +48,12 @@ const Cart = () => {
             Looks like you have not added anything to your cart.Go ahead &
             explore top categories
           </p>
-          <button onClick={() => {navigate("/shop");}} className="explore-btn">
+          <button
+            onClick={() => {
+              navigate("/shop");
+            }}
+            className="explore-btn"
+          >
             Explore Now
           </button>
         </div>
@@ -60,34 +65,30 @@ const Cart = () => {
             <div className="main-cart-section-left">
               <table className="cart-table">
                 <tr>
-                  <th className="th-of-cart-table">Product</th>
-                  <th className="th-of-cart-table">Name</th>
-                  <th className="th-of-cart-table">Price</th>
-                  <th className="th-of-cart-table">Subtotal</th>
+                  <th scope="col" className="th-of-cart-table">Product</th>
+                  <th scope="col" className="th-of-cart-table">Name</th>
+                  <th scope="col" className="th-of-cart-table">Price</th>
+                  <th scope="col" className="th-of-cart-table">Subtotal</th>
                 </tr>
                 {cart.map((item, id) => {
                   return (
                     <tr className="table-row-of-products" key={id}>
                       <td className="table-td-of-cart-table">
-                        <img src={item.images} className="td-images" />
+                        <img src={item.images} alt={item.productName} className="td-images" />
                       </td>
-
 
                       <td className="td-product-of-cart-table">
                         {item.productName}
                       </td>
 
+                      <td className="td-product-of-cart-table">
+                        ₹{item.price}
+                      </td>
 
                       <td className="td-product-of-cart-table">
                         ₹{item.price}
                       </td>
 
-
-                      <td className="td-product-of-cart-table">
-                        ₹{item.price}
-                      </td>
-
-                      
                       <td
                         onClick={() => {
                           dispatch(removeFromCart(item.id));
@@ -130,8 +131,10 @@ const Cart = () => {
 
           <div className="coupon-section">
             <p>Coupon Code</p>
-            <input type="text" placeholder="Enter code" maxLength={15} />
-            <button>Apply Coupon</button>
+            <div className="inputForCoupon">
+              <input type="text" placeholder="Enter code" maxLength={15} />
+              <button>Apply Coupon</button>
+            </div>
           </div>
         </div>
       )}

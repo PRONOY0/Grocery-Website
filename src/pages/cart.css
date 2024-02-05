@@ -57,7 +57,7 @@
 
 .table-td-of-cart-table img{
   width: 20vw;
-  height: 20rem;
+  height: 20vh;
   object-fit: contain;
 }
 
@@ -298,6 +298,10 @@
     flex-direction: column;
   }
 
+  .main-cart-section-left{
+    width: 100%;
+  }
+
   .my-shopping-cart{
     font-size: 5vw;
   }
@@ -308,17 +312,19 @@
 
   .td-product-of-cart-table{
     font-size: 3.4vw;
-    height: unset;
   }
 
   .DeleteIcon{
     font-size: 4vw;
   }
 
-
-  .td-images{
+  .table-td-of-cart-table img{
     width: 20vw;
-    height: 10vh;
+    height: 7vh;
+  }
+
+  .table-row-of-products{
+    border-bottom: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
   }
 
   .empty-cart{
@@ -346,5 +352,73 @@
 
   .cart-table{
     width: 100%;
+    border-collapse: collapse;
+  }
+
+  .main-cart-section-right{
+    width: 100%;
+
+    margin-top: 2rem;
+  }
+
+  .cart-total{
+    font-size: 4vw;
+  }
+
+  .subtotal-text{
+    font-size: 4vw;
+  }
+
+  .subtotal-totalAmount{
+    font-size: 3.5vw;
+  }
+
+  .shipping-full-message{
+    font-size: 4vw;
+  }
+
+  .shipping-cost{
+    font-size: 3.5vw;
+  }
+
+  .total-txt{
+    font-size: 4vw;
+  }
+
+  .total-amount{
+    font-size: 3.5vw;
+  }
+
+  .main-cart-section-right button{
+    width: 100%;
+    font-size: 3.6vw;
+  }
+
+  .coupon-section{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+
+  .inputForCoupon{
+    display: flex;
+  }
+
+  .coupon-section p{
+    font-size: 4vw;
+  }
+
+
+  .inputForCoupon input{
+    width: 100%;
+    font-size: 4vw;
+    border-radius: 2.875rem 0rem 0rem 2.875rem;
+    outline-color: none;
+  }
+  
+  .inputForCoupon button{
+    width: 90%;
+    font-size: 2.7vw;
+    border-radius: 0rem 2.875rem 2.875rem 0rem;
   }
 }
