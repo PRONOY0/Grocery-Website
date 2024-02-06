@@ -152,23 +152,23 @@ const CheckoutPage = () => {
         <div className="billing-right-section">
           <div className="table-for-purchased">
             <h2 className="ordersummary">Order Summary</h2>
+            
+            <table className="table-for-checkout-section">
             {cart.map((item, id) => {
               return (
-                <table className="checkout-tables" key={id}>
-                  <tr className="checkout-table-row image-price-productName-checkout">
-                    <td>
-                      <img src={item.images} className="table-data-images"/>
-                    </td>
+                <tr className="checkout-tables" key={id}>
+                  <td>
+                    <img src={item.images} className="table-data-images"/>
+                  </td>
 
-                    <td>
-                      {item.productName}
-                    </td>
+                  <td>
+                    {item.productName}
+                  </td>
 
-                    <td className="itemPriceFromTableData">
-                      ₹{item.price}
-                    </td>
-                  </tr>
-                </table>
+                  <td className="itemPriceFromTableData">
+                    ₹{item.price}
+                  </td>
+                </tr>
               );
             })}
 
@@ -196,7 +196,7 @@ const CheckoutPage = () => {
               </td>
               <td className="frame-146">₹{totalAmount}</td>
             </tr>
-
+            </table>
 
             <div className="payment-method">
               <h2>Payment Method</h2>
@@ -209,7 +209,7 @@ const CheckoutPage = () => {
               <label className="label-text">
                 <input type="radio" name="radio-btns" />
                 <p className="paymentDelivery">Paypal</p>
-              </label>
+              </label> 
 
               <label className="label-text">
                 <input type="radio" name="radio-btns" />

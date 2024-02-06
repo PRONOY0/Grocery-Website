@@ -42,13 +42,13 @@ const AboutUs = () => {
       </div>
 
       <div className="trusted-oc-food">
-          <div className="trusted-oc-food-img">
+        <div className="trusted-oc-food-img">
             <div className="trusted-oc-food-img-grass"></div>
             <div className="trusted-oc-food-img-farmer"></div>
-          </div>
+        </div>
 
-          <div className="trusted-oc-food-desc">
-            <div className="trusted-oc-food-desc-headingAndDescription">
+        <div className="trusted-oc-food-desc">
+          <div className="trusted-oc-food-desc-headingAndDescription">
               <h1>100% Trusted Organic Food Store</h1>
               <p>
                 Pellentesque a ante vulputate leo porttitor luctus sed eget
@@ -56,9 +56,9 @@ const AboutUs = () => {
                 tincidunt a a mi. Nulla eu eros consequat tortor tincidunt
                 feugiat.
               </p>
-            </div>
+          </div>
 
-            <div className="gridforfacilities">
+          <div className="gridforfacilities">
               <div className="facilities">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -267,8 +267,8 @@ const AboutUs = () => {
                   <p>100% healthy & Fresh food.</p>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
       </div>
 
       <div className="delivery">

@@ -328,9 +328,16 @@ select {
   gap: 1rem;
 }
 
-.checkout-tables{
+.table-for-checkout-section{
   display: flex;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.checkout-tables{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 1rem;
 }
 
@@ -405,8 +412,15 @@ select {
 
 
 @media (max-width:1024px) {
-  .billing-left-section{
-    width: 120%;
+  .checkout-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .billing-info-text{
+    font-size: 4vw;
   }
 
   .firstname-lastname-companyName{
@@ -414,41 +428,29 @@ select {
     flex-direction: column;
   }
 
-  .billing-info-text{
-    font-size: 4vw;
-  }
-
   .billing-label-text{
-    font-size: 3vw;
+    font-size: 4vw;
   }
 
   .billing-inputs{
     width: 100%;
-    height: 2vh;
+    height: 2rem;
+    font-size: 3.5vw;
   }
 
   .street-address-text{
     font-size: 4vw;
   }
 
-  .billing-label-firstname input{
-    font-size: 3vw;
-  }
-
-  .billing-label-lastname input{
-    font-size: 3vw;
-  }
-
-  .billing-label-companyname input{
-    font-size: 3vw;
-  }
-  
   .streetaddressinput input{
-    font-size: 3vw;
+    width: 100%;
   }
 
   .state-zipCodes{
+    width: 100%;
     display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
   }
 
@@ -457,8 +459,8 @@ select {
   }
 
   #stateName{
-    width: 100%;
     font-size: 4vw;
+    width: 100%;
   }
 
   .zip-code{
@@ -467,12 +469,15 @@ select {
 
   .zipcode{
     width: 100%;
-    font-size: 3vw;
+    font-size: 4vw;
   }
 
   .email-and-phoneNumber{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .emailandphonetext{
@@ -481,23 +486,18 @@ select {
 
   .email-phone-input{
     width: 100%;
-    height: 2rem;
   }
 
   .default-text{
-    font-size: 3.5vw;
-  }
-
-  .additional-info-text{
-    font-size: 3.5vw;
+    font-size: 4vw;
   }
 
   .textarea-of-checkout{
     font-size: 3vw;
   }
 
-  .billing-right-section{
-    width: 120%;
+  .additional-info-text{
+    font-size: 4vw;
   }
 
   .ordersummary{
@@ -505,40 +505,45 @@ select {
   }
 
   .table-data-images{
-    width: 20vw;
-    min-height: 10vh;
+    min-height: 1rem;
   }
 
-  .checkout-table-row{
-    width: 100%;
+  .table-for-checkout-section{
+    border-collapse: collapse;
   }
 
-  .checkout-table-row td{
-    width: 7rem;
+  .checkout-tables{
+    border-bottom: 1px solid var(--Gray-Scale-Gray-100, #e6e6e6);
+  }
+
+  .payment-method h2{
+    font-size: 4vw;
   }
 
   .frame-145{
     font-size: 4vw;
   }
-  
+
   .frame-146{
     font-size: 4vw;
   }
 
-  .payment-method{
-    width: 80%;
-  }
-
-  .payment-method h2{
-    font-size: 3vw;
+  .frame-69{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 
   .paymentDelivery{
-    font-size: 3vw;
+    font-size: 4vw;
   }
 
   #place-orderBUTTON{
-    width: 90%;
+    width: 100%;
     font-size: 3vw;
+  }
+
+  .payment-method{
+    border: none;
   }
 }

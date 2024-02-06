@@ -16,8 +16,6 @@ body {
 }
 
 .App {
-  width: 100vw;
-  max-height: 100vh;
   font-family: customFont;
   overflow-x: hidden;
 }

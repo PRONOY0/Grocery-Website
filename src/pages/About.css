@@ -16,6 +16,10 @@
   padding-left: 1rem;
 }
 
+html{
+  min-height: auto;
+}
+
 .farmer-img {
   background-image: url("../resources/farmeroc.png");
   object-fit: cover;
@@ -577,5 +581,62 @@
 @media (max-width:768px) {
   .testimonials{
     display: none;
+  }
+}
+
+
+@media (max-width:1024px) {
+  .about-container{
+    width: 100vw;
+  }
+
+  .oc-food{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .oc-desc h1{
+    font-size: 7vw;
+    width: 100%;
+  }
+
+  .oc-desc p{
+    font-size: 4vw;
+    width: 80vw;
+  }
+
+  .farmer-img{
+    width: 100%;
+    height: 50vh;
+    margin-top: 1rem;
+    background-size: contain;
+  }
+
+  .trusted-oc-food{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .trusted-oc-food-img-farmer{
+    width: 100%;
+    height: 22.7vh;
+    margin-top: 1rem;
+    background-size: contain;
+    left: 0;
+  }
+
+  .trusted-oc-food-img-grass{
+    width: 100%;
+    height: 50vh;
+    margin-top: 1rem;
+    background-size: contain;
+  }
+
+  .trusted-oc-food-desc{
+    display: flex;
+    flex-direction: column;
   }
 }
