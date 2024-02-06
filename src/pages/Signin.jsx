@@ -8,6 +8,11 @@ import { FaInstagram } from "react-icons/fa";
 import { GoHome, GoChevronRight } from "react-icons/go";
 import "./Signup.css";
 import plantlogo from "../resources/Group.png";
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 const Signin = () => {
   const navigation = useNavigate();
@@ -26,6 +31,13 @@ const Signin = () => {
     console.log("this is checked value ",event.target.checked);
   };
 
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+  }
+
   return (
     <div>
       <div className="track-of-path">
@@ -42,6 +54,28 @@ const Signin = () => {
             <p className="login">Login</p>
           </div>
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
+        </NavLink>
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
+        </NavLink>
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
+        </NavLink>
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
+        </NavLink>
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
+        </NavLink>
       </div>
 
       <form className="loginForm">

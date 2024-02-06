@@ -16,6 +16,11 @@ import { toast } from "react-toastify";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
 import Loader from "./Loader";
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 
 const RecipeSearch = () => {
@@ -111,6 +116,14 @@ const RecipeSearch = () => {
   const [selectedMealForMobile, setSelectedMealForMobile] = useState(null);
   const [loader,setLoader] = useState(false);
 
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+    console.log("this is whichNavClicked value",whichNavClicked);
+  }
+
   const handleSearchForMobile = async () => {
     setLoader(true);
     try {
@@ -171,6 +184,28 @@ const RecipeSearch = () => {
 
           <p className="login">Recipe</p>
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
+        </NavLink>
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
+        </NavLink>
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
+        </NavLink>
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
+        </NavLink>
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
+        </NavLink>
       </div>
 
       { loader ?  

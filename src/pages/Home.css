@@ -1766,6 +1766,20 @@ nav {
 
 @media (max-width: 600px) {
 
+  .navClickedActive{
+    background: #00b207;
+    width:30vw;
+    border-radius: 2rem;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navClickedActive .icon{
+    color: white;
+  }
+
   .logoandNameForMobile{
     padding: 1rem;
     font-size: 5vw;

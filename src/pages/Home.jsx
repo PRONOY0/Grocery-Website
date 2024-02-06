@@ -13,19 +13,19 @@ import DiabeticFood from "../resources/Diabetic Food.png";
 import DishDetergents from "../resources/Dish Detergents.png";
 import { useState, useEffect, useContext } from "react";
 import PopUp from "../components/PopUp";
-import { IoMdCall } from "react-icons/io";
 import { RiStarSFill } from "react-icons/ri";
-import { BsCart } from "react-icons/bs";
 import { BsHandbag } from "react-icons/bs";
-import { MdFastfood } from "react-icons/md";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaEye, FaPinterest } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import plantlogo from "../resources/Group.png";
 import { AppContext } from "../context/AppContext";
 import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 import latestnewsimage1 from "../resources/news1.jpeg";
 import latestnewsimage2 from "../resources/news2.jpeg";
 import latestnewsimage3 from "../resources/news3.jpeg";
@@ -33,7 +33,6 @@ import pfp1 from "../resources/P1.jpeg";
 import pfp2 from "../resources/P2.jpeg";
 import pfp3 from "../resources/P3.jpeg";
 import Timer from "../components/Timer";
-import {TiHome} from "react-icons/ti"
 import { useSelector } from "react-redux";
 
 const Home = ({ products }) => {
@@ -156,38 +155,60 @@ const Home = ({ products }) => {
     }
   };
 
+  const [activeIcons, setActiveIcons] = useState([]);
+
+  const NavClick = (index) => {
+    setActiveIcons((prevActiveIcons) =>
+      prevActiveIcons.includes(index)
+        ? prevActiveIcons.filter((item) => item !== index)
+        : [...prevActiveIcons, index]
+    );
+  };
+
+
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+    console.log("this is whichNavClicked value",whichNavClicked);
+  }
+
   return (
     <div className="container">
       <div className="POPUP-CLASS">{showPopup && <PopUp />}</div>
 
       <div className="logoandNameForMobile">
-        <div className="Ecobazar-logo-and-text"> 
-          <p>Ecobazar</p> 
-          <img src={plantlogo} className="plant-logo"/>
+        <div className="Ecobazar-logo-and-text">
+          <p>Ecobazar</p>
+          <img src={plantlogo} className="plant-logo" />
         </div>
-
 
         <NavLink to="/cart" className="cart-items">
           <p>{cart.length}</p>
-          <BsHandbag/>
+          <BsHandbag />
         </NavLink>
       </div>
 
       <div className="bottom-navbar-mobile">
-        <NavLink to="/shop">
-          <FaSearch />
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
         </NavLink>
-        <NavLink to="/recipe">
-          <MdFastfood />
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
         </NavLink>
-        <NavLink to="/">
-          <TiHome />
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
         </NavLink>
-        <NavLink to="/contact">
-          <IoMdCall />
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
         </NavLink>
-        <NavLink to="/signin">
-          <MdAccountCircle />
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
         </NavLink>
       </div>
 
@@ -379,7 +400,9 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}>
+      <div
+        className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}
+      >
         <h1 className="Popular-Categories-heading">Popular Categories</h1>
 
         <ul className="Popular-Categories-first-ul">
@@ -542,7 +565,9 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div className={`${showPopup ? "lightHOME" : "OGHOME"} home-discount-bannar`}>
+      <div
+        className={`${showPopup ? "lightHOME" : "OGHOME"} home-discount-bannar`}
+      >
         <div className="home-discount-bannar-description">
           <div className="summersalediscount">
             <p>Summer Sale</p>
@@ -1167,7 +1192,9 @@ const Home = ({ products }) => {
         </button>
       </div>
 
-      <div className={`${showPopup ? "lightHOME" : "OGHOME"} companies-name-info`}>
+      <div
+        className={`${showPopup ? "lightHOME" : "OGHOME"} companies-name-info`}
+      >
         <div className="gridlaganevalabox">
           <svg
             xmlns="http://www.w3.org/2000/svg"

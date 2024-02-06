@@ -18,6 +18,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../Slices/Slice/cartSlice";
 import { GoChevronDown } from "react-icons/go";
 import { GoChevronUp } from "react-icons/go";
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 const Shop = () => {
   const [allSelected, setAllSelected] = useState(true);
@@ -30,6 +35,12 @@ const Shop = () => {
 
   const dispath = useDispatch();
 
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+  }
 
   const [userFilteredCategory, setUserFilteredCategory] = useState(null);
   const [mobileuserFilteredCategory, setmobileUserFilteredCategory] = useState(null);
@@ -105,7 +116,7 @@ const Shop = () => {
     console.log("THe value of setFiltersClicked is ",filtersClicked);
   }
 
-  console.log(values);
+  
   return (
     <div className="shop-container">
       <div className="track-of-path">
@@ -116,6 +127,28 @@ const Shop = () => {
 
           <p className="signup">Shop</p>
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
+        </NavLink>
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
+        </NavLink>
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
+        </NavLink>
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
+        </NavLink>
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
+        </NavLink>
       </div>
 
       <div className="filters-for-mobile">

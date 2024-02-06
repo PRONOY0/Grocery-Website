@@ -10,6 +10,12 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import "./Recipepage.css";
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
+import { useState } from "react";
 
 const RecipePage = () => {
   const location = useLocation();
@@ -21,6 +27,13 @@ const RecipePage = () => {
   const roundedCalories = calories.toFixed(2);
   const healthLabels = recipe.recipe.healthLabels;
 
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+  }
+
   return (
     <div className="single-recipe">
       <div className="track-of-path">
@@ -31,6 +44,28 @@ const RecipePage = () => {
 
           <p className="login">Single Recipe</p>
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
+        </NavLink>
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
+        </NavLink>
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
+        </NavLink>
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
+        </NavLink>
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
+        </NavLink>
       </div>
 
       <div className="single-recipe-card">

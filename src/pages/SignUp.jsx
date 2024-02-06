@@ -1,6 +1,6 @@
 import React from "react";
 import "./Signin.css";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaPinterest } from "react-icons/fa";
@@ -9,6 +9,11 @@ import { GoHome } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
 import plantlogo from "../resources/Group.png";
 import { useState } from "react";
+import { MdAccountCircle } from "react-icons/md";
+import { IoMdCall } from "react-icons/io";
+import { TiHome } from "react-icons/ti";
+import { MdFastfood } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
 
 const SignUp = () => {
 
@@ -26,6 +31,13 @@ const SignUp = () => {
     console.log("this is checked value ",event.target.checked);
   };
 
+  const [whichNavClicked,setWhichNavClicked] = useState(3);
+
+  function navClickHandler(navId){
+    setWhichNavClicked(navId);
+    console.log("this is navId",navId);
+  }
+
   return (
     <div className="signup-div">
       <div className="track-of-path">
@@ -40,6 +52,28 @@ const SignUp = () => {
 
           <p className="signup">Create Account</p>
         </div>
+      </div>
+
+      <div className="bottom-navbar-mobile">
+        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
+          <FaSearch className="icon" />
+        </NavLink>
+
+        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
+          <MdFastfood className="icon" />
+        </NavLink>
+
+        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
+          <TiHome className="icon" />
+        </NavLink>
+
+        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
+          <IoMdCall className="icon" />
+        </NavLink>
+
+        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
+          <MdAccountCircle className="icon" />
+        </NavLink>
       </div>
 
       <form className="loginForm">
