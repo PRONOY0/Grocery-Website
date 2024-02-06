@@ -11,7 +11,6 @@ import RecipeSearch from "./pages/RecipeSearch";
 import RecipePage from "./pages/RecipePage";
 import PopUp from "./components/PopUp";
 import data from "./Data";
-import ProductsPage from "./pages/ProductsPage";
 import Timer from "./components/Timer";
 import Shop from "./pages/Shop";
 import SingleProductPage from "./pages/SingleProductPage";
@@ -32,7 +31,6 @@ function App() {
         <Route path="/recipe" element={<RecipeSearch />} />
         <Route path="/recipePage" element={<RecipePage />} />
         <Route path="/popup" element={<PopUp />} />
-        <Route path="/Products" element={<ProductsPage />} />
         <Route element={<Timer />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/singleProduct/:itemId" element={<SingleProductPage/>}/>

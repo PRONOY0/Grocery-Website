@@ -145,7 +145,11 @@
 @media (max-width:1024px) {
   .popup{
     width: 80vw;
-    height: 40vh;
+    max-height: 50vh;
+  }
+
+  .nomessageagain {
+    margin-top: 0rem;
   }
 
   .crossIcon{

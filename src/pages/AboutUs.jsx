@@ -49,13 +49,13 @@ const AboutUs = () => {
 
         <div className="trusted-oc-food-desc">
           <div className="trusted-oc-food-desc-headingAndDescription">
-              <h1>100% Trusted Organic Food Store</h1>
-              <p>
+            <h1>100% Trusted Organic Food Store</h1>
+            <p>
                 Pellentesque a ante vulputate leo porttitor luctus sed eget
                 eros. Nulla et rhoncus neque. Duis non diam eget est luctus
                 tincidunt a a mi. Nulla eu eros consequat tortor tincidunt
                 feugiat.
-              </p>
+            </p>
           </div>
 
           <div className="gridforfacilities">
@@ -272,7 +272,7 @@ const AboutUs = () => {
       </div>
 
       <div className="delivery">
-          <div className="delivery-desc">
+        <div className="delivery-desc">
             <h2>We Delivered, You Enjoy Your Order.</h2>
 
             <p>
@@ -284,19 +284,19 @@ const AboutUs = () => {
 
             <ul>
               <li>
-                <FcCheckmark />
+                <FcCheckmark id="checkmarks"/>
                 <p>Sed in metus pellentesque.</p>
               </li>
 
               <li>
-                <FcCheckmark />
+                <FcCheckmark id="checkmarks"/>
                 <p>
                   Fusce et ex commodo, aliquam nulla efficitur, tempus lorem.
                 </p>
               </li>
 
               <li>
-                <FcCheckmark />
+                <FcCheckmark id="checkmarks"/>
                 <p>Maecenas ut nunc fringilla erat varius.</p>
               </li>
             </ul>
@@ -305,8 +305,9 @@ const AboutUs = () => {
               <div>Shop Now</div>
               <GoArrowRight />
             </NavLink>
-          </div>
-          <div className="delivery-guy-img"></div>
+        </div>
+
+        <div className="delivery-guy-img"></div>
       </div>
 
       <div className="TEAM">
