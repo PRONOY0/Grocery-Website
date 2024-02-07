@@ -1767,7 +1767,7 @@ nav {
 @media (max-width: 600px) {
 
   .active{
-    background: #00b207;
+    background-color: #00b207;
     width:25vw;
     border-radius: 2rem;
     height: 4vh;

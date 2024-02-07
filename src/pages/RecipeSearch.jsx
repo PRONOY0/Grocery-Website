@@ -21,6 +21,7 @@ import { IoMdCall } from "react-icons/io";
 import { TiHome } from "react-icons/ti";
 import { MdFastfood } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const RecipeSearch = () => {
@@ -1055,44 +1056,44 @@ const RecipeSearch = () => {
             <div className="foot-two-phase1-part2">
               <h3>My Account</h3>
               <div className="links">
-                <NavLink className="footer-all-links">My Account</NavLink>
-                <NavLink className="footer-all-links">Order History</NavLink>
-                <NavLink className="footer-all-links">Shoppin Cart</NavLink>
-                <NavLink className="footer-all-links">Wishlist</NavLink>
+                <Link to='/signin' className="footer-all-links">My Account</Link>
+                <Link to="/Cart" className="footer-all-links">Order History</Link>
+                <Link to="/Cart" className="footer-all-links">Shopping Cart</Link>
+                <Link to="/Cart" className="footer-all-links">Wishlist</Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part3">
               <h3>Helps</h3>
               <div className="help-links">
-                <NavLink className="footer-all-links">Contact</NavLink>
-                <NavLink className="footer-all-links">Faqs</NavLink>
-                <NavLink className="footer-all-links">
+                <Link to="/contact" className="footer-all-links">Contact</Link>
+                <Link className="footer-all-links">Faqs</Link>
+                <Link className="footer-all-links">
                   Terms & Condition
-                </NavLink>
-                <NavLink className="footer-all-links">Privacy Policy</NavLink>
+                </Link>
+                <Link className="footer-all-links">Privacy Policy</Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part4">
               <h3>Proxy</h3>
               <div className="proxy-links">
-                <NavLink className="footer-all-links">About</NavLink>
-                <NavLink className="footer-all-links">Shop</NavLink>
-                <NavLink className="footer-all-links">Product</NavLink>
-                <NavLink className="footer-all-links">Track Order</NavLink>
+                <Link to="/about" className="footer-all-links">About</Link>
+                <Link to="/shop" className="footer-all-links">Shop</Link>
+                <Link to="/shop" className="footer-all-links">Product</Link>
+                <Link to="/Cart" className="footer-all-links">Track Order</Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part5">
               <h3>Categories</h3>
               <div className="categories-links">
-                <NavLink className="footer-all-links">
+                <Link className="footer-all-links">
                   Fruits & Vegetables
-                </NavLink>
-                <NavLink className="footer-all-links">Meat & Fish</NavLink>
-                <NavLink className="footer-all-links">Bread & Bakery</NavLink>
-                <NavLink className="footer-all-links">Beauty & Health</NavLink>
+                </Link>
+                <Link className="footer-all-links">Meat & Fish</Link>
+                <Link className="footer-all-links">Bread & Bakery</Link>
+                <Link className="footer-all-links">Beauty & Health</Link>
               </div>
             </div>
           </div>

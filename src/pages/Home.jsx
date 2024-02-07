@@ -34,6 +34,7 @@ import pfp2 from "../resources/P2.jpeg";
 import pfp3 from "../resources/P3.jpeg";
 import Timer from "../components/Timer";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Home = ({ products }) => {
   const [showPopup, setShowPopup] = useState(false);
@@ -2021,70 +2022,70 @@ const Home = ({ products }) => {
             <div className="foot-two-phase1-part2">
               <h3>My Account</h3>
               <div className="links">
-                <NavLink to="/signin" className="footer-all-links">
+                <Link to="/signin" className="footer-all-links">
                   My Account
-                </NavLink>
-                <NavLink to="/paymentGateway" className="footer-all-links">
+                </Link>
+                <Link to="/paymentGateway" className="footer-all-links">
                   Order History
-                </NavLink>
-                <NavLink to="/Cart" className="footer-all-links">
-                  Shoppin Cart
-                </NavLink>
-                <NavLink to="/Cart" className="footer-all-links">
+                </Link>
+                <Link to="/Cart" className="footer-all-links">
+                  Shopping Cart
+                </Link>
+                <Link to="/Cart" className="footer-all-links">
                   Wishlist
-                </NavLink>
+                </Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part3">
               <h3>Helps</h3>
               <div className="help-links">
-                <NavLink to="/contact" className="footer-all-links">
+                <Link to="/contact" className="footer-all-links">
                   Contact
-                </NavLink>
-                <NavLink to="/FAQs" className="footer-all-links">
+                </Link>
+                <Link to="/FAQs" className="footer-all-links">
                   Faqs
-                </NavLink>
-                <NavLink className="footer-all-links">
+                </Link>
+                <Link className="footer-all-links">
                   Terms & Condition
-                </NavLink>
-                <NavLink className="footer-all-links">Privacy Policy</NavLink>
+                </Link>
+                <Link className="footer-all-links">Privacy Policy</Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part4">
               <h3>Proxy</h3>
               <div className="proxy-links">
-                <NavLink to="/about" className="footer-all-links">
+                <Link to="/about" className="footer-all-links">
                   About
-                </NavLink>
-                <NavLink to="/shop" className="footer-all-links">
+                </Link>
+                <Link to="/shop" className="footer-all-links">
                   Shop
-                </NavLink>
-                <NavLink to="/Products" className="footer-all-links">
+                </Link>
+                <Link to="/Products" className="footer-all-links">
                   Product
-                </NavLink>
-                <NavLink to="/Cart" className="footer-all-links">
+                </Link>
+                <Link to="/Cart" className="footer-all-links">
                   Track Order
-                </NavLink>
+                </Link>
               </div>
             </div>
 
             <div className="foot-two-phase1-part5">
               <h3>Categories</h3>
               <div className="categories-links">
-                <NavLink to="/" className="footer-all-links">
+                <Link to="/" className="footer-all-links">
                   Fruits & Vegetables
-                </NavLink>
-                <NavLink to="/" className="footer-all-links">
+                </Link>
+                <Link to="/" className="footer-all-links">
                   Meat & Fish
-                </NavLink>
-                <NavLink to="/" className="footer-all-links">
+                </Link>
+                <Link to="/" className="footer-all-links">
                   Bread & Bakery
-                </NavLink>
-                <NavLink to="/" className="footer-all-links">
+                </Link>
+                <Link to="/" className="footer-all-links">
                   Beauty & Health
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>
