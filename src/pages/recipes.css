@@ -200,7 +200,7 @@
 }
 
 .cuisine {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .cuisine-filter {
@@ -223,7 +223,7 @@
 }
 
 .meal {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .meal-filters {
@@ -284,7 +284,7 @@
   .filtersList-for-mobile {
     position: fixed;
     bottom: 0;
-    max-height: 80vh;
+    max-height: 70vh;
     left: 0;
     width: 100%;
     height: 0;
