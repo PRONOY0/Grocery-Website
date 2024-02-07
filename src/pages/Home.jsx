@@ -1,6 +1,6 @@
 import "./Home.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import { GoArrowRight, GoRead } from "react-icons/go";
+import { GoArrowRight} from "react-icons/go";
 import FreshFruit from "../resources/Fresh Fruit.png";
 import FreshVegetables from "../resources/Fresh vegetables.png";
 import MeatFish from "../resources/Meat & Fish.png";

@@ -661,12 +661,12 @@ const SingleProductPage = () => {
 
                     <div>
                       <p className="user-name">Kristin Watson</p>
-                      <div className="stars">
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
+                      <div className="stars" id="customer-feedback-stars">
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
                       </div>
                     </div>
                   </div>
@@ -686,13 +686,13 @@ const SingleProductPage = () => {
 
                     <div>
                       <p className="user-name">Jane Cooper</p>
-                      <div className="stars">
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
+                      <div className="stars" id="customer-feedback-stars">
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
                       </div>
                     </div>
                   </div>
@@ -715,13 +715,13 @@ const SingleProductPage = () => {
 
                     <div>
                       <p className="user-name">Jacob Jones</p>
-                      <div className="stars">
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
+                      <div className="stars" id="customer-feedback-stars">
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
                       </div>
                     </div>
                   </div>
@@ -742,13 +742,13 @@ const SingleProductPage = () => {
 
                     <div>
                       <p className="user-name">Ralph Edwards</p>
-                      <div className="stars">
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
-                        <FaStar />
+                      <div className="stars" id="customer-feedback-stars">
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
+                        <FaStar/>
                       </div>
                     </div>
                   </div>

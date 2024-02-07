@@ -2163,6 +2163,7 @@ nav {
 
   .read-more-formobile {
     border: none;
+    background-color: white;
     text-align: start;
     font-weight: 500;
     font-family: customFont;
