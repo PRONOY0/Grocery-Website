@@ -93,4 +93,12 @@
     font-weight: 400;
     width: 80vw;
   }
+
+  .home{
+    width: 5vw;
+  }
+
+  .rightIcon{
+    width: 5vw;
+  }
 }

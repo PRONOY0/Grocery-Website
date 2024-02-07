@@ -21,11 +21,12 @@ import { useState } from "react";
 const AboutUs = () => {
   const navigation = useNavigate();
 
-  const [whichNavClicked,setWhichNavClicked] = useState(3);
+  const [activeNav, setActiveNav] = useState("/"); // Initially set to the home route
 
-  function navClickHandler(navId){
-    setWhichNavClicked(navId);
-  }
+  const handleNavClick = (route) => {
+    setActiveNav(route);
+  };
+
   return (
     <div className="about-container">
       <div className="track-of-path">
@@ -39,25 +40,45 @@ const AboutUs = () => {
       </div>
 
       <div className="bottom-navbar-mobile">
-        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
-          <FaSearch className="icon" />
-        </NavLink>
+      <NavLink
+        to="/shop"
+        className={activeNav === "/shop" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/shop")}
+      >
+        <FaSearch className="icon" />
+      </NavLink>
 
-        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
-          <MdFastfood className="icon" />
-        </NavLink>
+      <NavLink
+        to="/recipe"
+        className={activeNav === "/recipe" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/recipe")}
+      >
+        <MdFastfood className="icon" />
+      </NavLink>
 
-        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
-          <TiHome className="icon" />
-        </NavLink>
+      <NavLink
+        to="/"
+        className={activeNav === "/" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/")}
+      >
+        <TiHome className="icon" />
+      </NavLink>
 
-        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
-          <IoMdCall className="icon" />
-        </NavLink>
+      <NavLink
+        to="/contact"
+        className={activeNav === "/contact" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/contact")}
+      >
+        <IoMdCall className="icon" />
+      </NavLink>
 
-        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
-          <MdAccountCircle className="icon" />
-        </NavLink>
+      <NavLink
+        to="/signin"
+        className={activeNav === "/signin" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/signin")}
+      >
+        <MdAccountCircle className="icon" />
+      </NavLink>
       </div>
 
       <div className="oc-food">

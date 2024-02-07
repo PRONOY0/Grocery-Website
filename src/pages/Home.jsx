@@ -61,46 +61,6 @@ const Home = ({ products }) => {
     navigate(`/singleProduct/${itemId}`);
   };
 
-  function freshFruithandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function freshVegetableshandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function meathandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function beveragesHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function snacksHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function BreadBakeryHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function BakingNeedsHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function CookingHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function DiabeticFoodHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
-  function DishDetergentHandler(value) {
-    navigation("/Products", { state: { value } });
-  }
-
   const latestNewsImages = [
     latestnewsimage1,
     latestnewsimage2,
@@ -166,13 +126,11 @@ const Home = ({ products }) => {
   };
 
 
-  const [whichNavClicked,setWhichNavClicked] = useState(3);
+  const [activeNav, setActiveNav] = useState("/"); // Initially set to the home route
 
-  function navClickHandler(navId){
-    setWhichNavClicked(navId);
-    console.log("this is navId",navId);
-    console.log("this is whichNavClicked value",whichNavClicked);
-  }
+  const handleNavClick = (route) => {
+    setActiveNav(route);
+  };
 
   return (
     <div className="container">
@@ -191,25 +149,45 @@ const Home = ({ products }) => {
       </div>
 
       <div className="bottom-navbar-mobile">
-        <NavLink to="/shop" className={`${whichNavClicked===1 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(1)}>
-          <FaSearch className="icon" />
-        </NavLink>
+      <NavLink
+        to="/shop"
+        className={activeNav === "/shop" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/shop")}
+      >
+        <FaSearch className="icon" />
+      </NavLink>
 
-        <NavLink to="/recipe" className={`${whichNavClicked===2 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(2)}>
-          <MdFastfood className="icon" />
-        </NavLink>
+      <NavLink
+        to="/recipe"
+        className={activeNav === "/recipe" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/recipe")}
+      >
+        <MdFastfood className="icon" />
+      </NavLink>
 
-        <NavLink to="/" className={`${whichNavClicked===3 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(3)}>
-          <TiHome className="icon" />
-        </NavLink>
+      <NavLink
+        to="/"
+        className={activeNav === "/" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/")}
+      >
+        <TiHome className="icon" />
+      </NavLink>
 
-        <NavLink to="/contact" className={`${whichNavClicked===4 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(4)}>
-          <IoMdCall className="icon" />
-        </NavLink>
+      <NavLink
+        to="/contact"
+        className={activeNav === "/contact" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/contact")}
+      >
+        <IoMdCall className="icon" />
+      </NavLink>
 
-        <NavLink to="/signin" className={`${whichNavClicked===5 ? "navClickedActive" : ""}`} onClick={() => navClickHandler(5)}>
-          <MdAccountCircle className="icon" />
-        </NavLink>
+      <NavLink
+        to="/signin"
+        className={activeNav === "/signin" ? "navClickedActive" : ""}
+        onClick={() => handleNavClick("/signin")}
+      >
+        <MdAccountCircle className="icon" />
+      </NavLink>
       </div>
 
       <div className="Bannar-forMobile">
@@ -400,18 +378,12 @@ const Home = ({ products }) => {
         </div>
       </div>
 
-      <div
-        className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}
-      >
+      <div className={`${showPopup ? "lightHOME" : "OGHOME"} Popular-Categories`}>
         <h1 className="Popular-Categories-heading">Popular Categories</h1>
 
         <ul className="Popular-Categories-first-ul">
           <li
-            className="Fresh-Fruit categories-formobile"
-            onClick={() => {
-              freshFruithandler(1);
-            }}
-          >
+            className="Fresh-Fruit categories-formobile">
             <img
               src={FreshFruit}
               className="Fresh-fruit-img list-items-image"
@@ -420,11 +392,7 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Fresh-Vegetables categories-formobile"
-            onClick={() => {
-              freshVegetableshandler(2);
-            }}
-          >
+            className="Fresh-Vegetables categories-formobile">
             <img
               src={FreshVegetables}
               className="Fresh-Vegetables-img list-items-image"
@@ -433,41 +401,25 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Meat-Fish categories-formobile"
-            onClick={() => {
-              meathandler(3);
-            }}
-          >
+            className="Meat-Fish categories-formobile">
             <img src={MeatFish} className="Meat-Fish-img list-items-image" />
             <h2 className="Meat-Fish-title">Meat & Fish</h2>
           </li>
 
           <li
-            className="Snacks categories-formobile"
-            onClick={() => {
-              snacksHandler(4);
-            }}
-          >
+            className="Snacks categories-formobile">
             <img src={Snacks} className="Snacks-img list-items-image" />
             <h2 className="Snacks-title">Snacks</h2>
           </li>
 
           <li
-            className="Beverages categories-formobile"
-            onClick={() => {
-              beveragesHandler(5);
-            }}
-          >
+            className="Beverages categories-formobile">
             <img src={Beverages} className="Beverages-img list-items-image" />
             <h2 className="Beverages-title">Beverages</h2>
           </li>
 
           <li
-            className="Bread-Bakery categories-formobile"
-            onClick={() => {
-              BreadBakeryHandler(6);
-            }}
-          >
+            className="Bread-Bakery categories-formobile">
             <img
               src={BreadBakery}
               className="Bread-Bakery-img list-items-image"
@@ -476,11 +428,7 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Baking-Needs categories-formobile"
-            onClick={() => {
-              BakingNeedsHandler(7);
-            }}
-          >
+            className="Baking-Needs categories-formobile">
             <img
               src={BakingNeeds}
               className="Baking-Needs-img list-items-image"
@@ -490,9 +438,6 @@ const Home = ({ products }) => {
 
           <li
             className="Cooking categories-formobile"
-            onClick={() => {
-              CookingHandler(8);
-            }}
           >
             <img src={Cooking} className="Cooking-img list-items-image" />
             <h2 className="Cooking-title">Cooking</h2>
@@ -500,9 +445,6 @@ const Home = ({ products }) => {
 
           <li
             className="Diabetic-Food categories-formobile"
-            onClick={() => {
-              DiabeticFoodHandler(9);
-            }}
           >
             <img
               src={DiabeticFood}
@@ -512,11 +454,7 @@ const Home = ({ products }) => {
           </li>
 
           <li
-            className="Dish-Detergents categories-formobile"
-            onClick={() => {
-              DishDetergentHandler(10);
-            }}
-          >
+            className="Dish-Detergents categories-formobile">
             <img
               src={DishDetergents}
               className="Dish-Detergents-img list-items-image"

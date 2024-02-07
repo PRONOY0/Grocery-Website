@@ -1766,9 +1766,9 @@ nav {
 
 @media (max-width: 600px) {
 
-  .navClickedActive{
+  .active{
     background: #00b207;
-    width:30vw;
+    width:25vw;
     border-radius: 2rem;
     height: 4vh;
     display: flex;
@@ -1776,7 +1776,7 @@ nav {
     align-items: center;
   }
 
-  .navClickedActive .icon{
+  .active .icon{
     color: white;
   }
 
