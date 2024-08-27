@@ -1,21 +1,21 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Signin from "./pages/Signin";
-import Navbar from "./components/Navbar";
-import SignUp from "./pages/SignUp";
-import Error from "./pages/Error";
-import AboutUs from "./pages/AboutUs";
-import Contact from "./pages/Contact";
-import RecipeSearch from "./pages/RecipeSearch";
-import RecipePage from "./pages/RecipePage";
-import PopUp from "./components/PopUp";
+import Home from "./pages/Home/Home";
+import Signin from "./pages/Sign-in/Signin";
+import Navbar from "./components/Navbar/Navbar";
+import SignUp from "./pages/Sign-up/SignUp";
+import Error from "./pages/Error/Error";
+import AboutUs from "./pages/About/AboutUs";
+import Contact from "./pages/Contacts/Contact";
+import RecipeSearch from "./pages/RecipeSearchPage/RecipeSearch";
+import RecipePage from "./pages/RecipePage/RecipePage";
+import PopUp from "./components/PopUp/PopUp";
 import data from "./Data";
-import Timer from "./components/Timer";
-import Shop from "./pages/Shop";
-import SingleProductPage from "./pages/SingleProductPage";
-import Cart from "./pages/Cart";
-import CheckoutPage from "./pages/CheckoutPage";
+import Timer from "./components/Timer/Timer";
+import Shop from "./pages/Shop/Shop";
+import SingleProductPage from "./pages/Single-Product/SingleProductPage";
+import Cart from "./pages/Cart/Cart";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 
 function App() {
   return (
