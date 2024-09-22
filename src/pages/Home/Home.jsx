@@ -139,7 +139,7 @@ const Home = ({ products }) => {
 
       <div className="logoandNameForMobile">
         <div className="Ecobazar-logo-and-text">
-          <p>Ecobazar</p>
+          <p>Daily Delight</p>
           <img src={plantlogo} className="plant-logo" />
         </div>
 
