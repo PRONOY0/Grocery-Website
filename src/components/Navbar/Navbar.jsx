@@ -50,7 +50,7 @@ const Navbar = () => {
         <div className="middle">
           <NavLink to="/" className="homePageNavLink">
             <img src={plant} className="plant" alt=""/>
-            <p className="title">Ecobazar</p>
+            <p className="title">Daily Delight</p>
           </NavLink>
 
           <div className="cartDetails">
